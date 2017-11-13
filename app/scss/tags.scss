@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend %title;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Geometria';
+    font-size: rem(14px);
+    color: #4a90e2;
+    transition: $transition;
+    &:hover {
+        color: #e53656;
+    }
+}

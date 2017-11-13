@@ -2,11 +2,11 @@ module.exports = function () {
     return {
         module: {
             rules: [{
-                test: /\.(jpg|png|svg)$/,
+                test: /\.woff2?$|\.ttf$|\.eot$|\.svg$|\.otf$/,
                 loader: 'file-loader',
                 options: {
-                    name: '[name].[ext]',
-                    outputPath: './assets/img/'
+                    outputPath: './assets/fonts/',
+                    name: '[name].[ext]'
                 }
             }]
         }

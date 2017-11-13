@@ -1,5 +1,32 @@
-$red: orangered;
-$blue: blueviolet;
-$green: olive;
+@font-face {
+    font-family: 'Geometria';
+    src: url('../fonts/geometria/Geometria.woff'), url('../fonts/geometria/Geometria.woff2');
+}
+
+@font-face {
+    font-family: 'GeometriaBold';
+    src: ('../fonts/geometria/Geometria-Bold.woff'), url('../fonts/geometria/Geometria-Bold.woff2');
+}
+
+@font-face {
+    font-family: 'GeometriaExtraBold';
+    src: ('../fonts/geometria/Geometria-ExtraBold.woff') url('../fonts/geometria/Geometria-ExtraBold.woff2');
+}
+
+@font-face {
+    font-family: 'GeometriaLight';
+    src: ('../fonts/geometria/Geometria-Light.woff'), url('../fonts/geometria/Geometria-Light.woff2');
+}
+
+@font-face {
+    font-family: 'GilroyExtraBold';
+    src: url('../fonts/gilroy/Gilroy-ExtraBold.otf'), ;
+}
+
+@font-face {
+    font-family: 'GilroyLight';
+    src: url('../fonts/gilroy/Gilroy-Light.otf');
+}
+
 $font-size: 16px;
 @import './style.scss';

@@ -1,13 +1,15 @@
 'use strict';
-const path = require('path');
-const merge = require('webpack-merge')
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path'),
+    merge = require('webpack-merge'),
+    CleanWebpackPlugin = require('clean-webpack-plugin'),
+    UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+    css = require('./webpack/css'),
+    babel = require('./webpack/babel'),
+    pug = require('./webpack/pug'),
+    img = require('./webpack/img'),
+    fonts = require('./webpack/fonts'),
+    server = require('./webpack/server');
 
-const sass = require('./webpack/sass');
-const babel = require('./webpack/babel');
-const pug = require('./webpack/pug');
-const img = require('./webpack/img');
-const server = require('./webpack/server');
 
 const PATHS = {
     app: path.resolve(__dirname, 'app'),
@@ -15,38 +17,47 @@ const PATHS = {
 }
 
 const common = merge([{
-        context: PATHS.app,
-        entry: './js/main.js',
-        output: {
-            path: PATHS.dist,
-            filename: 'bundle.js'
+            context: PATHS.app,
+            entry: './js/main.js',
+            output: {
+                path: PATHS.dist,
+                filename: 'bundle.js'
+            },
+            plugins: [
+                new CleanWebpackPlugin(['dist'])
+            ]
         },
+        babel(),
+        fonts(),
+        pug(),
+        img()
+    ]),
+    uglify = {
         plugins: [
-            new CleanWebpackPlugin(['dist'])
+            new UglifyJSPlugin()
         ]
-    },
-    sass(),
-    babel(),
-    pug(),
-    img()
-])
+    };
 
 module.exports = function (env) {
     switch (env) {
-        case 'prod':
-            return merge([
-                common
-            ])
-            break;
         case 'dev':
             return merge([
                 common,
+                css().dev,
                 server()
             ])
             break;
-        case 'serv':
+        case 'build':
             return merge([
-                common
+                common,
+                css().dev,
+            ])
+            break;
+        case 'prod':
+            return merge([
+                common,
+                css().min,
+                uglify
             ])
             break;
     }

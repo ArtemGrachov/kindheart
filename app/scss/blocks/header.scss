@@ -1,3 +1,11 @@
 .header {
     display: flex;
+    &-lang {
+        &-list {
+            @extend %list;
+        }
+        &-item {
+            display: inline-block;
+        }
+    }
 }

@@ -12,8 +12,9 @@ html {
 body {
     font-family: 'Gilroy';
     font-size: rem(14px);
-    text-align: left;
-    background-size: cover;
+    text-align: left; // background-image: url('../img/backgrounds/background_1.png');
+    // background-size: cover;
+    background: #363B5D;
     width: 100%;
     height: 100%;
 }

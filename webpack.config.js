@@ -3,6 +3,7 @@ const path = require('path'),
     merge = require('webpack-merge'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+    ImageminPlugin = require('imagemin-webpack-plugin').default,
     css = require('./webpack/css'),
     babel = require('./webpack/babel'),
     pug = require('./webpack/pug'),
@@ -24,7 +25,8 @@ const common = merge([{
                 filename: 'bundle.js'
             },
             plugins: [
-                new CleanWebpackPlugin(['dist'])
+                new CleanWebpackPlugin(['dist']),
+                new ImageminPlugin()
             ]
         },
         babel(),

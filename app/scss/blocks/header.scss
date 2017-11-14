@@ -1,11 +1,73 @@
 .header {
     display: flex;
+    margin: rem(20px) rem(30px) rem(50px);
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Geometria';
+    &__heart {
+        font-size: rem(32px);
+    }
     &-lang {
         &-list {
             @extend %list;
         }
         &-item {
             display: inline-block;
+        }
+        &__link {
+            color: #c5d5e6;
+            opacity: .5;
+            &:hover,
+            &_active {
+                color: #c5d5e6;
+                opacity: 1;
+            }
+        }
+    }
+    &-nav {
+        &-list {
+            @extend %list;
+        }
+        &-item {
+            display: inline-block;
+        }
+        &__link {
+            font-family: 'GeometriaExtraBold';
+            font-size: rem(14px);
+            opacity: 1;
+            padding: rem(8px) rem(20px);
+            display: block;
+            color: #c5d5e6;
+            border-radius: rem(5px);
+            &:hover {
+                background: rgba(black, .1);
+            }
+            &_active {
+                background: rgba(black, .2);
+            }
+            &_accent {
+                background: linear-gradient(to left, #6082d7, #e73453);
+                color: white;
+                &:hover {
+                    background: white;
+                }
+            }
+        }
+    }
+    &-search {
+        &__toggle {
+            font-size: rem(18px);
+        }
+    }
+    &-auth {
+        &__link {
+            color: #c5d5e6;
+            opacity: .5;
+            &:hover,
+            &_active {
+                color: #c5d5e6;
+                opacity: 1;
+            }
         }
     }
 }

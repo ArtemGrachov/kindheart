@@ -1,17 +1,18 @@
 header.header
     .header__heart
+        span.icon.icon-heart
     .header-lang
         ul.header-lang-list
             li.header-lang-item
-                a(href="#").header-lang__link УКР
+                a(href="#").header-lang__link.header-lang__link_active УКР
             li.header-lang-item
                 a(href="#").header-lang__link РУС
             li.header-lang-item
                 a(href="#").header-lang__link ENG
-    nav.nav.header-nav
+    nav.header-nav
         ul.header-nav-list
             li.header-nav-item
-                a(href="#").header-nav__link Проекти
+                a(href="#").header-nav__link.header-nav__link_active Проекти
             li.header-nav-item
                 a(href="#").header-nav__link Архів
             li.header-nav-item
@@ -19,6 +20,7 @@ header.header
             li.header-nav-item
                 a(href="#").header-nav__link.header-nav__link_accent Термінова допомога
     .header-search
-        a(href="#").header-search__toggle O
+        a(href="#").header-search__toggle
+            span.icon.icon-search
     .header-auth
-        a(href="#").header-auth_link Вхід / Зареєструватися
+        a(href="#").header-auth__link Вхід / Зареєструватися

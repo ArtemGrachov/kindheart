@@ -1,6 +1,6 @@
 .header {
     display: flex;
-    margin: rem(20px) rem(30px) rem(50px);
+    margin-bottom: rem(50px);
     justify-content: space-between;
     align-items: center;
     font-family: 'Geometria';
@@ -15,11 +15,11 @@
             display: inline-block;
         }
         &__link {
-            color: #c5d5e6;
+            color: $lightblue;
             opacity: .5;
             &:hover,
             &_active {
-                color: #c5d5e6;
+                color: $lightblue;
                 opacity: 1;
             }
         }
@@ -57,15 +57,18 @@
     &-search {
         &__toggle {
             font-size: rem(18px);
+            &:hover {
+                opacity: .5;
+            }
         }
     }
     &-auth {
         &__link {
-            color: #c5d5e6;
+            color: $lightblue;
             opacity: .5;
             &:hover,
             &_active {
-                color: #c5d5e6;
+                color: $lightblue;
                 opacity: 1;
             }
         }

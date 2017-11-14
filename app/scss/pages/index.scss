@@ -1,0 +1,46 @@
+.index {
+    &-element {
+        margin-left: rem(70px);
+    }
+    &-list {
+        @extend %list;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &-item {
+        padding: rem(8px) 0;
+        &:after {
+            margin-top: rem(62px);
+            display: block;
+            content: '';
+            background: white;
+            width: rem(50px);
+            height: rem(2px);
+        }
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+    }
+    &__link {
+        color: #c5d5e6;
+        font-size: rem(18px);
+    }
+    &-title-sm {
+        margin-bottom: rem(40px);
+        width: rem(456px);
+    }
+    &__btn {
+        margin-left: rem(100px);
+        padding: rem(20px);
+        border-radius: rem(10px);
+        background: rgba(black, .2);
+        color: white;
+        font-family: 'Geometria';
+        font-size: rem(18px);
+        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+    }
+}

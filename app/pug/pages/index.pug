@@ -1,0 +1,23 @@
+extends ../layout.pug
+
+block variables
+    - var title = "Добре серце"
+
+block content
+    .index-wrap.index-element
+        .index-title
+            .title.title_white Добре Серце
+                a(href="#").index__link.index__link_more детальніше про проект 
+                    span.icon.icon-right-circle
+        ul.index-list
+            li.index-item
+                .title-sm.index-title-sm Вже зараз Ви можете допомогти тим, хто дійсно потребує допомоги
+                a(href="#").index__link Як Ви можете допомогти? 
+                    span.icon.icon-right-circle
+                a(href="#").index__btn Допомогти вже зараз
+            li.index-item
+                .title-sm.index-title-sm Якщо Вам необхідна допомога, додайте проект
+                a(href="#").index__link Додати проект 
+                    span.icon.icon-right-circle
+    footer.footer.index-element Розповісти всім:
+        include ../elements/socials.pug

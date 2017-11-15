@@ -5,6 +5,12 @@
     }
     &-item {
         display: inline-block;
-        font-size: rem(24px)
+        font-size: rem(20px);
+        margin: 0 rem(6px);
+    }
+    &__link {
+        &:hover {
+            opacity: .5;
+        }
     }
 }

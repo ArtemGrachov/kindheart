@@ -1,0 +1,32 @@
+.search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: rem(15px) rem(30px);
+    display: none;
+    &.active {
+        display: block;
+    }
+    &__input {
+        background: rgba(#7F91AF, .8);
+        border: none;
+        width: 100%;
+        padding: rem(20px) rem(30px);
+        border-radius: rem(10px);
+        font-family: 'GeometriaBold';
+        color: white;
+        font-size: rem(18px);
+        text-align: center;
+        &::placeholder {
+            text-align: left;
+            color: #2e3f69;
+        }
+    }
+    &__close {
+        position: absolute;
+        font-size: rem(44px);
+        right: rem(56px);
+        top: rem(23px);
+    }
+}

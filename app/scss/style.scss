@@ -2,6 +2,7 @@
 *:before,
 *:after {
     box-sizing: border-box;
+    outline: none;
 }
 
 html {
@@ -12,15 +13,15 @@ html {
 body {
     font-family: 'Gilroy';
     font-size: rem(14px);
-    text-align: left; // background-image: url('../img/backgrounds/background_1.png');
-    // background-size: cover;
+    text-align: left;
     background: #363B5D;
     width: 100%;
     height: 100%;
+    letter-spacing: .003em;
 }
 
 .wrapper {
-    padding: rem(20px) rem(30px) 0;
+    padding: rem(4px) rem(30px) 0;
 }
 
 %title {

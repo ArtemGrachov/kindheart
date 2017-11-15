@@ -1,5 +1,6 @@
 'use strict';
-const path = require('path'),
+const webpack = require('webpack'),
+    path = require('path'),
     merge = require('webpack-merge'),
     CleanWebpackPlugin = require('clean-webpack-plugin'),
     UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
@@ -26,7 +27,11 @@ const common = merge([{
             },
             plugins: [
                 new CleanWebpackPlugin(['dist']),
-                new ImageminPlugin()
+                new ImageminPlugin(),
+                new webpack.ProvidePlugin({
+                    $: 'jquery',
+                    jQuery: 'jquery'
+                })
             ]
         },
         babel(),
@@ -40,7 +45,7 @@ const common = merge([{
         ]
     };
 
-module.exports = function (env) {
+module.exports = function(env) {
     switch (env) {
         case 'dev':
             return merge([

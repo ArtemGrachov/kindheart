@@ -1,18 +1,23 @@
 .header {
     display: flex;
-    margin-bottom: rem(50px);
+    margin-bottom: rem(150px);
     justify-content: space-between;
     align-items: center;
     font-family: 'Geometria';
     &__heart {
-        font-size: rem(32px);
+        font-size: rem(36px);
     }
     &-lang {
+        letter-spacing: rem(-1px);
         &-list {
             @extend %list;
         }
         &-item {
             display: inline-block;
+            margin-right: rem(8px);
+            &:last-child {
+                margin-right: 0;
+            }
         }
         &__link {
             color: $lightblue;
@@ -35,10 +40,11 @@
             font-family: 'GeometriaExtraBold';
             font-size: rem(14px);
             opacity: 1;
-            padding: rem(8px) rem(20px);
+            padding: rem(7px) rem(21px);
             display: block;
             color: #c5d5e6;
             border-radius: rem(5px);
+            margin: 0 rem(-7.5px);
             &:hover {
                 background: rgba(black, .1);
             }
@@ -48,9 +54,7 @@
             &_accent {
                 background: linear-gradient(to left, #6082d7, #e73453);
                 color: white;
-                &:hover {
-                    background: white;
-                }
+                margin: rem(14px);
             }
         }
     }

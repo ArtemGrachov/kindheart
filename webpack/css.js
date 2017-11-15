@@ -3,7 +3,7 @@ const extractCSS = new ExtractTextPlugin({
     filename: 'bundle.css'
 })
 
-module.exports = function (env) {
+module.exports = function(env) {
     const cssLoader = {
             loader: 'css-loader',
             options: {
@@ -38,7 +38,7 @@ module.exports = function (env) {
             module: {
                 rules: [{
                     test: /\.css$/,
-                    loader: ExtractTextPlugin.extract(['css-loader'])
+                    loader: (ExtractTextPlugin.extract(['css-loader']))
                 }, {
                     test: /\.scss$/,
                     loader: ExtractTextPlugin.extract([

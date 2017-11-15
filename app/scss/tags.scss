@@ -13,6 +13,6 @@ a {
     color: #4a90e2;
     transition: $transition;
     &:hover {
-        color: #e53656;
+        opacity: .5;
     }
 }

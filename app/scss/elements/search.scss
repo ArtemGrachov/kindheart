@@ -1,3 +1,8 @@
+%search-block {
+    background: rgba(#7F91AF, .95);
+    border-radius: rem(10px);
+}
+
 .search {
     position: fixed;
     top: 0;
@@ -5,19 +10,19 @@
     width: 100%;
     padding: rem(15px) rem(30px);
     display: none;
+    z-index: 50;
     &.active {
         display: block;
     }
     &__input {
-        background: rgba(#7F91AF, .8);
+        @extend %search-block;
         border: none;
         width: 100%;
-        padding: rem(20px) rem(30px);
-        border-radius: rem(10px);
         font-family: 'GeometriaBold';
         color: white;
         font-size: rem(18px);
         text-align: center;
+        padding: rem(20px) rem(30px);
         &::placeholder {
             text-align: left;
             color: #2e3f69;
@@ -27,6 +32,70 @@
         position: absolute;
         font-size: rem(44px);
         right: rem(56px);
-        top: rem(23px);
+        top: rem(15px);
+    }
+    &-form {
+        margin-bottom: rem(20px);
+    }
+    &-results {
+        @extend %search-block;
+        color: white;
+        padding: rem(18px) rem(50px) rem(20px);
+    }
+    &-list {
+        @extend %list;
+    }
+    &-item {
+        @extend %clearfix;
+        margin-bottom: rem(38px);
+        &:last-child {
+            .search-categories-list {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+    }
+    &__section {
+        width: rem(289px);
+        float: left;
+        font-family: 'Geometria';
+        font-size: rem(24px);
+        padding-top: rem(27px);
+    }
+    &-categories {
+        float: left;
+        &__title {
+            font-family: 'Geometria';
+            font-size: rem(18px);
+            margin-bottom: rem(20px);
+        }
+        &-list {
+            @extend %list;
+            padding-bottom: rem(26px);
+            border-bottom: rem(1px) solid rgba(white, .4);
+        }
+        &-item {
+            display: inline-block;
+            width: rem(300px);
+            vertical-align: top;
+            margin-right: rem(96px);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &-projects {
+        &-list {
+            font-weight: 300;
+            @extend %list;
+        }
+        &-item {
+            padding-bottom: rem(8px);
+            border-bottom: rem(1px) solid rgba(white, .4);
+            margin-bottom: rem(6px);
+            &:last-child {
+                border-bottom: none;
+            }
+        }
     }
 }

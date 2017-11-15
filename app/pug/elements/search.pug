@@ -1,4 +1,28 @@
-.search
-    input(type="text" placeholder="Пошук").search__input
-    a(href="#").search__close
-        span.icon.icon-close
+.search.active
+    .search-form
+        input(type="text" placeholder="Пошук").search__input
+        a(href="#").search__close
+            span.icon.icon-close
+    .search-results
+        ul.search-list
+            li.search-item
+                .search__section Проекти
+                .search-categories
+                    ul.search-categories-list
+                        li.search-categories-item
+                            .search-categories__title Діти
+                            ul.search-projects-list
+                                li.search-projects-item Для операції на сердце маленькому хлопчику, необхідно зібрати гроші на ліки
+                                li.search-projects-item Збираємо гроші на лікування п’ятирічного Василя, який став жертвою ДТП
+                        li.search-categories-item
+                            .search-categories__title Війна
+                            ul.search-projects-list
+                                li.search-projects-item Необхідно зібрати ліки для поранених бійців із зони АТО
+            li.search-item
+                .search__section Архів
+                .search-categories
+                    ul.search-categories-list
+                        li.search-categories-item
+                            .search-categories__title Діти
+                            ul.search-projects-list
+                                li.search-projects-item Необхідно купити ліки для дитячого будинку в місті Київ

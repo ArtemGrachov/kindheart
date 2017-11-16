@@ -7,6 +7,10 @@
     z-index: 100;
     padding: rem(100px) rem(50px) rem(50px);
     background: rgba(#c5d6e6, .5);
+    display: none;
+    &.active {
+        display: block;
+    }
     &__close {
         position: absolute;
         top: rem(35px);

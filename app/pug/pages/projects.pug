@@ -1,0 +1,30 @@
+extends ../layout.pug
+include ../mixins/projects-item.pug
+
+block variables
+    - var title = "Добре серце: Проекти"
+
+block content
+    .projects
+        ul.projects-carousel
+            li.projects-carousel-item
+                a(href="#").projects-carousel__link Війна
+                .projects-carousel__count 24
+            li.projects-carousel-item
+                a(href="#").projects-carousel__link Екологія
+                .projects-carousel__count 24
+            li.projects-carousel-item.active
+                a(href="#").projects-carousel__link Діти
+                .projects-carousel__count 24
+            li.projects-carousel-item
+                a(href="#").projects-carousel__link Освіта
+                .projects-carousel__count 24
+        ul.projects-list
+            +projects-item('Необхідна допомога дитячому будинку','513','07.05.2017',{collected: '10 000', total: '25 000'}, true)
+                | Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. 
+            +projects-item('Операція дитині, яка постраждала в зоні АТО','271','04.05.2017',{collected: '10 000', total: '25 000'})
+                | Et mollit quis ipsum nulla excepteur amet laboris deserunt sunt amet proident aliqua eiusmod quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad modi magni beatae sed aut quibusdam suscipit. Quis iure ab tempora! Animi beatae dicta repudiandae eveniet, enim expedita temporibus quo unde.
+            +projects-item('Освітній загальний курмс з основ WEB технологій для школярів','018','03.05.2017',{collected: '10 000', total: '25 000'})
+                | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga aliquid enim ex consectetur expedita ea beatae! Consectetur facilis ad neque molestiae alias accusamus id deserunt! Maxime, labore animi! Ipsa, asperiores?
+            +projects-item('Будування дитячого майданчику у місті Київ','419','03.05.2017',{collected: '10 000', total: '25 000'})
+                | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga aliquid enim ex consectetur expedita ea beatae! Consectetur facilis ad neque molestiae alias accusamus id deserunt! Maxime, labore animi! Ipsa, asperiores?

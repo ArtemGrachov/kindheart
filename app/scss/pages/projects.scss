@@ -1,0 +1,137 @@
+.projects {
+    &-carousel {
+        @extend %list;
+        margin-top: rem(35px);
+        margin-left: rem(-112px); // temp!
+        margin-bottom: rem(84px);
+        &-item {
+            display: inline-block;
+            margin: 0 rem(49px);
+            position: relative;
+            opacity: .15;
+            &.active {
+                opacity: 1;
+                .projects-carousel__count {
+                    display: block;
+                }
+            }
+        }
+        &__link {
+            @extend .title;
+            color: white;
+        }
+        &__count {
+            color: #e63554;
+            font-family: 'GilroyExtraBold';
+            font-size: rem(18px);
+            position: absolute;
+            top: rem(30px);
+            right: rem(-40px);
+            display: none;
+        }
+    }
+    &-list {
+        width: rem(1240px);
+        margin: 0 auto;
+        @extend %list;
+        color: white;
+    }
+    &-item {
+        height: rem(100px);
+        &.active {
+            height: rem(200px);
+            .projects {
+                &__text {
+                    display: block;
+                }
+                &-cost {
+                    display: block;
+                }
+                &-help {
+                    display: block;
+                }
+            }
+        }
+    }
+    &-pic {
+        float: left;
+        height: 100%;
+        width: rem(400px);
+        position: relative;
+        overflow: hidden;
+    }
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    &-details {
+        float: left;
+        @extend %clearfix;
+        border-bottom: 1px solid rgba(#d8d8d8, .5);
+        width: rem(840px);
+        padding: rem(9px) 0 rem(10px) rem(50px);
+        height: 100%;
+    }
+    &-desc {
+        float: left;
+        width: rem(600px);
+    }
+    &__date {
+        font-size: rem(12px);
+        color: #c5d5e6;
+        margin-top: rem(1px);
+        margin-bottom: rem(20px);
+    }
+    &__title {
+        font-family: 'GeometriaExtraBold';
+        font-size: rem(18px);
+        margin-bottom: rem(9px);
+    }
+    &__text {
+        margin-bottom: rem(16px);
+        padding-left: rem(1px);
+        display: none;
+    }
+    &-cost {
+        color: #b4c4d8;
+        opacity: .5;
+        display: none;
+        &__number {
+            font-size: rem(18px);
+            margin: 0 rem(5px) 0 rem(2px);
+        }
+    }
+    &-help {
+        display: none;
+        float: right;
+        height: 100%;
+        &-list {
+            @extend %list;
+            height: 100%;
+        }
+        &-item {
+            margin-bottom: rem(20px);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &__link {
+            background: #9c5d9a;
+            border-radius: rem(5px);
+            width: rem(30px);
+            height: rem(30px);
+            display: block;
+            text-align: center;
+            font-size: rem(18px);
+            &:before {
+                display: inline-block;
+                content: '';
+                height: 100%;
+                width: 0;
+                vertical-align: middle;
+            }
+        }
+    }
+}

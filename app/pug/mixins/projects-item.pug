@@ -1,0 +1,33 @@
+mixin projects-item(title, imgUrl, date, cost, active)
+    - var cls = 'projects-item';
+    if active
+        - cls += ' active'
+    li(class=cls)
+        .projects-pic
+            img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff').projects__img
+        .projects-details
+            .projects-desc
+                .projects__date #{date}
+                .projects__title #{title}
+                .projects__text 
+                    block
+                .projects-cost
+                    | Зібрано 
+                    span.projects-cost__number #{cost.collected}
+                    |  з 
+                    span.projects-cost__number #{cost.total}
+                    |  UAH
+            .projects-help
+                ul.projects-help-list
+                    li.projects-help-item
+                        a(href="#").projects-help__link
+                            span.icon.icon-help-hand-sm
+                    li.projects-help-item
+                        a(href="#").projects-help__link
+                            span.icon.icon-help-wallet-sm
+                    li.projects-help-item
+                        a(href="#").projects-help__link
+                            span.icon.icon-help-clothes-sm
+                    li.projects-help-item
+                        a(href="#").projects-help__link
+                            span.icon.icon-help-heart

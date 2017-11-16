@@ -1,0 +1,53 @@
+.help {
+    &-list {
+        @extend %list;
+        display: flex;
+        justify-content: space-between;
+        margin-top: rem(51px);
+    }
+    &-item {
+        @extend %clearfix;
+    }
+    ;
+    &__icon {
+        float: left;
+        width: rem(80px);
+        height: rem(80px);
+        border-radius: 15px;
+        border: solid 2px #c5d5e6;
+        text-align: center;
+        font-size: rem(40px);
+        margin-right: rem(20px);
+        &:before {
+            display: inline-block;
+            content: '';
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    &-title {
+        height: rem(81px);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        &__text {
+            font-family: 'GeometriaExtraBold';
+            font-size: rem(18px);
+            color: #363b5d;
+            display: inline-block;
+        }
+    }
+    &-content {
+        float: left;
+        width: rem(146px);
+        color: #525572;
+        font-size: rem(12px);
+        line-height: 1.2;
+        padding-left: rem(1px);
+        p {
+            margin: 0 0 rem(14px);
+        }
+    }
+}

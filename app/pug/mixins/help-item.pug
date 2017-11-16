@@ -1,0 +1,10 @@
+mixin help-item(title, iconClass)
+    li.help-item
+        .help__icon
+            span(class="icon icon-" + iconClass)
+        .help-content
+            .help-title
+                .help-title__text #{title}
+            .help__text
+                block
+        

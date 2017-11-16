@@ -14,40 +14,45 @@
     &.active {
         display: block;
     }
-    &__input {
+    &-form {
         @extend %search-block;
-        border: none;
-        width: 100%;
-        font-family: 'GeometriaBold';
-        color: white;
+        margin-bottom: rem(20px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(5px) rem(26px);
+    }
+    &__label {
         font-size: rem(18px);
+        font-family: 'GeometriaBold';
+        color: #2e3f69;
+        margin-left: rem(4px);
+    }
+    &__input {
+        font-family: 'Geometria';
+        font-size: rem(40px);
+        background: none;
+        border: none;
+        color: white;
         text-align: center;
-        padding: rem(20px) rem(30px);
-        &::placeholder {
-            text-align: left;
-            color: #2e3f69;
-        }
+        width: 100%;
+        padding: 0 rem(27px) 0 rem(10px);
+        font-weight: 600;
     }
     &__close {
-        position: absolute;
         font-size: rem(44px);
-        right: rem(56px);
-        top: rem(15px);
-    }
-    &-form {
-        margin-bottom: rem(20px);
     }
     &-results {
         @extend %search-block;
+        padding: rem(19px) rem(50px) rem(19px);
         color: white;
-        padding: rem(18px) rem(50px) rem(20px);
     }
     &-list {
         @extend %list;
     }
     &-item {
         @extend %clearfix;
-        margin-bottom: rem(38px);
+        margin-bottom: rem(39px);
         &:last-child {
             .search-categories-list {
                 border-bottom: none;
@@ -56,18 +61,18 @@
         }
     }
     &__section {
-        width: rem(289px);
+        width: rem(290px);
         float: left;
         font-family: 'Geometria';
         font-size: rem(24px);
-        padding-top: rem(27px);
+        padding-top: rem(28px);
     }
     &-categories {
         float: left;
         &__title {
             font-family: 'Geometria';
             font-size: rem(18px);
-            margin-bottom: rem(20px);
+            margin-bottom: rem(19px);
         }
         &-list {
             @extend %list;

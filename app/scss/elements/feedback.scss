@@ -1,0 +1,16 @@
+.feedback {
+    position: fixed;
+    bottom: rem(30px);
+    right: rem(30px);
+    border-radius: 50%;
+    width: rem(60px);
+    height: rem(60px);
+    line-height: rem(60px);
+    text-align: center;
+    background-color: #9d5e9b;
+    box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 #9d5e9b;
+    &__btn {
+        font-size: rem(44px);
+        vertical-align: middle;
+    }
+}

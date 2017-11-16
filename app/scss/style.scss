@@ -22,8 +22,9 @@ body {
 
 .body {
     &-index {
-        background-size: cover, 100% 100%;
-        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"><g fill="none" fill-rule="evenodd"><path fill="url(#a)" d="M0 0h1440v800H0z"/><path fill="#FFF" d="M1440 204v596H369z"/></g></svg>'), $body-background;
+        background-size: auto, cover, 100% 100%;
+        background-image: url('../img/backgrounds/heart-iso.png'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"><g fill="none" fill-rule="evenodd"><path fill="url(#a)" d="M0 0h1440v800H0z"/><path fill="#FFF" d="M1440 204v596H369z"/></g></svg>'), $body-background;
+        background-position: 85.9% 82%, center, center;
     }
 }
 

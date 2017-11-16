@@ -38,6 +38,8 @@
     }
     &-item {
         height: rem(100px);
+        transition: $transition;
+        overflow: hidden;
         &.active {
             height: rem(200px);
             .projects {
@@ -113,18 +115,6 @@
         }
         &-item {
             margin-bottom: rem(20px);
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        &__link {
-            background: #9c5d9a;
-            border-radius: rem(5px);
-            width: rem(30px);
-            height: rem(30px);
-            display: block;
-            text-align: center;
-            font-size: rem(18px);
             &:before {
                 display: inline-block;
                 content: '';
@@ -132,6 +122,42 @@
                 width: 0;
                 vertical-align: middle;
             }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+                .projects-help__name {
+                    opacity: 1;
+                }
+            }
+        }
+        &-icon {
+            background: #9c5d9a;
+            border-radius: rem(5px);
+            width: rem(30px);
+            height: rem(30px);
+            display: inline-block;
+            text-align: center;
+            font-size: rem(18px);
+            vertical-align: middle;
+            &:before {
+                display: inline-block;
+                content: '';
+                height: 100%;
+                width: 0;
+                vertical-align: middle;
+            }
+        }
+        &__name {
+            display: inline-block;
+            font-size: rem(12px);
+            color: #c5d5e6;
+            text-align: right;
+            vertical-align: middle;
+            margin-right: rem(10px);
+            opacity: 0;
+            transition: $transition;
+            width: rem(80px);
         }
     }
 }

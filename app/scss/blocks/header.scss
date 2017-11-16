@@ -39,18 +39,20 @@
             font-family: 'GeometriaExtraBold';
             font-size: rem(14px);
             opacity: 1;
-            padding: rem(7px) rem(21px);
             display: block;
             color: #c5d5e6;
             border-radius: rem(5px);
-            margin: 0 rem(-7.5px);
-            &_active {
+            margin: 0 rem(13.5px);
+            &.active {
+                padding: rem(7px) rem(21px);
                 background: rgba(black, .2);
+                margin: 0 rem(-7.5px);
             }
-            &_accent {
+            &.accent {
                 background: linear-gradient(to left, #6082d7, #e73453);
                 color: white;
                 margin: rem(14px);
+                padding: rem(7px) rem(21px);
             }
         }
     }

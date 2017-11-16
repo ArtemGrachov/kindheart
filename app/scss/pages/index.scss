@@ -1,4 +1,18 @@
 .index {
+    &-bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        max-height: rem(800px);
+        max-width: rem(1440px);
+        width: 100%;
+        height: 100%;
+        background-size: auto, cover;
+        background-image: url('../img/backgrounds/heart-iso.png'), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"><g fill="none" fill-rule="evenodd"><path fill="url(#a)" d="M0 0h1440v800H0z"/><path fill="#FFF" d="M1440 204v596H369z"/></g></svg>');
+        background-position: 85.9% 82%, center;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
     &-wrap {
         position: absolute;
         top: 50%;

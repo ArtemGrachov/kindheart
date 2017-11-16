@@ -1,8 +1,10 @@
 .projects {
+    padding-left: rem(120px);
+    padding-right: rem(20px);
     &-carousel {
         @extend %list;
         margin-top: rem(35px);
-        margin-left: rem(-112px); // temp!
+        margin-left: rem(-272px); // temp!
         margin-bottom: rem(84px);
         &-item {
             display: inline-block;
@@ -31,7 +33,6 @@
         }
     }
     &-list {
-        width: rem(1240px);
         margin: 0 auto;
         @extend %list;
         color: white;
@@ -40,6 +41,8 @@
         height: rem(100px);
         transition: $transition;
         overflow: hidden;
+        position: relative;
+        display: flex;
         &.active {
             height: rem(200px);
             .projects {
@@ -56,9 +59,9 @@
         }
     }
     &-pic {
-        float: left;
         height: 100%;
         width: rem(400px);
+        flex-shrink: 0;
         position: relative;
         overflow: hidden;
     }
@@ -69,15 +72,14 @@
         transform: translateY(-50%);
     }
     &-details {
-        float: left;
-        @extend %clearfix;
+        display: flex;
+        justify-content: space-between;
         border-bottom: 1px solid rgba(#d8d8d8, .5);
-        width: rem(840px);
         padding: rem(9px) 0 rem(10px) rem(50px);
         height: 100%;
+        width: 100%;
     }
     &-desc {
-        float: left;
         width: rem(600px);
     }
     &__date {
@@ -107,23 +109,17 @@
     }
     &-help {
         display: none;
-        float: right;
-        height: 100%;
+        flex-shrink: 0;
+        flex-grow: 0;
         &-list {
             @extend %list;
             height: 100%;
         }
         &-item {
-            margin-bottom: rem(20px);
-            &:before {
-                display: inline-block;
-                content: '';
-                height: 100%;
-                width: 0;
-                vertical-align: middle;
-            }
-            &:last-child {
-                margin-bottom: 0;
+            margin-top: rem(20px);
+            position: relative;
+            &:first-child {
+                margin-top: 0;
             }
             &:hover {
                 .projects-help__name {
@@ -150,12 +146,15 @@
         }
         &__name {
             display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: rem(40px);
+            transform: translateY(-50%);
             font-size: rem(12px);
             color: #c5d5e6;
             text-align: right;
             vertical-align: middle;
             margin-right: rem(10px);
-            opacity: 0;
             transition: $transition;
             width: rem(80px);
         }

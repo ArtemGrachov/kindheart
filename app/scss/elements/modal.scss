@@ -8,8 +8,12 @@
     padding: rem(100px) rem(50px) rem(50px);
     background: rgba(#c5d6e6, .5);
     display: none;
+    overflow-y: scroll;
     &.active {
         display: block;
+        &~.wrapper {
+            filter: blur(20px);
+        }
     }
     &__close {
         position: absolute;
@@ -20,7 +24,7 @@
     }
     &-window {
         width: 100%;
-        height: 100%;
+        min-height: 100%;
         background: white;
         border-radius: rem(15px);
         box-shadow: rem(3px) rem(4px) rem(10px) 0 rgba(0, 0, 0, 0.2);

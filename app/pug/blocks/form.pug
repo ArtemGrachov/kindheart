@@ -1,7 +1,10 @@
+include ../mixins/form-tabs.pug
+include ../mixins/form-radio.pug
+
 .modal.active
     a(href="#").modal__close
         span.icon.icon-close
-    .modal-window
+    form.modal-window
         .title Заповніть форму
         .form-toggle
             .form-toggle-btns
@@ -17,8 +20,9 @@
                         label.form__label Фамілія
                         input(type="text" id="lastname").form__input
                 .form-group
-                    label.form__label Назва компанії, організації
-                    input(type="text" id="org").form__input
+                    .form-group-inner
+                        label.form__label Назва компанії, організації
+                        input(type="text" id="org").form__input
                     a(href="#").form__link + Логотип
                 .form-group
                     label.form__label Email-адрес
@@ -45,3 +49,38 @@
                     .form-group-half
                         label.form__label Поштовий індекс
                         input(type="text" id="post").form__input
+        .form-wrap
+            .title Види допомоги
+                .subtitle.form-subtitle Ви можете змінити вид допомоги
+            +form-tabs([{icon:'help-hand',name:'Зробити'},{icon:'help-wallet',name:'Фінансова допомога'},{icon:'help-clothes',name:'Матеріальна допомога'},{icon:'help-heart',name:'Волонтерство'}],1)
+                li.form-tabs-item tab #1
+                li.form-tabs-item.active
+                    .form-left
+                        label.form__label Спосіб оплати
+                        .form-radio-group
+                            +form-radio('visa','pay')
+                                .form-radio__logo
+                                    span.icon.icon-mastercard
+                                    span.icon.icon-visa
+                                .form-radio__name Карта Visa/MasterCard
+                            +form-radio('pb','pay')
+                                .form-radio__logo Приват24
+                                .form-radio__name Приват24
+                            +form-radio('terminals','pay')
+                                .form-radio__logo
+                                    span.icon.icon-terminals
+                                .form-radio__name Термінали України
+                            +form-radio('webmoney','pay')
+                                .form-radio__logo
+                                    span.icon.icon-webmoney
+                                .form-radio__name WebMoney
+                            +form-radio('paypal','pay')
+                                .form-radio__logo
+                                    span.icon.icon-paypal
+                                .form-radio__name PayPal
+                    .form-right
+                        div(style="border:1px dashed lime; width: 375px; height: 188px") temp div
+                li.form-tabs-item tab #3
+                li.form-tabs-item tab #4
+        .form-submit
+            button(type="submit").btn Допомогти

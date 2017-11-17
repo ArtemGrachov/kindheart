@@ -23,6 +23,10 @@
     }
 }
 
+@function svg($svg) {
+    @return url('data:image/svg+xml;utf8,'+$svg);
+}
+
 @function rem($px) {
     @return $px / $font-size+0rem;
 }

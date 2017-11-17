@@ -24,37 +24,41 @@ body {
 .wrapper {
     padding: rem(4px) rem(30px) 0;
     transition: $transition;
-    &_blur {
-        filter: blur(20px);
-    }
 }
 
 %title {
     font-family: 'GeometriaExtraBold';
     color: $darkblue;
+    text-align: center;
 }
 
 .title {
     @extend %title;
     font-size: rem(64px);
-    text-align: center;
     &_white {
         color: white;
     }
 }
 
-.title-sm {
+.subtitle {
     font-size: rem(18px);
     font-family: 'GilroyLight';
+    text-align: center;
 }
 
 .btn {
     font-family: 'GeometriaExtraBold';
     font-size: rem(18px);
     color: white;
-    box-shadow: 0 0 15px 5px rgba(229, 54, 86, 0.4);
+    box-shadow: 0 0 15px 5px rgba(#e53656, 0.4);
     background-image: linear-gradient(79deg, #e53656, #6082d8);
-    padding: rem(22px) rem(100px) rem(20px);
+    padding: rem(21px) rem(99px) rem(19px);
     border-radius: rem(10px);
     display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        box-shadow: 0 0 15px 5px rgba(#6082d8, 0.4);
+    }
 }

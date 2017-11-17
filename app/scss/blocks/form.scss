@@ -18,17 +18,24 @@
                 color: white;
                 background: $darkblue;
             }
+            &:hover {
+                color: white;
+                background: rgba($darkblue, .8);
+            }
         }
     }
     &-wrap {
         @extend %clearfix;
         margin-left: rem(17px);
+        margin-bottom: rem(34px);
     }
     &-left {
         float: left;
+        max-width: 50%;
     }
     &-right {
         float: right;
+        max-width: 50%;
     }
     &__label {
         font-family: 'Geometria';
@@ -36,9 +43,10 @@
         color: #939aa3;
         margin-bottom: rem(2px);
         display: block;
+        font-weight: bold;
     }
     &__input {
-        display: inline-block;
+        display: block;
         width: rem(420px);
         max-width: 100%;
         background: rgba(#c5d5e6, .2);
@@ -46,6 +54,7 @@
         border-radius: rem(5px);
         color: #939aa3;
         padding: rem(12px);
+        font-weight: bold;
         &:focus {
             color: $darkblue;
         }
@@ -63,5 +72,113 @@
                 margin-right: 0;
             }
         }
+        &-inner {
+            display: inline-block;
+        }
+    }
+    &-subtitle {
+        margin-top: rem(6px);
+        margin-bottom: rem(39px);
+    }
+    &-tabs {
+        margin-bottom: rem(16px);
+        &-btns {
+            @extend %list;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: rem(23px);
+            padding: 0 rem(23px);
+        }
+        &-btn {
+            flex-grow: 0;
+            width: 100%;
+            &.active {
+                .form-tabs {
+                    &-title__text {
+                        color: $darkblue;
+                    }
+                    &__icon {
+                        background: $violet;
+                        border-color: $violet;
+                    }
+                }
+            }
+        }
+        &__link {
+            display: block;
+        }
+        &__icon {
+            @extend .help__icon;
+        }
+        &-title {
+            @extend .help-title;
+            &__text {
+                @extend .help-title__text;
+                color: $lightblue;
+            }
+        }
+        &-list {
+            @extend %list;
+        }
+        &-item {
+            display: none;
+            border-radius: rem(15px);
+            border: rem(1px) solid $lightblue;
+            padding: rem(16px) rem(19px) 0;
+            @extend %clearfix;
+            &.active {
+                display: block;
+            }
+        }
+    }
+    &-radio {
+        &-group {
+            margin: rem(8px) rem(-8px) 0;
+            @extend %clearfix;
+        }
+        &__logo {
+            font-size: rem(18px);
+            font-family: 'GilroyExtraBold';
+            height: rem(51px);
+            &:before {
+                display: inline-block;
+                content: '';
+                height: 100%;
+                width: 0;
+                vertical-align: middle;
+            }
+            .icon {
+                font-size: rem(31px);
+                .icon+.icon {
+                    margin-left: rem(20px);
+                }
+            }
+        }
+        &__label {
+            font-size: rem(12px);
+            padding: rem(10px);
+            text-align: center;
+            background: $lightblue;
+            color: white;
+            display: inline-block;
+            width: rem(170px);
+            height: rem(85px);
+            margin: 0 rem(8px) rem(20px);
+            border-radius: rem(10px);
+            transition: $transition;
+            vertical-align: top;
+            &:hover {
+                background: $darkblue;
+            }
+        }
+        &__input {
+            display: none;
+            &:checked+.form-radio__label {
+                background: $violet;
+            }
+        }
+    }
+    &-submit {
+        text-align: center;
     }
 }

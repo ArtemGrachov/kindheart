@@ -13,9 +13,10 @@
     }
     &__close {
         position: absolute;
-        top: rem(35px);
-        right: rem(59px);
-        font-size: rem(44px);
+        top: rem(31px);
+        right: rem(54px);
+        font-size: rem(34px);
+        padding: rem(10px);
     }
     &-window {
         width: 100%;
@@ -23,6 +24,6 @@
         background: white;
         border-radius: rem(15px);
         box-shadow: rem(3px) rem(4px) rem(10px) 0 rgba(0, 0, 0, 0.2);
-        padding: rem(46px) rem(123px) rem(79px);
+        padding: rem(46px) rem(60px) rem(79px) rem(123px);
     }
 }

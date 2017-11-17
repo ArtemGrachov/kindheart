@@ -1,0 +1,67 @@
+.form {
+    &-toggle {
+        text-align: center;
+        margin-top: rem(15px);
+        margin-bottom: rem(49px);
+        font-weight: bold;
+        &-btns {
+            border: rem(2px) solid $darkblue;
+            display: inline-block;
+            border-radius: rem(5px);
+        }
+        &__btn {
+            font-family: 'Geometria';
+            color: $darkblue;
+            display: inline-block;
+            padding: rem(12px) rem(20px) rem(8px);
+            &.active {
+                color: white;
+                background: $darkblue;
+            }
+        }
+    }
+    &-wrap {
+        @extend %clearfix;
+        margin-left: rem(17px);
+    }
+    &-left {
+        float: left;
+    }
+    &-right {
+        float: right;
+    }
+    &__label {
+        font-family: 'Geometria';
+        font-size: rem(14px);
+        color: #939aa3;
+        margin-bottom: rem(2px);
+        display: block;
+    }
+    &__input {
+        display: inline-block;
+        width: rem(420px);
+        max-width: 100%;
+        background: rgba(#c5d5e6, .2);
+        border: none;
+        border-radius: rem(5px);
+        color: #939aa3;
+        padding: rem(12px);
+        &:focus {
+            color: $darkblue;
+        }
+    }
+    &__link {
+        margin-left: rem(20px);
+    }
+    &-group {
+        margin-bottom: rem(32px);
+        &-half {
+            width: rem(200px);
+            display: inline-block;
+            margin-right: rem(16px);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

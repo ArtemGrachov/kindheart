@@ -1,0 +1,47 @@
+.modal.active
+    a(href="#").modal__close
+        span.icon.icon-close
+    .modal-window
+        .title Заповніть форму
+        .form-toggle
+            .form-toggle-btns
+                a(href="#").form-toggle__btn.active Фіз. особа
+                a(href="#").form-toggle__btn Юр. особа
+        .form-wrap
+            .form-left
+                .form-group
+                    .form-group-half
+                        label.form__label Ім'я
+                        input(type="text" id="firstname").form__input
+                    .form-group-half
+                        label.form__label Фамілія
+                        input(type="text" id="lastname").form__input
+                .form-group
+                    label.form__label Назва компанії, організації
+                    input(type="text" id="org").form__input
+                    a(href="#").form__link + Логотип
+                .form-group
+                    label.form__label Email-адрес
+                    input(type="email" id="email").form__input
+                .form-group
+                    label.form__label Номер телефону
+                    input(type="name" id="phone").form__input
+            .form-right
+                .form-group
+                    label.form__label Країна
+                    input(type="text" id="country").form__input
+                .form-group
+                    .form-group-half
+                        label.form__label Місто
+                        input(type="text" id="city").form__input
+                    .form-group-half
+                        label.form__label Штат, район
+                        input(type="text" id="district").form__input
+                .form-group
+                    label.form__label Адреса
+                    input(type="text" id="address").form__input
+                    a(href="#").form__link
+                .form__group
+                    .form-group-half
+                        label.form__label Поштовий індекс
+                        input(type="text" id="post").form__input

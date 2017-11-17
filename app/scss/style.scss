@@ -23,14 +23,15 @@ body {
 
 .wrapper {
     padding: rem(4px) rem(30px) 0;
-    &-blur {
+    transition: $transition;
+    &_blur {
         filter: blur(20px);
     }
 }
 
 %title {
     font-family: 'GeometriaExtraBold';
-    color: #363d5d;
+    color: $darkblue;
 }
 
 .title {

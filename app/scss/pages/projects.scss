@@ -84,7 +84,7 @@
     }
     &__date {
         font-size: rem(12px);
-        color: #c5d5e6;
+        color: $lightblue;
         margin-top: rem(1px);
         margin-bottom: rem(20px);
     }
@@ -147,16 +147,18 @@
         &__name {
             display: inline-block;
             position: absolute;
+            right: 0;
+            padding: rem(2px) rem(40px) rem(2px) rem(2px);
             top: 50%;
-            right: rem(40px);
             transform: translateY(-50%);
             font-size: rem(12px);
-            color: #c5d5e6;
+            color: $lightblue;
             text-align: right;
             vertical-align: middle;
-            margin-right: rem(10px);
             transition: $transition;
-            width: rem(80px);
+            font-family: 'Gilroy';
+            line-height: 1.2;
+            opacity: 0;
         }
     }
 }

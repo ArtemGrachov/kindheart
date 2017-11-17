@@ -1,4 +1,4 @@
-mixin projects-item(title, imgUrl, date, cost, active)
+mixin projects-item(title, imgUrl, date, meta, active)
     - var cls = 'projects-item';
     if active
         - cls += ' active'
@@ -11,12 +11,15 @@ mixin projects-item(title, imgUrl, date, cost, active)
                 .projects__title #{title}
                 .projects__text 
                     block
-                .projects-cost
-                    | Зібрано 
-                    span.projects-cost__number #{cost.collected}
-                    |  з 
-                    span.projects-cost__number #{cost.total}
-                    |  UAH
+                .projects-meta
+                    if meta.collected
+                        | Зібрано 
+                        span.projects-meta__number #{meta.collected}
+                        |  з 
+                        span.projects-meta__number #{meta.total}
+                        |  UAH
+                    else
+                        | #{meta}
             .projects-help
                 ul.projects-help-list
                     li.projects-help-item

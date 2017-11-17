@@ -11,8 +11,13 @@
     &-search {
         background-image: svg('<svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 18 18"><path fill="#C5D5E6" fill-rule="nonzero" d="M18 17.232l-5.608-5.607a7.012 7.012 0 0 0 1.701-4.579A7.055 7.055 0 0 0 7.046 0a7.01 7.01 0 0 0-4.984 2.063A7 7 0 0 0 0 7.046a7.055 7.055 0 0 0 7.046 7.047 7.015 7.015 0 0 0 4.58-1.7L17.234 18l.766-.768zM7.046 13.01a5.97 5.97 0 0 1-5.962-5.963A5.914 5.914 0 0 1 2.83 2.831a5.922 5.922 0 0 1 4.217-1.747 5.97 5.97 0 0 1 5.963 5.962 5.97 5.97 0 0 1-5.963 5.963z"/></svg>')
     }
-    &-right-circle {
-        background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"> <defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="nonzero" d="M249.257 4.39l4.61 4.61-4.61 4.61-.75-.748L252.37 9l-3.861-3.86.75-.75zM260 9c0 4.963-4.037 9-9 9s-9-4.037-9-9 4.037-9 9-9 9 4.037 9 9zm-1.059 0c0-4.38-3.562-7.941-7.941-7.941-4.38 0-7.941 3.562-7.941 7.941 0 4.38 3.562 7.941 7.941 7.941 4.38 0 7.941-3.562 7.941-7.941z" transform="translate(-242)"/></svg>')
+    &-arrow {
+        &-down {
+            background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="nonzero" d="M126.257 4.39l4.61 4.61-4.61 4.61-.75-.748L129.37 9l-3.861-3.86.75-.75zM137 9c0 4.963-4.037 9-9 9s-9-4.037-9-9 4.037-9 9-9 9 4.037 9 9zm-1.059 0c0-4.38-3.562-7.941-7.941-7.941-4.38 0-7.941 3.562-7.941 7.941 0 4.38 3.562 7.941 7.941 7.941 4.38 0 7.941-3.562 7.941-7.941z" transform="rotate(90 68.5 -50.5)"/></svg>');
+        }
+        &-right {
+            background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"> <defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="nonzero" d="M249.257 4.39l4.61 4.61-4.61 4.61-.75-.748L252.37 9l-3.861-3.86.75-.75zM260 9c0 4.963-4.037 9-9 9s-9-4.037-9-9 4.037-9 9-9 9 4.037 9 9zm-1.059 0c0-4.38-3.562-7.941-7.941-7.941-4.38 0-7.941 3.562-7.941 7.941 0 4.38 3.562 7.941 7.941 7.941 4.38 0 7.941-3.562 7.941-7.941z" transform="translate(-242)"/></svg>')
+        }
     }
     &-soc {
         &-twitter {

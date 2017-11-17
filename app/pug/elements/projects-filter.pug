@@ -1,0 +1,11 @@
+.projects-filter-wrap
+    .projects-filter
+        button(type="button").projects-filter__toggle Види допомоги
+            span.icon.icon-arrow-down
+        .projects-filter-dropdown
+            ul.projects-filter-list
+                each filter in [{name:'Зробити',id:'work'},{name:'Фінансрова допомога',id:'financial'},{name:'Матеріальна допомога',id:'material'},{name:'волонтерство',id:'volonteer'}]
+                    li.projects-filter-item
+                        input(type="checkbox" id=filter.id).projects-filter__checkbox
+                        label(fore=filter.id).projects-filter__label #{filter.name}
+            button(type="button").btn-small Показати

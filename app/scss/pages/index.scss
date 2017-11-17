@@ -47,11 +47,12 @@
     }
     &-title {
         margin-bottom: rem(58px);
-        &-sm {
-            margin-bottom: rem(35px);
-            width: rem(456px);
-            letter-spacing: .003em;
-        }
+    }
+    &-subtitle {
+        margin-bottom: rem(35px);
+        width: rem(456px);
+        letter-spacing: .003em;
+        text-align: left;
     }
     &__btn {
         margin-left: rem(100px);

@@ -5,7 +5,7 @@
         @extend %list;
         margin-top: rem(35px);
         margin-left: rem(-272px); // temp!
-        margin-bottom: rem(84px);
+        margin-bottom: rem(17px);
         &-item {
             display: inline-block;
             margin: 0 rem(49px);
@@ -49,7 +49,7 @@
                 &__text {
                     display: block;
                 }
-                &-cost {
+                &-meta {
                     display: block;
                 }
                 &-help {
@@ -57,6 +57,9 @@
                 }
             }
         }
+    }
+    &-dropdown {
+        text-align: right;
     }
     &-pic {
         height: 100%;
@@ -98,7 +101,7 @@
         padding-left: rem(1px);
         display: none;
     }
-    &-cost {
+    &-meta {
         color: #b4c4d8;
         opacity: .5;
         display: none;

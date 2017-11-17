@@ -1,5 +1,6 @@
 include ../mixins/form-tabs.pug
 include ../mixins/form-radio.pug
+include ../mixins/form-group.pug
 
 .modal.active
     a(href="#").modal__close
@@ -12,43 +13,25 @@ include ../mixins/form-radio.pug
                 a(href="#").form-toggle__btn Юр. особа
         .form-wrap
             .form-left
-                .form-group
-                    .form-group-half
-                        label.form__label Ім'я
-                        input(type="text" id="firstname").form__input
-                    .form-group-half
-                        label.form__label Фамілія
-                        input(type="text" id="lastname").form__input
-                .form-group
-                    .form-group-inner
-                        label.form__label Назва компанії, організації
-                        input(type="text" id="org").form__input
+                +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id:'lastname'}])
+                +form-group({name:'Назва компанії, організації',id:'org'})
                     a(href="#").form__link + Логотип
-                .form-group
-                    label.form__label Email-адрес
-                    input(type="email" id="email").form__input
-                .form-group
-                    label.form__label Номер телефону
-                    input(type="name" id="phone").form__input
+                +form-group({name:'Email-адрес',id:'email'})
+                +form-group({name:'Номер телефону',id:'phone'})
             .form-right
-                .form-group
-                    label.form__label Країна
-                    input(type="text" id="country").form__input
-                .form-group
-                    .form-group-half
-                        label.form__label Місто
-                        input(type="text" id="city").form__input
-                    .form-group-half
-                        label.form__label Штат, район
-                        input(type="text" id="district").form__input
-                .form-group
-                    label.form__label Адреса
-                    input(type="text" id="address").form__input
-                    a(href="#").form__link
-                .form__group
-                    .form-group-half
-                        label.form__label Поштовий індекс
-                        input(type="text" id="post").form__input
+                +form-group({name:'Країна',id:'country'})
+                +form-group([{name:'Місто',id:'city'},{name:'Штат, район',id:'district'}])
+                +form-group({name:'Адреса',id:'address'})
+                +form-group([{name:'Поштовий індекс',id:'postindex'}])
+        .form-wrap
+            .form-left
+                +form-group({name:'Юридична адреса',id:'jurAddress'})
+                +form-group([{name:'Найменування банку',id:'bankName'},{name:'МФО банку',id:'bankMFO'}])
+                +form-group({name:'Розрахунковий рахунок',id:'account'})
+            .form-right
+                +form-group([{name:'ЗКПО',id:'zkpo'},{name:'Тип оподаткування',id:'taxType'}])
+                +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:'taxSystem'}])
+                +form-group([{name:'Телефон бухгалтерії',id:'accouintingPhone'},{name:'Факс',id:'fax'}])
         .form-wrap
             .title Види допомоги
                 .subtitle.form-subtitle Ви можете змінити вид допомоги
@@ -56,7 +39,7 @@ include ../mixins/form-radio.pug
                 li.form-tabs-item tab #1
                 li.form-tabs-item.active
                     .form-left
-                        label.form__label Спосіб оплати
+                        label.form__label(for="pay") Спосіб оплати
                         .form-radio-group
                             +form-radio('visa','pay')
                                 .form-radio__logo
@@ -78,8 +61,26 @@ include ../mixins/form-radio.pug
                                 .form-radio__logo
                                     span.icon.icon-paypal
                                 .form-radio__name PayPal
+                            +form-radio('bank','pay')
+                                .form-radio__logo
+                                    span.icon.icon-bank
+                                .form-radio__name Банківський переказ
                     .form-right
-                        div(style="border:1px dashed lime; width: 375px; height: 188px") temp div
+                        label.form__label Введіть наступні дані
+                        .form-card
+                            label.form__label Номер карти
+                            .form-card-group
+                                - var n = 0;
+                                while n < 4
+                                    input(type="text").form__input.form-card__number
+                                    - n++
+                            .form-left
+                                label.form__label Термін дії
+                                input(type="text").form__input.form-card__delay
+                            .form-right
+                                label.form__label CVC/CVV
+                                input(type="text").form__input.form-card__delay
+                            .form-right
                 li.form-tabs-item tab #3
                 li.form-tabs-item tab #4
         .form-submit

@@ -1,0 +1,15 @@
+mixin form-group(inputs)
+    .form-group
+        if inputs.length
+            each input in inputs
+                .form-group-half
+                    label.form__label(for=input.id) #{input.name}
+                    input(type="text" id=input.id).form__input
+        else
+            if block
+                .form-group-inner
+                    label.form__label(for=inputs.id) #{inputs.name}
+                    input(type="text" id=inputs.id).form__input
+            else
+                label.form__label(for=inputs.id) #{inputs.name}
+                input(type="text" id=inputs.id).form__input

@@ -10,7 +10,15 @@ h6 {
 a {
     text-decoration: none;
     font-family: 'Geometria';
-    color: #4a90e2;
-    transition: $transition;
+    color: $blue;
     font-weight: bold;
+}
+
+a,
+input,
+button {
+    transition: $transition;
+    &:focus {
+        box-shadow: 0 0 0 rem(1.5px) rgba($blue, 0.3);
+    }
 }

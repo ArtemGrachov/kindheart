@@ -20,7 +20,11 @@
             }
             &:hover {
                 color: white;
-                background: rgba($darkblue, .8);
+                background: $blue;
+            }
+            &:focus {
+                color: white;
+                background: $blue;
             }
         }
     }
@@ -103,6 +107,13 @@
                     }
                 }
             }
+            &:hover {
+                .form-tabs {
+                    &-title__text {
+                        color: $darkblue;
+                    }
+                }
+            }
         }
         &__link {
             display: block;
@@ -115,6 +126,7 @@
             &__text {
                 @extend .help-title__text;
                 color: $lightblue;
+                transition: $transition;
             }
         }
         &-list {
@@ -129,11 +141,14 @@
             &.active {
                 display: block;
             }
+            .form__label {
+                margin-bottom: rem(8px);
+            }
         }
     }
     &-radio {
         &-group {
-            margin: rem(8px) rem(-8px) 0;
+            margin: 0 rem(-8px) 0;
             @extend %clearfix;
         }
         &__logo {
@@ -180,5 +195,32 @@
     }
     &-submit {
         text-align: center;
+    }
+    &-card {
+        border-radius: rem(15px);
+        background: $lightblue;
+        width: rem(375px);
+        height: rem(188px);
+        padding: rem(19px) rem(25px) rem(20px);
+        .form__label {
+            color: white;
+            margin-bottom: rem(4px);
+        }
+        .form__input {
+            background: #f3f7fa;
+            display: inline-block;
+        }
+        &-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: rem(30px);
+        }
+        &__number {
+            width: rem(74px);
+            text-align: center;
+        }
+        &__delay {
+            width: rem(130px);
+        }
     }
 }

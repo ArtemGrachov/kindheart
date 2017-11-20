@@ -1,0 +1,44 @@
+.contacts {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    &__tel {
+        font-family: 'GilroyExtraBold';
+        color: white;
+        font-size: rem(64px);
+        display: block;
+        margin-bottom: rem(18px);
+    }
+    &__email {
+        @extend .title;
+        color: white;
+        letter-spacing: -.003em;
+    }
+    &-form {
+        margin-top: rem(103px);
+        &__title {
+            margin-bottom: rem(19px);
+            letter-spacing: 0.0035em;
+        }
+        &__input {
+            color: white;
+            width: rem(200px);
+            background: rgba(#c5d5e6, .2);
+            border: none;
+            border-radius: rem(5px);
+            padding: rem(12px) rem(9px);
+            margin-right: rem(16px);
+            font-family: 'GeometriaBold';
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+    &-footer {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

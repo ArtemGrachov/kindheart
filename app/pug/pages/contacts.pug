@@ -1,0 +1,16 @@
+extends ../layout.pug
+
+block variables
+    - var title = 'Контакти'
+
+block content
+    .contacts
+        a.contacts__tel(href="tel:") +38 (077) 777 77 77
+        a.contacts__email(href="mailto:help@kindheart.ua ") help@kindheart.ua 
+        form.contacts-form
+            .contacts-form__title.subtitle Заповніть своє ім’я і контактні дані, і Вам нададуть консультацію по телефону
+            input(type="text" placeholder="Ім’я").contacts-form__input
+            input(type="text" placeholder="Телефон").contacts-form__input
+            button(type="submit").btn.contacts__btn Відправити
+    footer.footer.contacts-footer
+        include ../elements/socials.pug

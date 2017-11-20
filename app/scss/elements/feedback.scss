@@ -1,7 +1,7 @@
 .feedback {
     position: fixed;
-    bottom: rem(30px);
-    right: rem(30px);
+    bottom: rem(29px);
+    right: rem(29px);
     border-radius: 50%;
     width: rem(60px);
     height: rem(60px);
@@ -12,12 +12,5 @@
     &__btn {
         font-size: rem(44px);
         vertical-align: middle;
-    }
-}
-
-.body-danger {
-    .feedback {
-        background-color: #8492f3;
-        box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 #8492f3;
     }
 }

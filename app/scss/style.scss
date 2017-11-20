@@ -20,10 +20,6 @@ body {
     background-repeat: no-repeat;
 }
 
-.body-danger {
-    background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800"><defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="evenodd" d="M0 0h1440v800H0z"/></svg>');
-}
-
 .wrapper {
     padding: rem(4px) rem(30px) 0;
     transition: $transition;
@@ -41,6 +37,9 @@ body {
     &_white {
         color: white;
     }
+    a {
+        color: white;
+    }
 }
 
 .subtitle {
@@ -50,18 +49,31 @@ body {
 }
 
 .btn {
-    font-family: 'GeometriaExtraBold';
-    font-size: rem(18px);
-    color: white;
-    box-shadow: 0 0 15px 5px rgba(#e53656, 0.4);
-    background-image: linear-gradient(79deg, #e53656, #6082d8);
-    padding: rem(21px) rem(99px) rem(19px);
-    border-radius: rem(10px);
-    display: inline-block;
-    border: none;
+    background: rgba(black, .2);
+    font-family: 'GeometriaBold';
+    font-size: rem(14px);
     cursor: pointer;
+    border: none;
+    border-radius: rem(5px);
+    display: inline-block;
     transition: $transition;
+    color: white;
+    padding: rem(13px) rem(59px);
     &:hover {
-        box-shadow: 0 0 15px 5px rgba(#6082d8, 0.4);
+        background-color: rgba(white, .2);
+    }
+    &-lg {
+        font-family: 'GeometriaExtraBold';
+        font-size: rem(18px);
+        color: white;
+        box-shadow: 0 0 15px 5px rgba(#e53656, 0.4);
+        background-image: linear-gradient(79deg, #e53656, #6082d8);
+        padding: rem(21px) rem(99px) rem(19px);
+        border-radius: rem(10px);
+        border: none;
+        cursor: pointer;
+        &:hover {
+            box-shadow: 0 0 15px 5px rgba(#6082d8, 0.4);
+        }
     }
 }

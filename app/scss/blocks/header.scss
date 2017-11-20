@@ -1,12 +1,23 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: relative;
     font-family: 'Geometria';
+    @extend %clearfix;
+    text-align: center;
+    &-left {
+        float: left;
+    }
+    &-right {
+        float: right;
+        padding-top: rem(9px);
+    }
     &__heart {
         font-size: rem(36px);
+        display: inline-block;
+        margin-right: rem(96px);
+        vertical-align: middle;
     }
     &-lang {
+        display: inline-block;
         letter-spacing: rem(-1px);
         &-list {
             @extend %list;
@@ -29,6 +40,10 @@
         }
     }
     &-nav {
+        position: absolute;
+        top: rem(4px);
+        left: 50%;
+        transform: translateX(-50%);
         &-list {
             @extend %list;
         }
@@ -51,12 +66,14 @@
             &.accent {
                 background: linear-gradient(to left, #6082d7, #e73453);
                 color: white;
-                margin: rem(14px);
+                margin: 0 rem(14px);
                 padding: rem(7px) rem(21px);
             }
         }
     }
     &-search {
+        display: inline-block;
+        margin-right: rem(98px);
         &__toggle {
             font-size: rem(18px);
             &:hover {
@@ -65,6 +82,7 @@
         }
     }
     &-auth {
+        display: inline-block;
         &__link {
             color: $lightblue;
             opacity: .5;

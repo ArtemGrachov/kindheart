@@ -18,4 +18,11 @@
     .projects-carousel__count {
         color: #8492f3;
     }
+    .header-nav-list {
+        a {
+            &:hover {
+                color: white;
+            }
+        }
+    }
 }

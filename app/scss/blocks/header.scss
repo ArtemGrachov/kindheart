@@ -3,6 +3,15 @@
     font-family: 'Geometria';
     @extend %clearfix;
     text-align: center;
+    a {
+        color: $lightblue;
+        opacity: .5;
+        &:hover,
+        &.active {
+            color: $lightblue;
+            opacity: 1;
+        }
+    }
     &-left {
         float: left;
     }
@@ -10,32 +19,29 @@
         float: right;
         padding-top: rem(9px);
     }
-    &__heart {
+    &__logo {
         font-size: rem(36px);
         display: inline-block;
         margin-right: rem(96px);
         vertical-align: middle;
+        a {
+            opacity: 1;
+            &:hover {
+                opacity: .5;
+            }
+        }
     }
     &-lang {
         display: inline-block;
         letter-spacing: rem(-1px);
         &-list {
             @extend %list;
-        }
-        &-item {
-            display: inline-block;
-            margin-right: rem(8px);
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-        &__link {
-            color: $lightblue;
-            opacity: .5;
-            &:hover,
-            &_active {
-                color: $lightblue;
-                opacity: 1;
+            li {
+                display: inline-block;
+                margin-right: rem(8px);
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
     }
@@ -44,30 +50,37 @@
         top: rem(4px);
         left: 50%;
         transform: translateX(-50%);
-        &-list {
+        ul {
             @extend %list;
-        }
-        &-item {
-            display: inline-block;
-        }
-        &__link {
-            font-family: 'GeometriaExtraBold';
-            font-size: rem(14px);
-            opacity: 1;
-            display: block;
-            color: #c5d5e6;
-            border-radius: rem(5px);
-            margin: 0 rem(13.5px);
-            &.active {
-                padding: rem(7px) rem(21px);
-                background: rgba(black, .2);
-                margin: 0 rem(-7.5px);
-            }
-            &.accent {
-                background: linear-gradient(to left, #6082d7, #e73453);
-                color: white;
-                margin: 0 rem(14px);
-                padding: rem(7px) rem(21px);
+            li {
+                display: inline-block;
+                a {
+                    font-family: 'GeometriaExtraBold';
+                    font-size: rem(14px);
+                    opacity: 1;
+                    display: block;
+                    color: #c5d5e6;
+                    border-radius: rem(5px);
+                    margin: 0 rem(13.5px);
+                    &.active {
+                        padding: rem(7px) rem(21px);
+                        background: rgba(black, .2);
+                        margin: 0 rem(-7.5px);
+                    }
+                    &.accent {
+                        background: linear-gradient(to left, #6082d7, #e73453);
+                        color: white;
+                        margin: 0 rem(14px);
+                        padding: rem(7px) rem(21px);
+                        &:hover {
+                            background: $red;
+                            color: white;
+                        }
+                    }
+                    &:hover {
+                        color: $red;
+                    }
+                }
             }
         }
     }
@@ -83,14 +96,5 @@
     }
     &-auth {
         display: inline-block;
-        &__link {
-            color: $lightblue;
-            opacity: .5;
-            &:hover,
-            &_active {
-                color: $lightblue;
-                opacity: 1;
-            }
-        }
     }
 }

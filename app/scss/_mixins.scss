@@ -15,14 +15,6 @@
     margin: 0;
 }
 
-%hover {
-    cursor: pointer;
-    transition: $transition;
-    &:hover {
-        opacity: .8;
-    }
-}
-
 @function svg($svg) {
     @return url('data:image/svg+xml;utf8,'+$svg);
 }

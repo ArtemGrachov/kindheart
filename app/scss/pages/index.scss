@@ -63,5 +63,23 @@
         font-family: 'Geometria';
         font-size: rem(18px);
         box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+        animation-name: indbtn;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes indbtn {
+    0% {
+        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+    }
+    25% {
+        box-shadow: 0 0 7px 2px rgba(#e53656, .2), 0 0 15px 10px rgba(#9d5e9a, .2);
+    }
+    60% {
+        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+    }
+    75% {
+        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 20px 12px rgba(#9d5e9a, .2);
     }
 }

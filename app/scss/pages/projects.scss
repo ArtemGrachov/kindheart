@@ -5,24 +5,29 @@
         margin-top: rem(35px);
         margin-left: rem(-132px); // temp!
         margin-bottom: rem(14px);
-        &-item {
+        li {
             display: inline-block;
             margin: 0 rem(49px);
             position: relative;
-            opacity: .15;
+            a {
+                @extend .title;
+                opacity: .15;
+                color: white;
+                &:hover {
+                    opacity: .75;
+                }
+            }
             &.active {
-                opacity: 1;
-                .projects-carousel__count {
-                    display: block;
+                a {
+                    opacity: 1;
+                    .projects-carousel__count {
+                        display: block;
+                    }
                 }
             }
         }
-        &__link {
-            @extend .title;
-            color: white;
-        }
         &__count {
-            color: #e63554;
+            color: $red;
             font-family: 'GilroyExtraBold';
             font-size: rem(18px);
             position: absolute;
@@ -37,6 +42,7 @@
         color: white;
     }
     &-item {
+        padding-left: rem(100px);
         height: rem(100px);
         transition: $transition;
         overflow: hidden;
@@ -59,11 +65,6 @@
     }
     &-dropdown {
         text-align: right;
-    }
-    &-logo {
-        width: rem(100px);
-        height: 100%;
-        flex-shrink: 0;
     }
     &-pic {
         height: 100%;

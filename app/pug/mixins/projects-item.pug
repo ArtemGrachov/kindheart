@@ -3,7 +3,6 @@ mixin projects-item(title, imgUrl, date, meta, active)
     if active
         - cls += ' active'
     li(class=cls)
-        .projects-logo
         .projects-pic
             img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff').projects__img
         .projects-details

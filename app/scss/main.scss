@@ -38,6 +38,8 @@ $lightblue: #c5d5e6;
 $darkblue: #363b5d;
 $violet: #9c5d9a;
 $blue: #4a90e2;
+$pseudoblur: rgba(#678BBB,
+.95);
 @import './_mixins.scss';
 @import './icons.scss';
 @import './tags.scss';

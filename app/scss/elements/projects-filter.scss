@@ -7,13 +7,48 @@
     }
     &-dropdown {
         display: none;
+        background: $pseudoblur;
+        border-radius: rem(10px);
         left: 0;
         top: 100%;
         position: absolute;
         width: 100%;
+        width: rem(161px);
     }
     &-list {
         @extend %list;
+    }
+    &-item {
+        border-bottom: 1px solid rgba(#d8d8d8, .5);
+        text-align: left;
+        position: relative;
+        &:first-child,
+        &:last-child {
+            .projects-filter__label {
+                padding-top: rem(14px);
+                padding-bottom: rem(13px);
+            }
+        }
+    }
+    &__label {
+        color: white;
+        padding: rem(8px) rem(36px) rem(6px) rem(14px);
+        display: block;
+        font-size: rem(12px);
+        font-family: 'Geometria';
+        font-weight: bold;
+        &:after {
+            content: '';
+            display: block;
+            background: rgba(white, .6);
+            width: rem(18px);
+            height: rem(18px);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: rem(16px);
+            transform: translateY(-50%);
+        }
     }
     &__toggle {
         background: none;
@@ -22,6 +57,7 @@
         font-size: rem(14px);
         color: $lightblue;
         font-weight: bold;
+        padding: rem(4px) rem(6px) rem(4px) rem(8px);
     }
     .icon {
         margin-left: rem(10px);
@@ -29,5 +65,31 @@
     }
     &__checkbox {
         display: none;
+        &:checked+.projects-filter__label {
+            &:after {
+                background: linear-gradient(53deg, #e53656, #6082d8);
+            }
+        }
+    }
+    &__btn {
+        border: none;
+        display: block;
+        width: 100%;
+        border-radius: rem(5px);
+        background: rgba(black, .2);
+        color: white;
+        font-family: 'Geometria';
+        font-weight: bold;
+        padding: rem(9px);
+        font-size: rem(12px);
+    }
+    &-bottom {
+        padding: rem(13px) rem(18px);
+    }
+}
+
+.active {
+    .projects-filter-dropdown {
+        display: block;
     }
 }

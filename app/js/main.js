@@ -6,8 +6,3 @@ import '../pug/pages/contacts.pug';
 import '../pug/pages/immidiately.pug';
 import 'normalize.css';
 import '../scss/main.scss';
-
-
-$(document).ready(function () {
-    console.log('ready')
-})

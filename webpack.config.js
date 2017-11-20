@@ -45,7 +45,7 @@ const common = merge([{
         ]
     };
 
-module.exports = function(env) {
+module.exports = function (env) {
     switch (env) {
         case 'dev':
             return merge([

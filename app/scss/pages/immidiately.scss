@@ -3,9 +3,13 @@
     .header-nav__link.accent {
         background: rgba(black, .2);
     }
-    .feedback {
+    .feedback a {
         background-color: #8492f3;
         box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 #8492f3;
+        &:hover {
+            background-color: white;
+            box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 white;
+        }
     }
     .icon {
         &-heart {

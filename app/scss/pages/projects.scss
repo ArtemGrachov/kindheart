@@ -1,11 +1,10 @@
 .projects {
-    padding-left: rem(120px);
-    padding-right: rem(20px);
+    padding: 0 rem(20px);
     &-carousel {
         @extend %list;
         margin-top: rem(35px);
-        margin-left: rem(-272px); // temp!
-        margin-bottom: rem(15px);
+        margin-left: rem(-132px); // temp!
+        margin-bottom: rem(14px);
         &-item {
             display: inline-block;
             margin: 0 rem(49px);
@@ -61,6 +60,11 @@
     &-dropdown {
         text-align: right;
     }
+    &-logo {
+        width: rem(100px);
+        height: 100%;
+        flex-shrink: 0;
+    }
     &-pic {
         height: 100%;
         width: rem(400px);
@@ -84,12 +88,13 @@
     }
     &-desc {
         width: rem(600px);
+        padding-top: rem(2px);
     }
     &__date {
         font-size: rem(12px);
         color: $lightblue;
-        margin-top: rem(1px);
-        margin-bottom: rem(20px);
+        margin-bottom: rem(19px);
+        letter-spacing: 0.03em;
     }
     &__title {
         font-family: 'GeometriaExtraBold';

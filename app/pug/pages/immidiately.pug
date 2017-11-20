@@ -1,0 +1,14 @@
+extends ../templates/projects-list.pug
+
+block variables
+    - var title = 'Архів'
+    - var bodyClass = 'body-danger'
+    - var carousel = [{name:'Війна',count:1},{name:'Екологія',count:2},{name:'Діти',count:3},{name:'Освіта',count:1}]
+    
+block list
+    +projects-item('Операція дитині, яка постраждала в зоні АТО','513','04.05.2017',{collected: '18 000', total: '40 000'},true)
+        | Необхідно терміново зробити операцію або зібрати 40 000 грн Василю, який був поранений в зоні АТО
+    +projects-item('Ремонт опалення у дитячому будинку','271','04.05.2017',{collected: '10 000', total: '25 000'})
+        | Et mollit quis ipsum nulla excepteur amet laboris deserunt sunt amet proident aliqua eiusmod quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad modi magni beatae sed aut quibusdam suscipit. Quis iure ab tempora! Animi beatae dicta repudiandae eveniet, enim expedita temporibus quo unde.
+    +projects-item('Терміново неохідно закупити до лікарень дитячий “рідкісний препарат” від укусів кліщів','018','03.05.2017',{collected: '10 000', total: '25 000'})
+        | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga aliquid enim ex consectetur expedita ea beatae! Consectetur facilis ad neque molestiae alias accusamus id deserunt! Maxime, labore animi! Ipsa, asperiores?

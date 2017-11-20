@@ -5,10 +5,15 @@
     height: 100%;
     width: 100%;
     z-index: 100;
-    padding: rem(100px) rem(50px) rem(50px);
     background: rgba(#c5d6e6, .5);
     display: none;
     overflow-y: scroll;
+    &-wrap {
+        max-width: rem(1340px);
+        margin: 0 auto;
+        padding: rem(100px) 0 rem(54px);
+        position: relative;
+    }
     &.active {
         display: block;
         &~.wrapper {
@@ -18,12 +23,11 @@
     &__close {
         position: absolute;
         top: rem(31px);
-        right: rem(54px);
+        right: rem(4px);
         font-size: rem(34px);
         padding: rem(10px);
     }
     &-window {
-        width: 100%;
         min-height: 100%;
         background: white;
         border-radius: rem(15px);

@@ -1,6 +1,6 @@
 .body-danger {
     background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800"><defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="evenodd" d="M0 0h1440v800H0z"/></svg>');
-    .header-nav__link.accent {
+    .header-nav li .accent {
         background: rgba(black, .2);
     }
     .feedback a {

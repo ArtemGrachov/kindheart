@@ -104,3 +104,33 @@
         }
     }
 }
+
+@keyframes searchOn {
+    0% {
+        top: -100%;
+    }
+    45% {
+        top: 5%;
+    }
+    65% {
+        top: -2%;
+    }
+    100% {
+        top: 0%;
+    }
+}
+
+@keyframes searchOff {
+    0% {
+        top: 0%;
+    }
+    15% {
+        top: 5%;
+    }
+    35% {
+        top: 7%;
+    }
+    100% {
+        top: -100%;
+    }
+}

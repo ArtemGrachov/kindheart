@@ -1,9 +1,10 @@
 $(document).ready(function () {
     tabs.init();
-    toggleActive('.projects-item');
+    search();
+    switchActive('.projects-item');
 })
 
-const toggleActive = function (selector) {
+const switchActive = function (selector) {
     $(selector).on('click', function () {
         const $this = $(this);
         if (!$this.hasClass('active')) {

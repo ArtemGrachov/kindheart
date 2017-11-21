@@ -48,6 +48,7 @@
         overflow: hidden;
         position: relative;
         display: flex;
+        cursor: pointer;
         &.active {
             height: rem(200px);
             .projects {
@@ -168,6 +169,24 @@
             font-family: 'Gilroy';
             line-height: 1.2;
             opacity: 0;
+        }
+    }
+    &-more {
+        margin-top: rem(60px);
+        &__btn {
+            display: block;
+            margin: 0 auto;
+            padding: rem(18.5px)rem(15px);
+            border-radius: rem(10px);
+            width: rem(600px);
+            background: rgba(black, .2);
+            text-align: center;
+            color: white;
+            font-size: rem(18px);
+            font-family: 'GeometriaExtraBold';
+            &:hover {
+                background: rgba(white, .2);
+            }
         }
     }
 }

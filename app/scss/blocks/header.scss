@@ -62,8 +62,11 @@
                     color: #c5d5e6;
                     border-radius: rem(5px);
                     margin: 0 rem(13.5px);
+                    &.active,
+                    &.accent {
+                        padding: rem(6px) rem(21px);
+                    }
                     &.active {
-                        padding: rem(7px) rem(21px);
                         background: rgba(black, .2);
                         margin: 0 rem(-7.5px);
                     }
@@ -71,7 +74,6 @@
                         background: linear-gradient(to left, #6082d7, #e73453);
                         color: white;
                         margin: 0 rem(14px);
-                        padding: rem(7px) rem(21px);
                         &:hover {
                             background: $red;
                             color: white;

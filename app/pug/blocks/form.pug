@@ -34,10 +34,13 @@ block modal
         .title Види допомоги
             .subtitle.form-subtitle Ви можете змінити вид допомоги
         +form-tabs([{icon:'help-hand',name:'Зробити'},{icon:'help-wallet',name:'Фінансова допомога'},{icon:'help-clothes',name:'Матеріальна допомога'},{icon:'help-heart',name:'Волонтерство'}],1)
-            li.form-tabs-item
-                h2 tab #1
-                | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
-            li.form-tabs-item.active
+            li(id='doTab').form-tabs-item
+                h2 Зробити
+                .form-left
+                    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+                .form-right
+                    | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+            li(id='financialTab').form-tabs-item.active
                 .form-left
                     label.form__label(for="pay") Спосіб оплати
                     .form-radio-group
@@ -81,11 +84,13 @@ block modal
                             label.form__label CVC/CVV
                             input(type="text").form__input.form-card__delay
                         .form-right
-            li.form-tabs-item
-                h2 tab
+            li(id='materialTab').form-tabs-item
+                h2 Матеріальна допомога
                 | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
-            li.form-tabs-item
-                h2 tab 
+                | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+            li(id='volunteersTab').form-tabs-item
+                h2 Волонтерство
+                | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
                 | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
     .form-submit
-        button(type="submit").btn Допомогти
+        button(type="submit").btn.btn-lg Допомогти

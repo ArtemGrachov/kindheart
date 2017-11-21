@@ -22,9 +22,9 @@ mixin projects-item(title, imgUrl, date, meta, active)
                         | Допомогли: #{meta}
             .projects-help
                 ul.projects-help-list
-                    each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'finance',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteer',icon:'help-heart-sm'}]
+                    each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'financial',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteers',icon:'help-heart-sm'}]
                         li.projects-help-item
-                            a(href="#" onclick="openRegForm(event, '" + help.id + "');").projects-help__link
+                            a(href="#" onclick="openRegForm(event,'" + help.id + "');" id=).projects-help__link
                                 .projects-help__name #{help.name}
                                 .projects-help-icon
                                     span(class="icon icon-" + help.icon)

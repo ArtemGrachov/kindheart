@@ -66,6 +66,9 @@
         animation-name: indbtn;
         animation-duration: 1s;
         animation-iteration-count: infinite;
+        &:hover {
+            background: rgba($red, .2);
+        }
     }
 }
 

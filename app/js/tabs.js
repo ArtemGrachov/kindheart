@@ -1,28 +1,36 @@
 const tabs = (function () {
+    const getTabEls = function (tabs) {
+        return {
+            navBtns: tabs.find('.tabs-nav').find('li'),
+            tabPages: tabs.find('.tabs-list').find('li')
+        }
+    }
     return {
         init: function () {
             const _this = this;
             $('.tabs').each(function () {
                 const tabs = $(this),
-                    navBtns = tabs.find('.tabs-nav').find('li'),
-                    tabPages = tabs.find('.tabs-list').find('li');
+                    tabsEls = getTabEls(tabs);
 
-                navBtns.each(function () {
+                tabsEls.navBtns.each(function () {
                     $(this).on('click', function (e) {
                         e.preventDefault();
-                        _this.switchTab(navBtns, tabPages, $(this).index());
+                        _this.switchTab(tabsEls, $(this).index());
                     })
                 })
             })
         },
-        switchTab: function (navBtns, tabPages, index) {
-            const activePage = tabPages.filter('.active'),
-                newPage = $(tabPages[index]);
+        switchTab: function (tabEls, index) {
+            const activePage = tabEls.tabPages.filter('.active'),
+                newPage = $(tabEls.tabPages[index]);
             activePage.finish();
             newPage.finish();
             activePage.fadeOut(200, () => {
-                newPage.fadeIn();
-                $(navBtns[index])
+                newPage.fadeIn(200, () => {
+                    activePage.removeAttr('style');
+                    newPage.removeAttr('style');
+                });
+                $(tabEls.navBtns[index])
                     .addClass('active')
                     .siblings()
                     .removeClass('active');
@@ -32,6 +40,17 @@ const tabs = (function () {
                     .removeClass('active')
             })
 
+        },
+        setActive: function (tabs, index) {
+            const tabEls = getTabEls(tabs);
+            $(tabEls.navBtns[index])
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+            $(tabEls.tabPages[index])
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
         }
     }
 })()

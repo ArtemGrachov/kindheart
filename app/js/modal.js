@@ -25,7 +25,9 @@ const closeModal = function (event) {
     })
     setTimeout(() => {
         modal.css({
-            display: ''
+            'display': '',
+            'animation-name': '',
+            'animation-duration': ''
         })
     }, modalAnimDur * 0.8 - 100)
 }

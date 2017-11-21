@@ -22,23 +22,9 @@ mixin projects-item(title, imgUrl, date, meta, active)
                         | Допомогли: #{meta}
             .projects-help
                 ul.projects-help-list
-                    li.projects-help-item
-                        a(href="#").projects-help__link
-                            .projects-help__name зробити
-                            .projects-help-icon
-                                span.icon.icon-help-hand-sm
-                    li.projects-help-item
-                        a(href="#").projects-help__link
-                            .projects-help__name фінансова допомога
-                            .projects-help-icon
-                                span.icon.icon-help-wallet-sm
-                    li.projects-help-item
-                        a(href="#").projects-help__link
-                            .projects-help__name матеріальна допомога
-                            .projects-help-icon
-                                span.icon.icon-help-clothes-sm
-                    li.projects-help-item
-                        a(href="#").projects-help__link
-                            .projects-help__name волонтерство
-                            .projects-help-icon
-                                span.icon.icon-help-heart
+                    each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'finance',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteer',icon:'help-heart-sm'}]
+                        li.projects-help-item
+                            a(href="#" onclick="openRegForm(event, '" + help.id + "');").projects-help__link
+                                .projects-help__name #{help.name}
+                                .projects-help-icon
+                                    span(class="icon icon-" + help.icon)

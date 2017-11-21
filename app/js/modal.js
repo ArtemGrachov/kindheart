@@ -14,7 +14,6 @@ const openModal = function (event, modalId) {
 const closeModal = function (event) {
     event.preventDefault();
     const modal = $(event.target.closest('.modal'));
-
     modal.removeClass('active');
     modal.css({
         'display': 'block'

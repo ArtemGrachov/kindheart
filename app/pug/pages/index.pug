@@ -1,5 +1,6 @@
 extends ../layout.pug
-
+block variables
+    - modalHelp = true;
 block content
     .index-bg
     .index-wrap.index-element
@@ -10,9 +11,9 @@ block content
         ul.index-list
             li.index-item
                 .subtitle.index-subtitle Вже зараз Ви можете допомогти тим, хто дійсно потребує допомоги
-                a(href="#" onclick="openModal(event, 'modalHelp')").index__link Як Ви можете допомогти? 
+                a(href="#" onclick="openModal(event, 'modalHelp');").index__link Як Ви можете допомогти? 
                     span.icon.icon-arrow-right
-                a(href="#").index__btn Допомогти вже зараз
+                a(href="./projects.html").index__btn Допомогти вже зараз
             li.index-item
                 .subtitle.index-subtitle Якщо Вам необхідна допомога, додайте проект
                 a(href="#").index__link Додати проект 

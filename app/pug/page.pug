@@ -13,7 +13,9 @@ html(lang="en")
         script(src="./js/main.js")
         link(rel="stylesheet", href="./css/main.css")
     body(class=bodyClass)
-        include ./blocks/form.pug
-        include ./blocks/help.pug
+        if modalReg
+            include ./blocks/form.pug
+        if modalHelp
+            include ./blocks/help.pug
         .wrapper
             block page

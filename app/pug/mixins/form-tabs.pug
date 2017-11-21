@@ -1,15 +1,14 @@
 mixin form-tabs(tabs, active)
-    .form-tabs
-        ul.form-tabs-btns
+    .form-tabs.tabs
+        ul.form-tabs-btns.tabs-nav
             each tab,index in tabs
                 - var cls = 'form-tabs-btn'
                 if active == index
                     - cls += ' active'
                 li(class=cls)
-                    a(href="#").form-tabs__link 
-                        .form-tabs__icon
-                            span(class="icon icon-" + tab.icon)
-                        .form-tabs-title
-                            .form-tabs-title__text  #{tab.name}
-        ul.form-tabs-list
+                    .form-tabs__icon
+                        span(class="icon icon-" + tab.icon)
+                    .form-tabs-title
+                        .form-tabs-title__text  #{tab.name}
+        ul.form-tabs-list.tabs-list
             block

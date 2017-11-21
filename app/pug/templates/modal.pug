@@ -1,0 +1,12 @@
+include ../mixins/form-tabs.pug
+include ../mixins/form-radio.pug
+include ../mixins/form-group.pug
+
+block modalVariables
+
+.modal(id=modalId)
+    .modal-wrap
+        a(href="#" onclick="closeModal(event)").modal__close
+            span.icon.icon-close
+        form.modal-window
+            block modal

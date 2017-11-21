@@ -5,19 +5,18 @@
     height: 100%;
     width: 100%;
     z-index: 100;
-    background: rgba(#c5d6e6, .5);
     display: none;
-    overflow-y: scroll;
+    overflow: hidden;
     &-wrap {
         max-width: rem(1340px);
         margin: 0 auto;
         padding: rem(100px) 0 rem(54px);
         position: relative;
-        animation-name: modal;
-        animation-duration: 1s;
     }
     &.active {
         display: block;
+        background: rgba(#c5d6e6, .5);
+        overflow-y: scroll;
     }
     &__close {
         position: absolute;
@@ -35,17 +34,26 @@
     }
 }
 
-@keyframes modal {
+@keyframes modalOpen {
     0% {
         top: 100%;
     }
-    40% {
+    50% {
         top: -5%;
     }
-    65% {
-        top: 5%;
+    75% {
+        top: 2%;
     }
     100% {
         top: 0%;
+    }
+}
+
+@keyframes modalClose {
+    0% {
+        top: 0%;
+    }
+    100% {
+        top: 100%;
     }
 }

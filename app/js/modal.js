@@ -15,16 +15,17 @@ const closeModal = function (event) {
     event.preventDefault();
     const modal = $(event.target.closest('.modal'));
     modal.removeClass('active');
+    $('.wrapper').removeClass('wrapper_blur');
     modal.css({
         'display': 'block'
     })
     modal.find('.modal-wrap').css({
         'animation-name': 'modalClose',
-        'animation-duration': modalAnimDur + 'ms'
+        'animation-duration': modalAnimDur * 0.8 + 'ms'
     })
     setTimeout(() => {
         modal.css({
             display: ''
         })
-    }, modalAnimDur - 50)
+    }, modalAnimDur * 0.8 - 100)
 }

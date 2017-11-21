@@ -16,14 +16,22 @@ const tabs = (function () {
             })
         },
         switchTab: function (navBtns, tabPages, index) {
-            $(navBtns[index])
-                .addClass('active')
-                .siblings()
-                .removeClass('active');
-            $(tabPages[index])
-                .addClass('active')
-                .siblings()
-                .removeClass('active')
+            const activePage = tabPages.filter('.active'),
+                newPage = $(tabPages[index]);
+            activePage.finish();
+            newPage.finish();
+            activePage.fadeOut(200, () => {
+                newPage.fadeIn();
+                $(navBtns[index])
+                    .addClass('active')
+                    .siblings()
+                    .removeClass('active');
+                newPage
+                    .addClass('active')
+                    .siblings()
+                    .removeClass('active')
+            })
+
         }
     }
 })()

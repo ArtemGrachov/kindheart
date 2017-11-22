@@ -158,13 +158,13 @@
         &-list {
             @extend %list;
             height: 100%;
-            li {
-                margin-bottom: rem(20px);
-                position: relative;
-                &:hover {
-                    .projects-help__name {
-                        opacity: 1;
-                    }
+        }
+        &-item {
+            margin-bottom: rem(20px);
+            position: relative;
+            &:hover {
+                .projects-help__name {
+                    opacity: 1;
                 }
             }
         }

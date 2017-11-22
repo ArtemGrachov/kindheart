@@ -1,22 +1,24 @@
 extends ../layout.pug
 block variables
-    - modalHelp = true;
+    - var modalHelp = true;
+    - var modalInfo = true;
 block content
     .index-bg
     .index-wrap.index-element
         .index-title
             .title.title_white Добре Серце
-                a(href="#").index__link.index__link_more детальніше про проект 
+                a(href="#" id="indexProjectDetails").index__link.index__link_more детальніше про проект 
                     span.icon.icon-arrow-right
         ul.index-list
             li.index-item
                 .subtitle.index-subtitle Вже зараз Ви можете допомогти тим, хто дійсно потребує допомоги
-                a(href="#" onclick="openModal(event, 'modalHelp');").index__link Як Ви можете допомогти? 
+                a(href="#" id="indexHelp").index__link Як Ви можете допомогти? 
                     span.icon.icon-arrow-right
                 a(href="./projects.html").index__btn Допомогти вже зараз
             li.index-item
                 .subtitle.index-subtitle Якщо Вам необхідна допомога, додайте проект
-                a(href="#").index__link Додати проект 
+                a(href="#" id="indexAddProject").index__link Додати проект 
                     span.icon.icon-arrow-right
     footer.footer.index-element Розповісти всім:
         include ../elements/socials.pug
+    - // JS event listeners or onclick?

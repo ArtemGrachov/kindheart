@@ -8,23 +8,23 @@
             border: rem(2px) solid $darkblue;
             display: inline-block;
             border-radius: rem(5px);
-        }
-        &__btn {
-            font-family: 'Geometria';
-            color: $darkblue;
-            display: inline-block;
-            padding: rem(12px) rem(20px) rem(8px);
-            &.active {
-                color: white;
-                background: $darkblue;
-            }
-            &:hover {
-                color: white;
-                background: $blue;
-            }
-            &:focus {
-                color: white;
-                background: $blue;
+            a {
+                font-family: 'Geometria';
+                color: $darkblue;
+                display: inline-block;
+                padding: rem(12px) rem(20px) rem(8px);
+                &.active {
+                    color: white;
+                    background: $darkblue;
+                }
+                &:hover {
+                    color: white;
+                    background: $blue;
+                }
+                &:focus {
+                    color: white;
+                    background: $blue;
+                }
             }
         }
     }

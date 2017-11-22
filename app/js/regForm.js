@@ -1,8 +1,8 @@
-const openRegForm = function (event, help) {
-    openModal(event, 'modalFormPhys');
+const openRegForm = function (help) {
+    modal.open('modalFormPhys');
     const formModal = $('#modalFormPhys');
     tabs.setActive(
         formModal.find('.form-tabs'),
-        formModal.find(`#${help}Tab`).index()
+        help ? formModal.find(`#${help}Tab`).index() : 0
     );
 }

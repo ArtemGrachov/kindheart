@@ -1,8 +1,10 @@
 $(document).ready(function () {
     tabs.init();
+    modal.init();
+    projects.init();
     search();
-    projectsFilter();
     switchActive('.projects-item');
+    indexListeners();
 })
 
 const switchActive = function (selector) {
@@ -16,3 +18,20 @@ const switchActive = function (selector) {
         }
     })
 }
+// ???
+const indexListeners = function () {
+    [{
+            id: 'indexProjectDetails',
+            modal: 'modalInfo'
+        },
+        {
+            id: 'indexHelp',
+            modal: 'modalHelp'
+        },
+        {
+            id: 'indexAddProject',
+            modal: 'modalInfo'
+        }
+    ].forEach(el => $(`#${el.id}`).on('click', e => modal.open(el.modal)))
+}
+// ???

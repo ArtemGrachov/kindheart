@@ -8,8 +8,8 @@ block modal
     .title Заповніть форму
     .form-toggle
         .form-toggle-btns
-            a(href="#").form-toggle__btn.active Фіз. особа
-            a(href="#").form-toggle__btn Юр. особа
+            a(href="#").active Фіз. особа
+            a(href="#") Юр. особа
     .form-wrap
         .form-left
             +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id:'lastname'}])
@@ -22,15 +22,16 @@ block modal
             +form-group([{name:'Місто',id:'city'},{name:'Штат, район',id:'district'}])
             +form-group({name:'Адреса',id:'address'})
             +form-group([{name:'Поштовий індекс',id:'postindex'}])
-    .form-wrap
-        .form-left
-            +form-group({name:'Юридична адреса',id:'jurAddress'})
-            +form-group([{name:'Найменування банку',id:'bankName'},{name:'МФО банку',id:'bankMFO'}])
-            +form-group({name:'Розрахунковий рахунок',id:'account'})
-        .form-right
-            +form-group([{name:'ЗКПО',id:'zkpo'},{name:'Тип оподаткування',id:'taxType'}])
-            +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:'taxSystem'}])
-            +form-group([{name:'Телефон бухгалтерії',id:'accouintingPhone'},{name:'Факс',id:'fax'}])
+    if jurPerson
+        .form-wrap
+            .form-left
+                +form-group({name:'Юридична адреса',id:'jurAddress'})
+                +form-group([{name:'Найменування банку',id:'bankName'},{name:'МФО банку',id:'bankMFO'}])
+                +form-group({name:'Розрахунковий рахунок',id:'account'})
+            .form-right
+                +form-group([{name:'ЗКПО',id:'zkpo'},{name:'Тип оподаткування',id:'taxType'}])
+                +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:'taxSystem'}])
+                +form-group([{name:'Телефон бухгалтерії',id:'accouintingPhone'},{name:'Факс',id:'fax'}])
     .form-wrap
         .title Види допомоги
             .subtitle.form-subtitle Ви можете змінити вид допомоги
@@ -65,10 +66,11 @@ block modal
                             .form-radio__logo
                                 span.icon.icon-paypal
                             .form-radio__name PayPal
-                        +form-radio('bank','pay')
-                            .form-radio__logo
-                                span.icon.icon-bank
-                            .form-radio__name Банківський переказ
+                        if jurPerson
+                            +form-radio('bank','pay')
+                                .form-radio__logo
+                                    span.icon.icon-bank
+                                .form-radio__name Банківський переказ
                 .form-right
                     label.form__label Введіть наступні дані
                     .form-card

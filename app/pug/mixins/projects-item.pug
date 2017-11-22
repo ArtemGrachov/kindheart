@@ -24,7 +24,7 @@ mixin projects-item(title, imgUrl, options)
                         |  UAH
                     else
                         | Допомогли: #{options.meta}
-                        a(href="#" onclick="openModal(event,'modalInfo')").projects-meta-details
+                        a(href="#").projects-meta-details
                             span.projects-meta__dot
                             span.projects-meta__dot
                             span.projects-meta__dot
@@ -32,7 +32,7 @@ mixin projects-item(title, imgUrl, options)
                 ul.projects-help-list
                     each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'financial',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteers',icon:'help-heart-sm'}]
                         li.projects-help-item
-                            a(href="#" onclick="openRegForm(event,'" + help.id + "');" id=).projects-help__link
+                            a(href="#" data-tab-open=help.id).projects-help__link
                                 .projects-help__name #{help.name}
                                 .projects-help-icon
                                     span(class="icon icon-" + help.icon)

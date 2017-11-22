@@ -15,7 +15,8 @@ html(lang="en")
         link(rel="stylesheet", href="./css/main.css")
     body(class=bodyClass)
         if modalReg
-            include ./blocks/form.pug
+            include ./blocks/form-person.pug
+            include ./blocks/form-jur.pug
         if modalHelp
             include ./blocks/help.pug
         if modalInfo

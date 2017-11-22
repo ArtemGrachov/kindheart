@@ -2,9 +2,8 @@ mixin form-tabs(tabs, active)
     .form-tabs.tabs
         ul.form-tabs-btns.tabs-nav
             each tab,index in tabs
-                - var cls = 'form-tabs-btn'
                 if active == index
-                    - cls += ' active'
+                    - var cls = 'active'
                 li(class=cls)
                     .form-tabs__icon
                         span(class="icon icon-" + tab.icon)

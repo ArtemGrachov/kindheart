@@ -2,13 +2,13 @@
     &-list {
         @extend %list;
         display: inline-block;
+        li {
+            display: inline-block;
+            font-size: rem(20px);
+            margin: 0 rem(6px);
+        }
     }
-    &-item {
-        display: inline-block;
-        font-size: rem(20px);
-        margin: 0 rem(6px);
-    }
-    &__link {
+    a {
         &:hover {
             opacity: .5;
         }

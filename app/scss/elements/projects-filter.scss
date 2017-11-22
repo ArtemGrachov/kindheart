@@ -83,6 +83,9 @@
         font-weight: bold;
         padding: rem(9px);
         font-size: rem(12px);
+        &:hover {
+            background: rgba(white, .2);
+        }
     }
     &-bottom {
         padding: rem(13px) rem(18px);

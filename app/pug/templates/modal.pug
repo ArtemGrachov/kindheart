@@ -4,9 +4,17 @@ include ../mixins/form-group.pug
 
 block modalVariables
 
+- var cls = 'modal-wrap'
+if (modalSmall)
+    - cls += ' modal-wrap_small'
+
 .modal(id=modalId)
-    .modal-wrap
+    div(class=cls)
         a(href="#" onclick="closeModal(event)").modal__close
             span.icon.icon-close
-        form.modal-window
-            block modal
+        if modalForm
+            form.modal-window
+                block modal
+        else
+            .modal-window
+                block modal

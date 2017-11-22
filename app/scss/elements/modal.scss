@@ -12,6 +12,12 @@
         margin: 0 auto;
         padding: rem(100px) 0 rem(54px);
         position: relative;
+        &_small {
+            max-width: rem(700px);
+        }
+        .modal-window {
+            padding: rem(46px);
+        }
     }
     &.active {
         display: block;

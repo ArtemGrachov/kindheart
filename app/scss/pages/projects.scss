@@ -20,9 +20,9 @@
             &.active {
                 a {
                     opacity: 1;
-                    .projects-carousel__count {
-                        display: block;
-                    }
+                }
+                .projects-carousel__count {
+                    display: block;
                 }
             }
         }
@@ -40,6 +40,8 @@
         margin: 0 auto;
         @extend %list;
         color: white;
+        animation-name: projects-in;
+        animation-duration: 400ms;
     }
     &-item {
         padding-left: rem(100px);
@@ -50,6 +52,7 @@
         display: flex;
         cursor: pointer;
         &.active {
+            cursor: inherit;
             height: rem(200px);
             .projects {
                 &__text {
@@ -73,6 +76,24 @@
         flex-shrink: 0;
         position: relative;
         overflow: hidden;
+        &__warning {
+            position: absolute;
+            z-index: 1;
+            border-radius: rem(5px);
+            left: rem(10px);
+            bottom: rem(10px);
+            background-image: linear-gradient(to left, #6082d7, #e73453);
+            font-family: 'GeometriaExtraBold';
+            font-size: rem(14px);
+            padding: rem(4px);
+        }
+        &__video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: rem(60px);
+        }
     }
     &__img {
         position: absolute;
@@ -81,8 +102,6 @@
         transform: translateY(-50%);
     }
     &-details {
-        display: flex;
-        justify-content: space-between;
         border-bottom: 1px solid rgba(#d8d8d8, .5);
         padding: rem(9px) 0 rem(10px) rem(50px);
         height: 100%;
@@ -116,24 +135,36 @@
             font-size: rem(18px);
             margin: 0 rem(5px) 0 rem(2px);
         }
+        &-details {
+            display: inline-block;
+            padding: 0 rem(10px);
+            margin: 0 rem(5px);
+        }
+        &__dot {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 rem(2.5px);
+            width: rem(5px);
+            height: rem(5px);
+            border-radius: 50%;
+            background: rgba($lightblue, .5);
+        }
     }
     &-help {
         display: none;
-        flex-shrink: 0;
-        flex-grow: 0;
+        position: absolute;
+        bottom: 0;
+        right: 0;
         &-list {
             @extend %list;
             height: 100%;
-        }
-        &-item {
-            margin-top: rem(20px);
-            position: relative;
-            &:first-child {
-                margin-top: 0;
-            }
-            &:hover {
-                .projects-help__name {
-                    opacity: 1;
+            li {
+                margin-bottom: rem(20px);
+                position: relative;
+                &:hover {
+                    .projects-help__name {
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -169,10 +200,11 @@
             font-family: 'Gilroy';
             line-height: 1.2;
             opacity: 0;
+            text-transform: lowercase;
         }
     }
     &-more {
-        margin-top: rem(60px);
+        margin: rem(60px) 0 rem(30px);
         &__btn {
             display: block;
             margin: 0 auto;
@@ -188,5 +220,16 @@
                 background: rgba(white, .2);
             }
         }
+    }
+}
+
+@keyframes projects-in {
+    0% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }

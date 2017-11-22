@@ -1,25 +1,33 @@
-mixin projects-item(title, imgUrl, date, meta, active)
+mixin projects-item(title, imgUrl, options)
     - var cls = 'projects-item'
-    if active
+    if options.active
         - cls += ' active'
     li(class=cls)
         .projects-pic
             img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff').projects__img
+            if options.immidiately
+                .projects-pic__warning Терміново
+            if options.video
+                span.projects-pic__video.icon.icon-play       
         .projects-details
             .projects-desc
-                .projects__date #{date}
+                .projects__date #{options.date}
                 .projects__title #{title}
                 .projects__text 
                     block
                 .projects-meta
-                    if meta.collected
+                    if options.meta && options.meta.collected
                         | Зібрано 
-                        span.projects-meta__number #{meta.collected}
+                        span.projects-meta__number #{options.meta.collected}
                         |  з 
-                        span.projects-meta__number #{meta.total}
+                        span.projects-meta__number #{options.meta.total}
                         |  UAH
                     else
-                        | Допомогли: #{meta}
+                        | Допомогли: #{options.meta}
+                        a(href="#" onclick="openModal(event,'modalInfo')").projects-meta-details
+                            span.projects-meta__dot
+                            span.projects-meta__dot
+                            span.projects-meta__dot
             .projects-help
                 ul.projects-help-list
                     each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'financial',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteers',icon:'help-heart-sm'}]

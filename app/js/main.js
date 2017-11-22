@@ -1,6 +1,7 @@
 $(document).ready(function () {
     tabs.init();
     search();
+    projectsFilter();
     switchActive('.projects-item');
 })
 

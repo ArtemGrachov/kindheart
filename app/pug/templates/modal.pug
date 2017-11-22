@@ -12,9 +12,5 @@ if (modalSmall)
     div(class=cls)
         a(href="#").modal__close
             span.icon.icon-close
-        if modalForm
-            form.modal-window
-                block modal
-        else
-            .modal-window
-                block modal
+        .modal-window
+            block modal

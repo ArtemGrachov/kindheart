@@ -2,9 +2,9 @@
     padding: 0 rem(20px);
     &-carousel {
         @extend %list;
-        margin-top: rem(35px);
+        margin-top: rem(40px);
         margin-left: rem(-132px); // temp!
-        margin-bottom: rem(14px);
+        margin-bottom: rem(12px);
         li {
             display: inline-block;
             margin: 0 rem(49px);
@@ -153,7 +153,7 @@
     &-help {
         display: none;
         position: absolute;
-        bottom: 0;
+        bottom: rem(11px);
         right: 0;
         &-list {
             @extend %list;
@@ -166,6 +166,9 @@
                 .projects-help__name {
                     opacity: 1;
                 }
+            }
+            &:last-child {
+                margin-bottom: 0;
             }
         }
         &-icon {

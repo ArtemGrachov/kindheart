@@ -22,3 +22,33 @@ button {
         box-shadow: 0 0 0 rem(1.5px) rgba($blue, 0.3);
     }
 }
+
+a,
+button,
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+label {
+    font-family: 'Geometria';
+    font-size: rem(14px);
+    color: #939aa3;
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    width: rem(420px);
+    max-width: 100%;
+    background: rgba($lightblue, .2);
+    border: none;
+    border-radius: rem(5px);
+    color: #939aa3;
+    padding: rem(12px);
+    font-weight: bold;
+    &:focus {
+        color: $darkblue;
+    }
+}

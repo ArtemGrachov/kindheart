@@ -62,9 +62,11 @@
                     color: $lightblue;
                     border-radius: rem(5px);
                     margin: 0 rem(13.5px);
+                    padding: rem(6px) 0;
                     &.active,
                     &.accent {
-                        padding: rem(6px) rem(21px);
+                        padding-left: rem(21px);
+                        padding-right: rem(21px);
                     }
                     &.active {
                         background: rgba(black, .2);

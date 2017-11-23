@@ -24,6 +24,7 @@
             letter-spacing: 0.0035em;
         }
         &__input {
+            display: inline-block;
             color: white;
             width: rem(200px);
             background: rgba($lightblue, .2);
@@ -32,6 +33,9 @@
             padding: rem(12px) rem(9px);
             margin-right: rem(16px);
             font-family: 'GeometriaBold';
+            &:focus {
+                background: $lightblue;
+            }
             &::placeholder {
                 color: white;
             }

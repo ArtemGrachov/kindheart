@@ -54,7 +54,6 @@ body {
     background: rgba(black, .2);
     font-family: 'GeometriaBold';
     font-size: rem(14px);
-    cursor: pointer;
     border: none;
     border-radius: rem(5px);
     display: inline-block;
@@ -73,7 +72,6 @@ body {
         padding: rem(21px) rem(99px) rem(19px);
         border-radius: rem(10px);
         border: none;
-        cursor: pointer;
         &:hover {
             box-shadow: 0 0 15px 5px rgba(#6082d8, 0.4);
         }

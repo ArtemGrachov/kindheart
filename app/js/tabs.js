@@ -25,7 +25,7 @@ const tabs = (function () {
         },
         switchTab: function (tabEls, index) {
             const activePage = tabEls.tabPages.filter('.active'),
-                newPage = $(tabEls.tabPages[index]);
+                newPage = $(tabEls.tabPages.eq(index));
             activePage.finish();
             newPage.finish();
             activePage.fadeOut(200, () => {
@@ -33,7 +33,7 @@ const tabs = (function () {
                     activePage.removeAttr('style');
                     newPage.removeAttr('style');
                 });
-                $(tabEls.navBtns[index])
+                $(tabEls.navBtns.eq(index))
                     .addClass('active')
                     .siblings()
                     .removeClass('active');
@@ -46,11 +46,11 @@ const tabs = (function () {
         },
         setActive: function (tabs, index) {
             const tabEls = getTabEls(tabs);
-            $(tabEls.navBtns[index])
+            $(tabEls.navBtns.eq(index))
                 .addClass('active')
                 .siblings()
                 .removeClass('active');
-            $(tabEls.tabPages[index])
+            $(tabEls.tabPages.eq(index))
                 .addClass('active')
                 .siblings()
                 .removeClass('active');

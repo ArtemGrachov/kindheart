@@ -3,20 +3,29 @@ include ../mixins/projects-item.pug
 
 block content
     .projects
-        ul.projects-carousel
-            each category,index in carousel
-                - var cls ='projects-carousel-item'
-                if index == 2
-                    - cls += ' active'
-                li(class=cls)
-                    a(href="#").projects-carousel__link #{category.name}
-                    .projects-carousel__count #{category.count}
+        .projects-carousel-wrap
+            ul.projects-carousel
+                each category,index in carousel
+                    - var cls ='projects-carousel-item'
+                    if index == 2
+                        - cls += ' active'
+                    li(class=cls)
+                        a #{category.name}
+                        .projects-carousel__count #{category.count}
         include ../elements/projects-filter.pug
-        ul.projects-list
-            block list
-        .projects-more
-            a(href="#").projects-more__btn
-                | Показати ще 
-                span.red 6
-                |  з 
-                span.red 18
+        ul.projects-categories
+            li
+                h1.title_white війна
+            li 
+                h1.title_white екологія
+            li.active
+                ul.projects-list
+                    block list
+                .projects-more
+                    a(href="#").projects-more__btn
+                        | Показати ще 
+                        span.red 6
+                        |  з 
+                        span.red 18
+            li 
+                h1.title_white освіта

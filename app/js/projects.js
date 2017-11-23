@@ -74,6 +74,12 @@ const projects = (function () {
             filter.init();
             initItemModal();
             initItemDetails();
+            $('.projects').each(function () {
+                const $this = $(this),
+                    nav = $this.find('.projects-carousel'),
+                    tabs = $this.find('.projects-categories');
+                tabCarousel.init(nav, tabs);
+            })
         }
     }
 })()

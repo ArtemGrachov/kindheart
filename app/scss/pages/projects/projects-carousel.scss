@@ -1,0 +1,57 @@
+.projects {
+    &-carousel {
+        @extend %list;
+        position: absolute;
+        top: 0;
+        left: 0;
+        outline: 1px dashed blue;
+        li {
+            display: inline-block;
+            position: relative;
+            outline: 1px dashed orange;
+            margin-right: rem(90px);
+            a {
+                @extend .title;
+                opacity: .15;
+                color: white;
+                &:hover {
+                    opacity: .75;
+                }
+            }
+            &.active {
+                a {
+                    opacity: 1;
+                }
+                .projects-carousel__count {
+                    display: block;
+                }
+            }
+        }
+        &__count {
+            color: $red;
+            font-family: 'GilroyExtraBold';
+            font-size: rem(18px);
+            position: absolute;
+            top: rem(30px);
+            right: rem(-40px);
+            display: none;
+        }
+        &-wrap {
+            position: relative;
+            overflow: visible;
+            margin-top: rem(40px);
+            margin-bottom: rem(12px);
+            height: rem(64px);
+            outline: 1px dashed lime;
+        }
+    }
+    &-categories {
+        @extend %list;
+        &>li {
+            display: none;
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

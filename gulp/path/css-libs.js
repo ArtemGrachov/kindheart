@@ -1,1 +1,4 @@
-module.exports = ['node_modules/normalize.css/normalize.css'];
+module.exports = [
+    'normalize.css/normalize.css',
+    // 'slick-carousel/slick/slick.css'
+];

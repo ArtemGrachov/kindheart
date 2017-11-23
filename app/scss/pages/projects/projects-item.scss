@@ -1,48 +1,4 @@
 .projects {
-    padding: 0 rem(20px);
-    &-carousel {
-        @extend %list;
-        margin-top: rem(40px);
-        margin-left: rem(-132px); // temp!
-        margin-bottom: rem(12px);
-        li {
-            display: inline-block;
-            margin: 0 rem(49px);
-            position: relative;
-            a {
-                @extend .title;
-                opacity: .15;
-                color: white;
-                &:hover {
-                    opacity: .75;
-                }
-            }
-            &.active {
-                a {
-                    opacity: 1;
-                }
-                .projects-carousel__count {
-                    display: block;
-                }
-            }
-        }
-        &__count {
-            color: $red;
-            font-family: 'GilroyExtraBold';
-            font-size: rem(18px);
-            position: absolute;
-            top: rem(30px);
-            right: rem(-40px);
-            display: none;
-        }
-    }
-    &-list {
-        margin: 0 auto;
-        @extend %list;
-        color: white;
-        animation-name: projects-in;
-        animation-duration: 400ms;
-    }
     &-item {
         padding-left: rem(100px);
         height: rem(100px);
@@ -66,9 +22,6 @@
                 }
             }
         }
-    }
-    &-dropdown {
-        text-align: right;
     }
     &-pic {
         height: 100%;
@@ -150,62 +103,6 @@
             background: rgba($lightblue, .5);
         }
     }
-    &-help {
-        display: none;
-        position: absolute;
-        bottom: rem(11px);
-        right: 0;
-        &-list {
-            @extend %list;
-            height: 100%;
-        }
-        &-item {
-            margin-bottom: rem(20px);
-            position: relative;
-            &:hover {
-                .projects-help__name {
-                    opacity: 1;
-                }
-            }
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-        &-icon {
-            background: #9c5d9a;
-            border-radius: rem(5px);
-            width: rem(30px);
-            height: rem(30px);
-            display: inline-block;
-            text-align: center;
-            font-size: rem(18px);
-            vertical-align: middle;
-            &:before {
-                display: inline-block;
-                content: '';
-                height: 100%;
-                width: 0;
-                vertical-align: middle;
-            }
-        }
-        &__name {
-            display: inline-block;
-            position: absolute;
-            right: 0;
-            padding: rem(2px) rem(40px) rem(2px) rem(2px);
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: rem(12px);
-            color: $lightblue;
-            text-align: right;
-            vertical-align: middle;
-            transition: $transition;
-            font-family: 'Gilroy';
-            line-height: 1.2;
-            opacity: 0;
-            text-transform: lowercase;
-        }
-    }
     &-more {
         margin: rem(60px) 0 rem(30px);
         &__btn {
@@ -223,16 +120,5 @@
                 background: rgba(white, .2);
             }
         }
-    }
-}
-
-@keyframes projects-in {
-    0% {
-        transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
     }
 }

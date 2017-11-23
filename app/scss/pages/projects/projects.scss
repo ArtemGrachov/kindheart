@@ -1,0 +1,27 @@
+.projects {
+    padding: 0 rem(20px);
+    &-list {
+        margin: 0 auto;
+        @extend %list;
+        color: white; // animation-name: projects-in;
+        // animation-duration: 400ms;
+    }
+    &-dropdown {
+        text-align: right;
+    }
+}
+
+@keyframes projects-in {
+    0% {
+        transform: scale(.7);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@import './projects-carousel.scss';
+@import './projects-help.scss';
+@import './projects-item.scss';

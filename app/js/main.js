@@ -18,7 +18,7 @@ const switchActive = function (selector) {
         }
     })
 }
-// ???
+
 const indexListeners = function () {
     [{
             id: 'indexProjectDetails',
@@ -34,4 +34,3 @@ const indexListeners = function () {
         }
     ].forEach(el => $(`#${el.id}`).on('click', e => modal.open(el.modal)))
 }
-// ???

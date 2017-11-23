@@ -1,0 +1,18 @@
+extends ../templates/modal.pug
+
+block modalVariables
+    - var modalId = 'modalHelpForm'
+
+block modal
+    .title Заповніть форму
+    .modal-tabs.tabs
+        .form-toggle
+            ul.form-toggle-btns.tabs-nav
+                li.active Фіз. особа
+                li Юр. особа
+        ul.tabs-list
+            li.active
+                include ../elements/form/form.pug
+            li
+                - var jurPerson = true;
+                include ../elements/form/form.pug

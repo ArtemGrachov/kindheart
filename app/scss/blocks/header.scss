@@ -91,6 +91,7 @@
         margin-right: rem(98px);
         &__toggle {
             font-size: rem(18px);
+            padding: rem(15px);
             &:hover {
                 opacity: .5;
             }
@@ -98,5 +99,8 @@
     }
     &-auth {
         display: inline-block;
+        a {
+            padding: rem(15px);
+        }
     }
 }

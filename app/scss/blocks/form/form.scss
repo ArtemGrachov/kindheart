@@ -1,0 +1,55 @@
+.form {
+    &-toggle {
+        text-align: center;
+        margin-top: rem(15px);
+        margin-bottom: rem(49px);
+        font-weight: bold;
+        &-btns {
+            border: rem(2px) solid $darkblue;
+            display: inline-block;
+            border-radius: rem(5px);
+            li {
+                display: inline-block;
+                font-family: 'Geometria';
+                color: $darkblue;
+                padding: rem(12px) rem(20px) rem(8px);
+                &.active {
+                    color: white;
+                    background: $darkblue;
+                }
+                &:hover {
+                    color: white;
+                    background: $blue;
+                }
+                &:focus {
+                    color: white;
+                    background: $blue;
+                }
+            }
+        }
+    }
+    &-wrap {
+        @extend %clearfix;
+        margin-left: rem(17px);
+        margin-bottom: rem(34px);
+    }
+    &-left {
+        float: left;
+        max-width: 50%;
+    }
+    &-right {
+        float: right;
+        max-width: 50%;
+    }
+    &-subtitle {
+        margin-top: rem(6px);
+        margin-bottom: rem(39px);
+    }
+    &-submit {
+        text-align: center;
+    }
+}
+
+@import './form-labels.scss';
+@import './form-tabs.scss';
+@import './form-pay.scss';

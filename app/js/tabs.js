@@ -1,8 +1,8 @@
 const tabs = (function () {
     const getTabEls = function (tabs) {
         return {
-            navBtns: tabs.find('.tabs-nav').find('li'),
-            tabPages: tabs.find('.tabs-list').find('li')
+            navBtns: tabs.find('.tabs-nav').first().children('li'),
+            tabPages: tabs.find('.tabs-list').first().children('li')
         }
     }
     return {
@@ -11,7 +11,6 @@ const tabs = (function () {
             $('.tabs').each(function () {
                 const tabs = $(this),
                     tabsEls = getTabEls(tabs);
-
                 tabsEls.navBtns.each(function () {
                     $(this).on('click', function (e) {
                         e.preventDefault();

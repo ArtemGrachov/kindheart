@@ -1,0 +1,22 @@
+.form-wrap
+    .form-left
+        +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id:'lastname'}])
+        +form-group({name:'Назва компанії, організації',id:'org'})
+            a(href="#").form__link + Логотип
+        +form-group({name:'Email-адрес',id:'email'})
+        +form-group({name:'Номер телефону',id:'phone'})
+    .form-right
+        +form-group({name:'Країна',id:'country'})
+        +form-group([{name:'Місто',id:'city'},{name:'Штат, район',id:'district'}])
+        +form-group({name:'Адреса',id:'address'})
+        +form-group([{name:'Поштовий індекс',id:'postindex'}])
+if jurPerson
+    .form-wrap
+        .form-left
+            +form-group({name:'Юридична адреса',id:'jurAddress'})
+            +form-group([{name:'Найменування банку',id:'bankName'},{name:'МФО банку',id:'bankMFO'}])
+            +form-group({name:'Розрахунковий рахунок',id:'account'})
+        .form-right
+            +form-group([{name:'ЗКПО',id:'zkpo'},{name:'Тип оподаткування',id:'taxType'}])
+            +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:'taxSystem'}])
+            +form-group([{name:'Телефон бухгалтерії',id:'accouintingPhone'},{name:'Факс',id:'fax'}])

@@ -1,0 +1,44 @@
+.form-left
+    label.form__label(for="pay") Спосіб оплати
+    .form-radio-group
+        +form-radio('visa','pay')
+            .form-radio__logo
+                span.icon.icon-mastercard
+                span.icon.icon-visa
+            .form-radio__name Карта Visa/MasterCard
+        +form-radio('pb','pay')
+            .form-radio__logo Приват24
+            .form-radio__name Приват24
+        +form-radio('terminals','pay')
+            .form-radio__logo
+                span.icon.icon-terminals
+            .form-radio__name Термінали України
+        +form-radio('webmoney','pay')
+            .form-radio__logo
+                span.icon.icon-webmoney
+            .form-radio__name WebMoney
+        +form-radio('paypal','pay')
+            .form-radio__logo
+                span.icon.icon-paypal
+            .form-radio__name PayPal
+        if jurPerson
+            +form-radio('bank','pay')
+                .form-radio__logo
+                    span.icon.icon-bank
+                .form-radio__name Банківський переказ
+.form-right
+    label.form__label Введіть наступні дані
+    .form-card
+        label.form__label Номер карти
+        .form-card-group
+            - var n = 0;
+            while n < 4
+                input(type="text").form__input.form-card__number
+                - n++
+        .form-left
+            label.form__label Термін дії
+            input(type="text").form__input.form-card__delay
+        .form-right
+            label.form__label CVC/CVV
+            input(type="text").form__input.form-card__delay
+        .form-right

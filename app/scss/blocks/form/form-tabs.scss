@@ -1,0 +1,65 @@
+.form {
+    &-tabs {
+        margin-bottom: rem(16px);
+        &-btns {
+            @extend %list;
+            margin-bottom: rem(23px);
+            padding: 0 rem(23px);
+            display: flex;
+            justify-content: space-between;
+            &>li {
+                max-width: rem(220px);
+                flex-grow: 0;
+                width: 100%;
+                &.active {
+                    .form-tabs {
+                        &-title__text {
+                            color: $darkblue;
+                        }
+                        &__icon {
+                            background: $violet;
+                            border-color: $violet;
+                        }
+                    }
+                }
+                &:hover {
+                    .form-tabs {
+                        &-title__text {
+                            color: $darkblue;
+                        }
+                    }
+                }
+            }
+        }
+        &__link {
+            display: block;
+        }
+        &__icon {
+            @extend .help__icon;
+        }
+        &-title {
+            @extend .help-title;
+            &__text {
+                @extend .help-title__text;
+                color: $lightblue;
+                transition: $transition;
+            }
+        }
+        &-list {
+            @extend %list;
+            &>li {
+                display: none;
+                border-radius: rem(15px);
+                border: rem(1px) solid $lightblue;
+                padding: rem(16px) rem(19px) rem(20px);
+                @extend %clearfix;
+                &.active {
+                    display: block;
+                }
+                .form__label {
+                    margin-bottom: rem(8px);
+                }
+            }
+        }
+    }
+}

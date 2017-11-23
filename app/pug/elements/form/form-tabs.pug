@@ -1,0 +1,17 @@
+.form-wrap
+    .title Види допомоги
+        .subtitle.form-subtitle Ви можете змінити вид допомоги
+    +form-tabs([{icon:'help-hand',name:'Зробити'},{icon:'help-wallet',name:'Фінансова допомога'},{icon:'help-clothes',name:'Матеріальна допомога'},{icon:'help-heart',name:'Волонтерство'}],1)
+        li(id='doTab')
+            h2 Зробити
+            | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+        li(id='financialTab').active
+            include ./form-pay.pug
+        li(id='materialTab')
+            h2 Матеріальна допомога
+            | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+            | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+        li(id='volunteersTab')
+            h2 Волонтерство
+            | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+            | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.

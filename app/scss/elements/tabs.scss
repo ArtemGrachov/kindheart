@@ -1,7 +1,17 @@
 .tabs {
     &-nav {
-        li {
+        @extend %list;
+        &>li {
             cursor: pointer;
+        }
+    }
+    &-list {
+        @extend %list;
+        &>li {
+            display: none;
+            &.active {
+                display: block;
+            }
         }
     }
 }

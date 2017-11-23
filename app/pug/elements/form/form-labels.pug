@@ -1,22 +1,22 @@
 .form-wrap
     .form-left
-        +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id:'lastname'}])
-        +form-group({name:'Назва компанії, організації',id:'org'})
+        +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id: prefix +'Lastname'}])
+        +form-group({name:'Назва компанії, організації',id:prefix +'Org'})
             a(href="#").form__link + Логотип
-        +form-group({name:'Email-адрес',id:'email'})
-        +form-group({name:'Номер телефону',id:'phone'})
+        +form-group({name:'Email-адрес',id:prefix +'Email'})
+        +form-group({name:'Номер телефону',id:prefix +'Phone'})
     .form-right
-        +form-group({name:'Країна',id:'country'})
-        +form-group([{name:'Місто',id:'city'},{name:'Штат, район',id:'district'}])
-        +form-group({name:'Адреса',id:'address'})
-        +form-group([{name:'Поштовий індекс',id:'postindex'}])
+        +form-group({name:'Країна',id:prefix +'Country'})
+        +form-group([{name:'Місто',id:prefix +'City'},{name:'Штат, район',id:prefix +'District'}])
+        +form-group({name:'Адреса',id:prefix +'Address'})
+        +form-group([{name:'Поштовий індекс',id:prefix +'Postindex'}])
 if jurPerson
     .form-wrap
         .form-left
-            +form-group({name:'Юридична адреса',id:'jurAddress'})
-            +form-group([{name:'Найменування банку',id:'bankName'},{name:'МФО банку',id:'bankMFO'}])
-            +form-group({name:'Розрахунковий рахунок',id:'account'})
+            +form-group({name:'Юридична адреса',id:prefix +'OrgAddress'})
+            +form-group([{name:'Найменування банку',id:prefix +'BankName'},{name:'МФО банку',id:prefix +'BankMFO'}])
+            +form-group({name:'Розрахунковий рахунок',id:prefix +'Account'})
         .form-right
-            +form-group([{name:'ЗКПО',id:'zkpo'},{name:'Тип оподаткування',id:'taxType'}])
-            +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:'taxSystem'}])
-            +form-group([{name:'Телефон бухгалтерії',id:'accouintingPhone'},{name:'Факс',id:'fax'}])
+            +form-group([{name:'ЗКПО',id:prefix +'Zkpo'},{name:'Тип оподаткування',id:prefix +'TaxType'}])
+            +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:prefix +'TaxSystem'}])
+            +form-group([{name:'Телефон бухгалтерії',id:prefix +'AccouintingPhone'},{name:'Факс',id:prefix +'Fax'}])

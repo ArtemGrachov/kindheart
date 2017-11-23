@@ -1,28 +1,28 @@
 .form-left
     label.form__label(for="pay") Спосіб оплати
     .form-radio-group
-        +form-radio('visa','pay')
+        +form-radio(prefix+'Visa','pay')
             .form-radio__logo
                 span.icon.icon-mastercard
                 span.icon.icon-visa
             .form-radio__name Карта Visa/MasterCard
-        +form-radio('pb','pay')
+        +form-radio(prefix+'Pb','pay')
             .form-radio__logo Приват24
             .form-radio__name Приват24
-        +form-radio('terminals','pay')
+        +form-radio(prefix+'Terminals','pay')
             .form-radio__logo
                 span.icon.icon-terminals
             .form-radio__name Термінали України
-        +form-radio('webmoney','pay')
+        +form-radio(prefix+'Webmoney','pay')
             .form-radio__logo
                 span.icon.icon-webmoney
             .form-radio__name WebMoney
-        +form-radio('paypal','pay')
+        +form-radio(prefix+'Paypal','pay')
             .form-radio__logo
                 span.icon.icon-paypal
             .form-radio__name PayPal
         if jurPerson
-            +form-radio('bank','pay')
+            +form-radio(prefix+'Bank','pay')
                 .form-radio__logo
                     span.icon.icon-bank
                 .form-radio__name Банківський переказ

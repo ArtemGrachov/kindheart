@@ -11,8 +11,7 @@ block content
                 li(class=cls)
                     a(href="#").projects-carousel__link #{category.name}
                     .projects-carousel__count #{category.count}
-        .projects-filter-wrap
-            include ../elements/projects-filter.pug
+        include ../elements/projects-filter.pug
         ul.projects-list
             block list
         .projects-more

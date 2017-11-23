@@ -11,6 +11,10 @@ const tabs = (function () {
             $('.tabs').each(function () {
                 const tabs = $(this),
                     tabsEls = getTabEls(tabs);
+                if (!tabsEls.navBtns.find('.active').length) {
+                    tabsEls.navBtns.first().addClass('active');
+                    tabsEls.tabPages.first().addClass('active');
+                }
                 tabsEls.navBtns.each(function () {
                     $(this).on('click', function (e) {
                         e.preventDefault();

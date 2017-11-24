@@ -1,0 +1,11 @@
+.validation {
+    &-valid {
+        color: rgb(76, 190, 23);
+    }
+    &-invalid {
+        color: $red;
+    }
+    &-subtext {
+        font-family: 'GeometriaLight';
+    }
+}

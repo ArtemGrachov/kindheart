@@ -12,6 +12,9 @@ a {
     font-family: 'Geometria';
     color: $blue;
     font-weight: bold;
+    &:hover {
+        color: $red;
+    }
 }
 
 a,
@@ -51,4 +54,35 @@ input {
     &:focus {
         color: $darkblue;
     }
+}
+
+strong {
+    color: $darkblue;
+}
+
+table,
+th,
+td {
+    border: rem(1px) solid $lightblue;
+}
+
+th,
+td {
+    padding: rem(10px);
+}
+
+th {
+    font-family: 'GeometriaBold';
+    color: $darkblue;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    padding: rem(10px);
+    font-size: rem(18px);
+    color: $darkblue;
+    font-family: 'GeometriaExtraBold';
 }

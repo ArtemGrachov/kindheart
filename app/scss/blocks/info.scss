@@ -1,0 +1,20 @@
+.info {
+    &-list {
+        @extend %list;
+        font-family: 'GeometriaLight';
+        font-size: rem(16px);
+        margin: rem(20px) 0;
+        li {
+            padding: rem(10px) 0;
+            &:before {
+                display: inline-block;
+                content: '';
+                width: 1em;
+                height: 1em;
+                background: $lightblue;
+                vertical-align: middle;
+                margin-right: rem(15px);
+            }
+        }
+    }
+}

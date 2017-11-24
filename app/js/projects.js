@@ -70,9 +70,11 @@ const projects = (function () {
             })
         },
         tabsCarousel = (function () {
+            let options;
             return {
-                init: function (options) {
+                init: function (initOptions) {
                     const _this = this;
+                    options = initOptions;
                     $(options.group)
                         .each(function () {
                             const $list = $(this),
@@ -89,32 +91,32 @@ const projects = (function () {
                             nav.on('click', function () {
                                 const $this = $(this),
                                     index = $(this).index();
-                                _this.toggleNav($carousel, nav, index, options.activeClass);
-                                _this.toggleTab(tabs, index, options.activeClass);
+                                _this.toggleNav($carousel, nav, index);
+                                _this.toggleTab(tabs, index);
                             })
                         })
                 },
-                setActive: function (nav, tabs, index, activeClass) {
+                setActive: function (nav, tabs, index, ) {
                     nav
-                        .removeClass(activeClass)
+                        .removeClass(options.activeClass)
                     nav
                         .eq(index)
-                        .addClass(activeClass);
+                        .addClass(options.activeClass);
                     tabs
-                        .removeClass(activeClass)
+                        .removeClass(options.activeClass)
                         .eq(index)
-                        .addClass(activeClass)
+                        .addClass(options.activeClass)
                 },
-                toggleNav: function (carousel, nav, index, activeClass) {
+                toggleNav: function (carousel, nav, index) {
                     nav
-                        .removeClass(activeClass);
+                        .removeClass(options.activeClass);
                     nav
                         .eq(index)
-                        .addClass(activeClass);
+                        .addClass(options.activeClass);
                     carousel
                         .flickity('select', index);
                 },
-                toggleTab: function (tabs, index, activeClass) {
+                toggleTab: function (tabs, index) {
                     const animationDur = 300,
                         activeTab = tabs.filter('.active');
                     activeTab.css({
@@ -127,10 +129,10 @@ const projects = (function () {
                             'animation-duration': ''
                         })
                         tabs
-                            .removeClass(activeClass)
+                            .removeClass(options.activeClass)
                         tabs
                             .eq(index)
-                            .addClass(activeClass)
+                            .addClass(options.activeClass)
                             .css({
                                 'animation-name': 'projectsIn',
                                 'animation-duration': animationDur + 'ms'

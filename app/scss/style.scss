@@ -41,6 +41,9 @@ body {
     a {
         color: white;
     }
+    &_sm {
+        font-size: rem(26px);
+    }
 }
 
 .subtitle {

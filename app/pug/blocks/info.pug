@@ -4,5 +4,8 @@ block modalVariables
     - var modalSmall = true
 
 block modal
-    .title Lorem ipsum
-    p Et deserunt excepteur et mollit labore sunt cupidatat voluptate. Nulla aliquip adipisicing nulla deserunt. Duis ullamco anim dolore duis ad do ad esse voluptate ullamco id excepteur quis nulla. Culpa exercitation excepteur pariatur veniam tempor incididunt est esse et fugiat labore. Qui laborum ad veniam voluptate minim aute eu exercitation id elit laboris incididunt dolore.
+    .title.title_sm Допомогли
+    ul.info-list
+        each name in ['Ім\'я Фамілія', 'ВАТ "Фірма 1"', 'Ім\'я Фамілія 4', 'ВАТ "Фірма 3"', 'Ім\'я Прізвище', 'ТзОВ "Фірма 11"', 'Ім\'я Прізвище', 'Ім\'я Прізвище', 'Ім\'я Прізвище', '"Фірма 5"',' ВАТ "Фірма 2"']
+            li
+                a(href="#" target="_blank") #{name}

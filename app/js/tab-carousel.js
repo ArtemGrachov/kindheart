@@ -1,33 +1,43 @@
 const tabCarousel = (function () {
     return {
-        init: function (nav, tabs) {
+        init: function (carousel) {
             const _this = this;
-            nav
+            carousel.wrap.css({
+                'position': 'relative',
+                'height': carousel.wrap.height(),
+
+            })
+            carousel.nav.css({
+                'position': 'absolute',
+                'top': '0',
+                'left': '0',
+                'width': '100%'
+            })
+            carousel
+                .nav
                 .find('li')
                 .on('click', function (e) {
                     e.preventDefault();
-                    _this.switchTab(nav, tabs, $(this).index());
+                    _this.switchTab(carousel, $(this).index());
                 })
         },
-        switchTab: function (nav, tabs, index) {
-            tabs
+        switchTab: function (carousel, index) {
+
+            const _this = this;
+            carousel.tabs
                 .children('li')
                 .eq(index)
                 .addClass('active')
                 .siblings()
                 .removeClass('active')
-            nav
+            carousel.nav
                 .children('li')
                 .eq(index)
                 .addClass('active')
                 .siblings()
                 .removeClass('active')
-            const wrapCenter = nav.parent().width() / 2;
-            const activeHalfWidth = nav.children('.active').width() / 2;
-            const activeNewLeftPos = wrapCenter - activeHalfWidth;
-            console.log('wrapCenter', wrapCenter);
-            console.log('activeHalfWidth', activeHalfWidth);
-            console.log('activeNewLeftPos', activeNewLeftPos);
+
+            _this.animation.move(carousel, carousel.nav.children('.active'));
         },
         animation: (function () {
             return { in: function () {
@@ -35,6 +45,13 @@ const tabCarousel = (function () {
                 },
                 out: function () {
 
+                },
+                move: function (carousel, active) {
+                    const move = (carousel.wrap.width() / 2 - active.width() / 2) - active.offset().left;
+                    console.log(carousel.nav.offset().left + move + 'px')
+                    carousel.nav.animate({
+                        'left': carousel.nav.offset().left + move + 'px'
+                    }, 1500)
                 }
             }
         })()

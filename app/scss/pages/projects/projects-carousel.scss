@@ -1,14 +1,9 @@
 .projects {
     &-carousel {
         @extend %list;
-        position: absolute;
-        top: 0;
-        left: 0;
-        outline: 1px dashed blue;
         li {
             display: inline-block;
             position: relative;
-            outline: 1px dashed orange;
             margin-right: rem(90px);
             a {
                 @extend .title;
@@ -37,12 +32,8 @@
             display: none;
         }
         &-wrap {
-            position: relative;
-            overflow: visible;
             margin-top: rem(40px);
             margin-bottom: rem(12px);
-            height: rem(64px);
-            outline: 1px dashed lime;
         }
     }
     &-categories {

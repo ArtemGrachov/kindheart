@@ -75,10 +75,12 @@ const projects = (function () {
             initItemModal();
             initItemDetails();
             $('.projects').each(function () {
-                const $this = $(this),
-                    nav = $this.find('.projects-carousel'),
-                    tabs = $this.find('.projects-categories');
-                tabCarousel.init(nav, tabs);
+                const $this = $(this);
+                tabCarousel.init({
+                    nav: $this.find('.projects-carousel'),
+                    tabs: $this.find('.projects-categories'),
+                    wrap: $this.find('.projects-carousel-wrap')
+                });
             })
         }
     }

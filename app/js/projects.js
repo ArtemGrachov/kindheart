@@ -68,20 +68,63 @@ const projects = (function () {
                 e.preventDefault();
                 modal.open('modalInfo');
             })
-        }
+        },
+        tabsCarousel = (function () {
+            return {
+                init: function (selector) {
+                    const _this = this;
+                    $(selector.group)
+                        .each(function () {
+                            const $list = $(this),
+                                $carousel = $list.find(selector.nav.wrap);
+                            $carousel.flickity({
+                                freeScroll: true,
+                                prevNextButtons: false,
+                                pageDots: false
+                            })
+                            const tabs = $list.find(selector.tabs),
+                                nav = $carousel.find(selector.nav.item);
+
+                            nav.on('click', function () {
+                                const $this = $(this),
+                                    index = $(this).index();
+                                _this.toggleNav($carousel, nav, index, selector.activeClass);
+                                _this.toggleTab(tabs, index, selector.activeClass);
+                            })
+                        })
+                },
+                toggleNav: function (carousel, nav, index, activeClass) {
+                    nav
+                        .removeClass(activeClass);
+                    nav
+                        .eq(index)
+                        .addClass(activeClass);
+                    carousel
+                        .flickity('select', index);
+                },
+                toggleTab: function (tabs, index, activeClass) {
+                    tabs
+                        .removeClass(activeClass)
+                    tabs
+                        .eq(index)
+                        .addClass(activeClass)
+                }
+            }
+        })()
     return {
         init: function () {
             filter.init();
             initItemModal();
             initItemDetails();
-            $('.projects').each(function () {
-                const $this = $(this);
-                tabCarousel.init({
-                    nav: $this.find('.projects-carousel'),
-                    tabs: $this.find('.projects-categories'),
-                    wrap: $this.find('.projects-carousel-wrap')
-                });
-            })
+            tabsCarousel.init({
+                group: '.projects',
+                nav: {
+                    wrap: '.projects-carousel',
+                    item: '.projects-carousel-item'
+                },
+                tabs: '.projects-categories > li',
+                activeClass: 'active'
+            });
         }
     }
 })()

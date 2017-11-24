@@ -103,11 +103,29 @@ const projects = (function () {
                         .flickity('select', index);
                 },
                 toggleTab: function (tabs, index, activeClass) {
-                    tabs
-                        .removeClass(activeClass)
-                    tabs
-                        .eq(index)
-                        .addClass(activeClass)
+                    const animationDur = 300,
+                        activeTab = tabs.filter('.active');
+                    activeTab.css({
+                        'animation-name': 'projectsOut',
+                        'animation-duration': animationDur + 'ms'
+                    })
+                    setTimeout(() => {
+                        activeTab.css({
+                            'animation-name': '',
+                            'animation-duration': ''
+                        })
+                        tabs
+                            .removeClass(activeClass)
+                        tabs
+                            .eq(index)
+                            .addClass(activeClass)
+                            .css({
+                                'animation-name': 'projectsIn',
+                                'animation-duration': animationDur + 'ms'
+                            })
+                    }, animationDur * 0.9)
+
+
                 }
             }
         })()

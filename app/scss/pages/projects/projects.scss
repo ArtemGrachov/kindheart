@@ -11,17 +11,6 @@
     }
 }
 
-@keyframes projects-in {
-    0% {
-        transform: scale(.7);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
 @import './projects-carousel.scss';
 @import './projects-help.scss';
 @import './projects-item.scss';

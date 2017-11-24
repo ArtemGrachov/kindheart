@@ -1,5 +1,6 @@
 extends ../layout.pug
 include ../mixins/projects-item.pug
+include ../mixins/projects-tab.pug
 
 block content
     .projects
@@ -10,22 +11,23 @@ block content
                     if index == 2
                         - cls += ' active'
                     li(class=cls)
-                        a #{category.name}
+                        .title #{category.name}
                         .projects-carousel__count #{category.count}
-        include ../elements/projects-filter.pug
-        ul.projects-categories
-            li
-                h1.title_white війна
-            li 
-                h1.title_white екологія
-            li.active
-                ul.projects-list
-                    block list
-                .projects-more
-                    a(href="#").projects-more__btn
-                        | Показати ще 
-                        span.red 6
-                        |  з 
-                        span.red 18
-            li 
-                h1.title_white освіта
+        .projects-content
+            include ../elements/projects-filter.pug
+            ul.projects-categories
+                li.active
+                    +projects-tab(isArchive)
+                li
+                    +projects-tab(isArchive)
+                li
+                    ul.projects-list
+                        block list
+                    .projects-more
+                        a(href="#").projects-more__btn
+                            | Показати ще 
+                            span.red 6
+                            |  з 
+                            span.red 18
+                li
+                    +projects-tab(isArchive)

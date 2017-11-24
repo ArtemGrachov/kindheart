@@ -3,6 +3,7 @@
     font-family: 'Geometria';
     @extend %clearfix;
     text-align: center;
+    padding: rem(17px) rem(30px) 0;
     a {
         color: $lightblue;
         opacity: .5;
@@ -47,9 +48,9 @@
     }
     &-nav {
         position: absolute;
-        top: rem(6px);
         left: 50%;
         transform: translateX(-50%);
+        margin-top: rem(5px);
         ul {
             @extend %list;
             li {
@@ -90,7 +91,7 @@
     }
     &-search {
         display: inline-block;
-        margin-right: rem(98px);
+        margin-right: rem(83px);
         &__toggle {
             font-size: rem(18px);
             padding: rem(15px);
@@ -102,7 +103,7 @@
     &-auth {
         display: inline-block;
         a {
-            padding: rem(15px);
+            padding: rem(15px) 0;
         }
     }
 }

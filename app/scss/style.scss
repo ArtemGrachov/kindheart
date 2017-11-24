@@ -21,7 +21,6 @@ body {
 }
 
 .wrapper {
-    padding: rem(17px) rem(30px) 0;
     &_blur {
         // filter: blur(rem(20px));
     }
@@ -59,7 +58,7 @@ body {
     display: inline-block;
     transition: $transition;
     color: white;
-    padding: rem(13px) rem(59px);
+    padding: rem(12px) rem(59px);
     &:hover {
         background-color: rgba(white, .2);
     }

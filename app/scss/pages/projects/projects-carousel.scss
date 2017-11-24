@@ -5,7 +5,7 @@
             display: inline-block;
             position: relative;
             margin-right: rem(90px);
-            a {
+            .title {
                 @extend .title;
                 opacity: .15;
                 color: white;
@@ -14,7 +14,7 @@
                 }
             }
             &.active {
-                a {
+                .title {
                     opacity: 1;
                 }
                 .projects-carousel__count {
@@ -32,8 +32,8 @@
             display: none;
         }
         &-wrap {
-            margin-top: rem(40px);
-            margin-bottom: rem(12px);
+            margin-top: rem(39px);
+            margin-bottom: rem(13px);
         }
     }
     &-categories {

@@ -1,5 +1,6 @@
 .feedback {
     position: fixed;
+    z-index: 15;
     bottom: rem(29px);
     right: rem(29px);
     a {

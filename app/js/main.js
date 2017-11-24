@@ -20,17 +20,8 @@ const switchActive = function (selector) {
 }
 
 const indexListeners = function () {
-    [{
-            id: 'indexProjectDetails',
-            modal: 'modalInfo'
-        },
-        {
-            id: 'indexHelp',
-            modal: 'modalHelp'
-        },
-        {
-            id: 'indexAddProject',
-            modal: 'modalInfo'
-        }
-    ].forEach(el => $(`#${el.id}`).on('click', e => modal.open(el.modal)))
+    $('#indexHelp').on('click', e => {
+        e.preventDefault();
+        modal.open('modalHelp')
+    })
 }

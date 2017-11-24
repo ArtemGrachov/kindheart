@@ -1,5 +1,4 @@
 .projects {
-    padding: 0 rem(20px);
     &-list {
         margin: 0 auto;
         @extend %list;
@@ -8,6 +7,9 @@
     }
     &-dropdown {
         text-align: right;
+    }
+    &-content {
+        padding: 0 rem(50px);
     }
 }
 

@@ -20,7 +20,7 @@
     &-form {
         margin-top: rem(103px);
         &__title {
-            margin-bottom: rem(19px);
+            margin-bottom: rem(20px);
             letter-spacing: 0.0035em;
         }
         &__input {
@@ -31,7 +31,7 @@
             border: none;
             border-radius: rem(5px);
             padding: rem(12px) rem(9px);
-            margin-right: rem(16px);
+            margin-right: rem(20px);
             font-family: 'GeometriaBold';
             &:focus {
                 background: $lightblue;

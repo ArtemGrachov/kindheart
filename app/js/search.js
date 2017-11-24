@@ -22,6 +22,6 @@ const search = function () {
                 'animation-duration': '',
                 'animation-direction': ''
             })
-        }, animDur)
+        }, animDur * .9)
     })
 };

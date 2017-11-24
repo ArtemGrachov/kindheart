@@ -71,27 +71,39 @@ const projects = (function () {
         },
         tabsCarousel = (function () {
             return {
-                init: function (selector) {
+                init: function (options) {
                     const _this = this;
-                    $(selector.group)
+                    $(options.group)
                         .each(function () {
                             const $list = $(this),
-                                $carousel = $list.find(selector.nav.wrap);
+                                $carousel = $list.find(options.nav.wrap);
                             $carousel.flickity({
                                 freeScroll: true,
                                 prevNextButtons: false,
-                                pageDots: false
+                                pageDots: false,
+                                initialIndex: options.index
                             })
-                            const tabs = $list.find(selector.tabs),
-                                nav = $carousel.find(selector.nav.item);
-
+                            const tabs = $list.find(options.tabs),
+                                nav = $carousel.find(options.nav.item);
+                            _this.setActive(nav, tabs, options.index, options.activeClass)
                             nav.on('click', function () {
                                 const $this = $(this),
                                     index = $(this).index();
-                                _this.toggleNav($carousel, nav, index, selector.activeClass);
-                                _this.toggleTab(tabs, index, selector.activeClass);
+                                _this.toggleNav($carousel, nav, index, options.activeClass);
+                                _this.toggleTab(tabs, index, options.activeClass);
                             })
                         })
+                },
+                setActive: function (nav, tabs, index, activeClass) {
+                    nav
+                        .removeClass(activeClass)
+                    nav
+                        .eq(index)
+                        .addClass(activeClass);
+                    tabs
+                        .removeClass(activeClass)
+                        .eq(index)
+                        .addClass(activeClass)
                 },
                 toggleNav: function (carousel, nav, index, activeClass) {
                     nav
@@ -124,8 +136,6 @@ const projects = (function () {
                                 'animation-duration': animationDur + 'ms'
                             })
                     }, animationDur * 0.9)
-
-
                 }
             }
         })()
@@ -141,7 +151,8 @@ const projects = (function () {
                     item: '.projects-carousel-item'
                 },
                 tabs: '.projects-categories > li',
-                activeClass: 'active'
+                activeClass: 'active',
+                index: 2
             });
         }
     }

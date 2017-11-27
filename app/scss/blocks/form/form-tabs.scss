@@ -1,6 +1,7 @@
 .form {
     &-tabs {
         margin-bottom: rem(16px);
+        margin-right: rem(2px);
         &-btns {
             @extend %list;
             margin-bottom: rem(23px);
@@ -56,10 +57,10 @@
                 &.active {
                     display: block;
                 }
-                .form__label {
-                    margin-bottom: rem(8px);
-                }
             }
+        }
+        &__label {
+            margin-bottom: rem(8px);
         }
     }
 }

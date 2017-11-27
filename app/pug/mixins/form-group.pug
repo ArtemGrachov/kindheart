@@ -6,10 +6,8 @@ mixin form-group(inputs)
                     label.form__label(for=input.id) #{input.name}
                     input(type="text" id=input.id).form__input
         else
-            if block
-                .form-group-inner
-                    label.form__label(for=inputs.id) #{inputs.name}
-                    input(type="text" id=inputs.id).form__input
-            else
+            .form-group-inner
                 label.form__label(for=inputs.id) #{inputs.name}
                 input(type="text" id=inputs.id).form__input
+            if block
+                block

@@ -2,7 +2,7 @@
     &-toggle {
         text-align: center;
         margin-top: rem(15px);
-        margin-bottom: rem(49px);
+        margin-bottom: rem(46px);
         font-weight: bold;
         &-btns {
             border: rem(2px) solid $darkblue;
@@ -30,7 +30,7 @@
     }
     &-wrap {
         @extend %clearfix;
-        margin-left: rem(17px);
+        margin-left: rem(80px);
         margin-bottom: rem(34px);
     }
     &-left {

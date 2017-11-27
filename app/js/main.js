@@ -5,7 +5,6 @@ $(document).ready(function () {
     search();
     switchActive('.projects-item');
     indexListeners();
-    initValidation();
 })
 
 const switchActive = function (selector) {

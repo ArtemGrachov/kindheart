@@ -15,9 +15,6 @@
         &_small {
             max-width: rem(700px);
         }
-        .modal-window {
-            padding: rem(46px);
-        }
     }
     &.active {
         display: block;
@@ -36,7 +33,7 @@
         background: white;
         border-radius: rem(15px);
         box-shadow: rem(3px) rem(4px) rem(10px) 0 rgba(0, 0, 0, 0.2);
-        padding: rem(46px) rem(60px) rem(79px) rem(123px);
+        padding: rem(46px) rem(60px) rem(74px);
     }
 }
 

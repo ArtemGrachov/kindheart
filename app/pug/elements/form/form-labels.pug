@@ -2,7 +2,8 @@
     .form-left
         +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id: prefix +'Lastname'}])
         +form-group({name:'Назва компанії, організації',id:prefix +'Org'})
-            a(href="#").form__link + Логотип
+            input(type="file" id=prefix+'LogoInput').form-file__input
+            a(href="#" id=prefix + 'LogoBtn').form-file__btn + Логотип
         +form-group({name:'Email-адрес',id:prefix +'Email'})
         +form-group({name:'Номер телефону',id:prefix +'Phone'})
     .form-right

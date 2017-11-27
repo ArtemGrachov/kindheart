@@ -19,8 +19,10 @@
             background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><path fill="#c5d5e6" fill-rule="nonzero" d="M126.257 4.39l4.61 4.61-4.61 4.61-.75-.748L129.37 9l-3.861-3.86.75-.75zM137 9c0 4.963-4.037 9-9 9s-9-4.037-9-9 4.037-9 9-9 9 4.037 9 9zm-1.059 0c0-4.38-3.562-7.941-7.941-7.941-4.38 0-7.941 3.562-7.941 7.941 0 4.38 3.562 7.941 7.941 7.941 4.38 0 7.941-3.562 7.941-7.941z" transform="rotate(90 68.5 -50.5)"/></svg>');
         }
     }
-    .projects-carousel__count {
-        color: #8492f3;
+    .projects {
+        &-carousel__count {
+            color: #8492f3;
+        }
     }
     .header-nav-list {
         a {
@@ -28,5 +30,8 @@
                 color: white;
             }
         }
+    }
+    .red {
+        color: white;
     }
 }

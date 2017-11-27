@@ -5,6 +5,14 @@
     &__link {
         margin-left: rem(20px);
     }
+    &-file {
+        &__input {
+            display: none;
+        }
+        &__btn {
+            margin-left: rem(20px);
+        }
+    }
     &-group {
         margin-bottom: rem(32px);
         &-half {

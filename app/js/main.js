@@ -3,26 +3,19 @@ $(document).ready(function () {
     modal.init();
     projects.init();
     search();
-    switchActive('.projects-item');
+    switchActive('.projects-item', 'active');
     indexListeners();
-
-    validation.init([{
-        id: 'physHelpForm',
-        options: helpFormOptions('phys')
-    }, {
-        id: 'jurHelpForm',
-        options: helpFormOptions('jur')
-    }]);
+    initRegForm();
 })
 
-const switchActive = function (selector) {
+const switchActive = function (selector, activeClass) {
     $(selector).on('click', function () {
         const $this = $(this);
-        if (!$this.hasClass('active')) {
+        if (!$this.hasClass(activeClass)) {
             $this
-                .addClass('active')
+                .addClass(activeClass)
                 .siblings()
-                .removeClass('active');
+                .removeClass(activeClass);
         }
     })
 }

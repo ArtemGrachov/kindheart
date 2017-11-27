@@ -95,12 +95,8 @@ const helpFormOptions = function (prefix) {
                     message: '^Введіть номер телефону'
                 },
                 format: {
-                    pattern: /([()-]*?[0-9] *?)/,
-                    message: '^Для номеру телефону дозволено лише цифри та символи ( ) -'
-                },
-                length: {
-                    is: 10,
-                    message: '^Довжина номеру телефону має складати 10 цифр'
+                    pattern: /([()-]*?[0-9]{10} *?)/g,
+                    message: '^Для номеру телефону дозволено лише цифри та символи ( ) -. Довжина номеру має складати 10 цифр'
                 }
             },
             [prefix + 'Country']: {
@@ -123,7 +119,7 @@ const helpFormOptions = function (prefix) {
                     message: '^Вкажіть адресу'
                 }
             },
-            [prefix + 'PostIndex']: {
+            [prefix + 'PostalCode']: {
                 presence: {
                     message: '^Вкажіть поштовий індекс'
                 }

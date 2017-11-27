@@ -3,8 +3,11 @@ mixin projects-item(title, imgUrl, options)
     if options.active
         - cls += ' active'
     li(class=cls)
+        if isArchive
+            .projects__logo
+                img(src="./img/misc/test-logo.png")
         .projects-pic
-            img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff').projects__img
+            img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff')
             if options.immidiately
                 .projects-pic__warning Терміново
             if options.video

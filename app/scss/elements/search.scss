@@ -38,6 +38,9 @@
         width: 100%;
         padding: 0 rem(27px) 0 rem(10px);
         font-weight: 600;
+        &:focus {
+            color: white;
+        }
     }
     &__close {
         font-size: rem(44px);

@@ -7,10 +7,10 @@
             font-size: rem(20px);
             margin: 0 rem(6px);
         }
-    }
-    a {
-        &:hover {
-            opacity: .5;
+        a {
+            &:hover {
+                opacity: .5;
+            }
         }
     }
 }

@@ -47,12 +47,23 @@
             transform: translate(-50%, -50%);
             font-size: rem(60px);
         }
+        img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
     }
-    &__img {
+    &__logo {
         position: absolute;
-        top: 50%;
         left: 0;
+        top: 50%;
         transform: translateY(-50%);
+        width: rem(100px);
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
     }
     &-details {
         border-bottom: 1px solid rgba(#d8d8d8, .5);
@@ -108,7 +119,7 @@
         &__btn {
             display: block;
             margin: 0 auto;
-            padding: rem(18.5px)rem(15px);
+            padding: rem(18.5px) rem(15px);
             border-radius: rem(10px);
             width: rem(600px);
             background: rgba(black, .2);
@@ -118,6 +129,7 @@
             font-family: 'GeometriaExtraBold';
             &:hover {
                 background: rgba(white, .2);
+                color: white;
             }
         }
     }

@@ -69,13 +69,13 @@ body {
         font-family: 'GeometriaExtraBold';
         font-size: rem(18px);
         color: white;
-        box-shadow: 0 0 15px 5px rgba(#e53656, 0.4);
+        box-shadow: 0 0 rem(15px) rem(5px) rgba(#e53656, 0.4);
         background-image: linear-gradient(79deg, #e53656, #6082d8);
         padding: rem(21px) rem(99px) rem(19px);
         border-radius: rem(10px);
         border: none;
         &:hover {
-            box-shadow: 0 0 15px 5px rgba(#6082d8, 0.4);
+            box-shadow: 0 0 rem(25px) rem(8px) rgba(#6082d8, 0.6);
         }
     }
 }

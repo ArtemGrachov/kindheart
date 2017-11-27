@@ -1,16 +1,16 @@
 .form-wrap
     .form-left
-        +form-group([{name:'Ім\'я',id:'firstname'},{name:'Фамілія',id: prefix +'Lastname'}])
+        +form-group([{name:'Ім\'я',id:prefix + 'Firstname'},{name:'Фамілія',id: prefix +'Lastname'}])
         +form-group({name:'Назва компанії, організації',id:prefix +'Org'})
             input(type="file" id=prefix+'LogoInput').form-file__input
             a(href="#" id=prefix + 'LogoBtn').form-file__btn + Логотип
         +form-group({name:'Email-адрес',id:prefix +'Email'})
-        +form-group({name:'Номер телефону',id:prefix +'Phone'})
+        +form-group({name:'Номер телефону',id:prefix +'Phone', placeholder:'123-456-78-90'})
     .form-right
         +form-group({name:'Країна',id:prefix +'Country'})
         +form-group([{name:'Місто',id:prefix +'City'},{name:'Штат, район',id:prefix +'District'}])
         +form-group({name:'Адреса',id:prefix +'Address'})
-        +form-group([{name:'Поштовий індекс',id:prefix +'Postindex'}])
+        +form-group([{name:'Поштовий індекс',id:prefix +'PostIndex'}])
 if jurPerson
     .form-wrap
         .form-left

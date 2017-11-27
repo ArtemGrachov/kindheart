@@ -5,6 +5,15 @@
     &__link {
         margin-left: rem(20px);
     }
+    &__input {
+        border: rem(1px)solid transparent;
+        &.invalid {
+            border-color: $red;
+        }
+        &.valid {
+            border-color: rgb(73, 107, 48);
+        }
+    }
     &-file {
         &__input {
             display: none;
@@ -15,6 +24,7 @@
     }
     &-group {
         margin-bottom: rem(32px);
+        position: relative;
         &-half {
             width: rem(200px);
             display: inline-block;
@@ -26,5 +36,14 @@
         &-inner {
             display: inline-block;
         }
+    }
+}
+
+.invalid {
+    &__msg {
+        margin-top: rem(5px);
+        color: $red;
+        position: absolute;
+        width: 100%;
     }
 }

@@ -5,6 +5,14 @@ $(document).ready(function () {
     search();
     switchActive('.projects-item');
     indexListeners();
+
+    validation.init([{
+        id: 'physHelpForm',
+        options: helpFormOptions('phys')
+    }, {
+        id: 'jurHelpForm',
+        options: helpFormOptions('jur')
+    }]);
 })
 
 const switchActive = function (selector) {

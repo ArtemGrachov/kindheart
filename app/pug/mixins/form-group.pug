@@ -4,10 +4,13 @@ mixin form-group(inputs)
             each input in inputs
                 .form-group-half
                     label.form__label(for=input.id) #{input.name}
-                    input(type="text" id=input.id).form__input
+                    input(type="text" id=input.id name=input.id placeholder=input.placeholder).form__input
         else
-            .form-group-inner
-                label.form__label(for=inputs.id) #{inputs.name}
-                input(type="text" id=inputs.id).form__input
             if block
+                .form-group-inner
+                    label.form__label(for=inputs.id) #{inputs.name}
+                    input(type="text" id=inputs.id name=inputs.id placeholder=inputs.placeholder).form__input
                 block
+            else
+                label.form__label(for=inputs.id) #{inputs.name}
+                input(type="text" id=inputs.id name=inputs.id placeholder=inputs.placeholder).form__input

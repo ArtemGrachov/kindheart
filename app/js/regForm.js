@@ -27,6 +27,7 @@ const autocompleteRegForm = function (prefix, validator) {
     const autoComplete = new google.maps.places.Autocomplete(document.getElementById(prefix + 'Address'));
     google.maps.event.addListener(autoComplete, 'place_changed', function () {
         const place = autoComplete.getPlace();
+        console.log(place)
         let form = {};
         autoComplete.getPlace().address_components.forEach(component => {
             switch (component.types[0]) {
@@ -42,13 +43,20 @@ const autocompleteRegForm = function (prefix, validator) {
                 case 'postal_code':
                     form.postalCode = component.long_name
                     break;
+                case 'route':
+                    form.address = form.address ? component.long_name + form.address : component.long_name
+                    break;
+                case 'street_number':
+                    form.address = form.address ? form.address + component.long_name : component.long_name
+                    break;
             }
         })
         $('#' + prefix + 'Country').val(form.country);
+        $('#' + prefix + 'Address').val(form.address);
         $('#' + prefix + 'District').val(form.district);
         $('#' + prefix + 'City').val(form.city);
         $('#' + prefix + 'PostalCode').val(form.postalCode);
-        validator.validateInputs([prefix + 'Country', prefix + 'District', prefix + 'City', prefix + 'PostalCode']);
+        validator.validateInputs([prefix + 'Country', prefix + 'District', prefix + 'City', prefix + 'PostalCode', prefix + 'Address']);
     })
 }
 

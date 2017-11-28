@@ -33,6 +33,14 @@ input[type="radio"] {
     cursor: pointer;
 }
 
+button,
+input {
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: .3;
+    }
+}
+
 label {
     font-family: 'Geometria';
     font-size: rem(14px);

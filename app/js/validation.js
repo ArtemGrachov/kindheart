@@ -24,24 +24,38 @@ const validation = (function () {
                 .addClass(options.validClass);
         }
     }
+    const submitAccess = function (submit, validation) {
+        validation ? submit.attr('disabled', true) : submit.removeAttr('disabled')
+    }
     return {
         init: function (form) {
             const formEl = $('#' + form.id),
                 validationObj = {
                     options: form.options,
                     form: formEl,
+                    submitBtn: formEl.find(form.options.submitSelector),
                     validateForm: function () {
                         validateForm(this.form, this.options)
                     },
                     validateInput: function (elName) {
+                        const validation = validate(
+                            this.form,
+                            this.options.constraints)
                         validateInput(elName,
-                            validate(
-                                this.form,
-                                this.options.constraints),
+                            validation,
                             this.options)
+                        submitAccess(this.submitBtn, validation);
                     },
                     validateInputs: function (elNames) {
-                        elNames.forEach(elName => this.validateInput(elName))
+                        const validation = validate(
+                            this.form,
+                            this.options.constraints)
+                        elNames.forEach(elName => {
+                            validateInput(elName,
+                                validation,
+                                this.options)
+                        })
+                        submitAccess(this.submitBtn, validation);
                     }
                 }
             formEl.submit(function (e) {
@@ -51,7 +65,7 @@ const validation = (function () {
             formEl.serializeArray().forEach(
                 el => $('#' + el.name)
                 .on('blur', function () {
-                    validationObj.validateInput(el.name)
+                    validationObj.validateInput(el.name);
                 })
             )
             return validationObj;
@@ -70,6 +84,7 @@ const helpFormOptions = function (prefix) {
         validClass: 'valid',
         invalidClass: 'invalid',
         messageClass: 'invalid__msg',
+        submitSelector: '.form-submit>button',
         constraints: {
             [prefix + 'Firstname']: {
                 presence: {

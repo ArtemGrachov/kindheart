@@ -22,29 +22,6 @@
                 }
             }
         }
-        &__label {
-            font-size: rem(12px);
-            padding: rem(10px);
-            text-align: center;
-            background: $lightblue;
-            color: white;
-            display: inline-block;
-            width: rem(170px);
-            height: rem(85px);
-            margin: 0 rem(8px) rem(20px);
-            border-radius: rem(10px);
-            transition: $transition;
-            vertical-align: top;
-            &:hover {
-                background: $darkblue;
-            }
-        }
-        &__input {
-            display: none;
-            &:checked+.form-radio__label {
-                background: $violet;
-            }
-        }
     }
     &-card {
         border-radius: rem(15px);
@@ -91,5 +68,32 @@
         &__delay {
             width: rem(130px);
         }
+    }
+}
+
+input[type="radio"].form-radio__input {
+    display: none;
+    &+.form-radio__label {
+        font-size: rem(12px);
+        padding: rem(10px);
+        text-align: center;
+        background: $lightblue;
+        color: white;
+        display: inline-block;
+        width: rem(170px);
+        height: rem(85px);
+        margin: 0 rem(8px) rem(20px);
+        border-radius: rem(10px);
+        transition: $transition;
+        vertical-align: top;
+        &:hover {
+            background: $darkblue;
+        }
+        &:before {
+            content: none;
+        }
+    }
+    &:checked+.form-radio__label {
+        background: $violet;
     }
 }

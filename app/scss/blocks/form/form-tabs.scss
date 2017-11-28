@@ -20,6 +20,20 @@
                         &__icon {
                             background: $violet;
                             border-color: $violet;
+                            &:after {
+                                display: block;
+                                position: absolute;
+                                width: rem(30px);
+                                height: rem(20px);
+                                left: 50%;
+                                bottom: rem(-28px);
+                                content: '';
+                                transform: translateX(-50%);
+                                background-image: svg('<svg xmlns="http://www.w3.org/2000/svg"><polygon points="15,0 0,19 30,19" style="fill:white;stroke:#c5d5e6;stroke-width:1" /></svg>');
+                                background-position-y: rem(3px);
+                                background-position-x: center;
+                                background-repeat: no-repeat;
+                            }
                         }
                     }
                 }
@@ -37,6 +51,7 @@
         }
         &__icon {
             @extend .help__icon;
+            position: relative;
         }
         &-title {
             @extend .help-title;
@@ -53,6 +68,7 @@
                 border-radius: rem(15px);
                 border: rem(1px) solid $lightblue;
                 padding: rem(16px) rem(20px) rem(20px) rem(19px);
+                background: white;
                 @extend %clearfix;
                 &.active {
                     display: block;

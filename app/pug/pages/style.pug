@@ -12,7 +12,6 @@ block content
             .title.title_white Id qui ea sint nisi laboris officia ad.
             .title.title_sm Elit ipsum sunt do proident qui aliqua deserunt et ea veniam Lorem exercitation cillum voluptate.
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis deleniti assumenda similique numquam est consequatur eaque animi modi voluptas, eos quibusdam rem nihil quidem dignissimos maxime quis molestiae dicta distinctio!
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum repellat ab similique ipsum voluptate eius iusto saepe eaque assumenda distinctio inventore cupiditate a deleniti error expedita amet exercitationem, commodi nesciunt.
             p Перебуваючи у сиротинцях ці діти мають різного роду матеріальні та нематеріальні потреби, якими зазвичай ніхто не займається. Ті, хто має займатися утриманням дитячих будинків, опікою над дітьми часто забувають про свій обов’язок або ж отримують недостатнє фінансування від держави. Тому вся надія цих діточок покладається на небайдужих людей, волонтерів, благодійні фонди. 
             a(href="#").btn Button
         div(style="padding: 20px; background: white;")
@@ -57,3 +56,32 @@ block content
                         td Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis voluptatum a cumque sequi? Vitae, facere? Unde, corporis nulla, eos reprehenderit asperiores expedita officia odio vel repudiandae aliquam atque quae.
                         td 4534.54
                         td Lorem Ipsum
+            hr                        
+            form
+                - i = 0
+                while i < 5
+                    input(type="checkbox" id="testCheckbox"+i name="testCheckbox")
+                    label(for="testCheckbox"+m) Test Checkbox #{i}
+                    - i++
+                hr
+                - i = 0
+                while i < 5
+                    input(type="radio" id="testRadio"+i name="testRadio")
+                    label(for="testRadio"+i) Test Radio #{i}
+                    - i++
+                hr
+                each input in ['text','number','email','password','submit','button','color','date','datetime-local','range','month','search','tel','time','url','week']
+                    div(style="margin-bottom: 10px; border: 1px dashed lightgrey")
+                        label(for=input+'TestInput') input[type="#{input}"]
+                        input(type=input id=input+'TestInput' name=input+'TestInput')
+            hr
+            ul
+                - i = 0
+                while i < 5
+                    li Some unordered list item ##{i}
+                    - i++
+            ol
+                - i = 0
+                while i < 5
+                    li Some ordered list item ##{i}
+                    - i++

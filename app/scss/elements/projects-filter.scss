@@ -20,7 +20,7 @@
         @extend %list;
         li {
             height: rem(40px);
-            border-bottom: 1px solid rgba(#d8d8d8, .5);
+            border-bottom: rem(1px) solid rgba(#d8d8d8, .5);
             text-align: left;
             position: relative;
             &:before {

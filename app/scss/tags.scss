@@ -33,6 +33,12 @@ input[type="radio"] {
     cursor: pointer;
 }
 
+hr {
+    border-color: $lightblue;
+    border-top: none;
+    margin: rem(10px) 0;
+}
+
 button,
 input {
     &[disabled] {
@@ -56,20 +62,60 @@ input {
     background: rgba($lightblue, .2);
     border: none;
     border-radius: rem(5px);
-    color: black;
+    color: $darkblue;
     padding: rem(12px);
     font-weight: bold;
     &::placeholder {
         color: $lightblue;
     }
     &:focus {
-        color: $darkblue;
+        color: $violet;
     }
     &.invalid {
         border-color: $red;
     }
     &.valid {
         border-color: #496b30;
+    }
+    &[type="checkbox"],
+    &[type="radio"] {
+        display: none;
+        &+label {
+            padding: rem(5px) 0;
+            &:before {
+                display: inline-block;
+                content: '';
+                width: 1em;
+                height: 1em;
+                border: rem(1px) solid $lightblue;
+                vertical-align: middle;
+                margin-right: rem(15px);
+            }
+        }
+        &:checked {
+            &+label {
+                color: $darkblue;
+                &:before {
+                    border-color: $red;
+                    background: $red;
+                }
+            }
+        }
+    }
+    &[type="radio"] {
+        +label {
+            &:before {
+                border-radius: 50%;
+            }
+        }
+    }
+    &[type="button"],
+    &[type="submit"] {
+        @extend .btn
+    }
+    &[type="color"] {
+        padding: 0;
+        height: rem(50px);
     }
 }
 

@@ -17,6 +17,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+        margin-top: rem(33px);
     }
     &-element {
         margin-left: rem(100px);
@@ -49,20 +50,20 @@
         margin-bottom: rem(58px);
     }
     &-subtitle {
-        margin-bottom: rem(35px);
+        margin-bottom: rem(36px);
         width: rem(456px);
         letter-spacing: .003em;
         text-align: left;
     }
     &__btn {
         margin-left: rem(100px);
-        padding: rem(13px) rem(20px) rem(14px);
+        padding: rem(15px) rem(20px) rem(16px);
         border-radius: rem(10px);
         background: rgba(black, .2);
         color: white;
         font-family: 'Geometria';
         font-size: rem(18px);
-        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+        box-shadow: 0 0 rem(15px) rem(10px) rgba(#e53656, .2), 0 0 rem(7px) rem(2px) rgba(#9d5e9a, .2);
         animation-name: indbtn;
         animation-duration: 1s;
         animation-iteration-count: infinite;
@@ -75,15 +76,15 @@
 
 @keyframes indbtn {
     0% {
-        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+        box-shadow: 0 0 rem(15px) rem(10px) rgba(#e53656, .2), 0 0 rem(7px) rem(2px) rgba(#9d5e9a, .2);
     }
     25% {
-        box-shadow: 0 0 7px 2px rgba(#e53656, .2), 0 0 15px 10px rgba(#9d5e9a, .2);
+        box-shadow: 0 0 rem(7px) rem(2px) rgba(#e53656, .2), 0 0 rem(15px) rem(10px) rgba(#9d5e9a, .2);
     }
     60% {
-        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 7px 2px rgba(#9d5e9a, .2);
+        box-shadow: 0 0 rem(15px) rem(10px) rgba(#e53656, .2), 0 0 rem(7px) rem(2px) rgba(#9d5e9a, .2);
     }
     75% {
-        box-shadow: 0 0 15px 10px rgba(#e53656, .2), 0 0 20px 12px rgba(#9d5e9a, .2);
+        box-shadow: 0 0 rem(15px) rem(10px) rgba(#e53656, .2), 0 0 rem(20px) rem(12px) rgba(#9d5e9a, .2);
     }
 }

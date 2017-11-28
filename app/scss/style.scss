@@ -71,10 +71,15 @@ body {
         padding: rem(21px) rem(99px) rem(19px);
         border-radius: rem(10px);
         border: none;
-        &:hover {
+        &:hover,
+        &:focus {
             box-shadow: 0 0 rem(25px) rem(8px) rgba(#6082d8, 0.6);
         }
     }
+}
+
+a.btn {
+    color: white;
 }
 
 .red {

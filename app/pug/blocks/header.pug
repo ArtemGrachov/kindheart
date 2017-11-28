@@ -16,8 +16,6 @@ header.header
             each page,index in [{name:'Проекти',url:'./projects.html'},{name:'Архів',url:'./archive.html'},{name:'Контакти',url:'./contacts.html'}]
                 if index == navIndex
                     - var cls = 'active'
-                else
-                    - var cls =''
                 li
                     a(href=page.url class=cls) #{page.name}
             li

@@ -3,7 +3,7 @@ extends ../templates/projects-list.pug
 block variables
     - var title = 'Проекти'
     - var carousel = [{name:'Війна',count:24},{name:'Екологія',count:24},{name:'Діти',count:24},{name:'Освіта',count:24}]
-    - modalReg = true;
+    - var modalReg = true;
     - var navIndex = 0;
 block list
     +projects-item('Необхідна допомога дитячому будинку','513',{date:'07.05.2017',active: true, meta:{collected:'10 000',total:'25 000'}})

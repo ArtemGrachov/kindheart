@@ -1,6 +1,15 @@
 const initRegForm = function () {
     const formModal = $('#modalHelpForm');
-    if (formModal) {
+    if (formModal.length) {
+        const cardInputOptions = function (prefix) {
+            const cardGroup = $('#' + prefix + 'HelpForm').find('.form-card-group');
+            return {
+                numberInput: cardGroup.find('#' + prefix + 'CardNumber'),
+                numberMasks: cardGroup.find('.form-card__number'),
+                numberMaskSelector: '.form-card__number'
+            }
+        }
+
         formModal.find('.form-file__input').each(function () {
             const $this = $(this);
             $this
@@ -10,17 +19,54 @@ const initRegForm = function () {
                     $this.trigger('click');
                 })
         })
-        const physValid = validation.init({
+        const physValidator = validation.init({
                 id: 'physHelpForm',
                 options: helpFormOptions('phys')
             }),
-            jurValid = validation.init({
+            jurValidator = validation.init({
                 id: 'jurHelpForm',
                 options: helpFormOptions('jur')
             })
-        autocompleteRegForm('phys', physValid);
-        autocompleteRegForm('jur', jurValid);
+        autocompleteRegForm('phys', physValidator);
+        autocompleteRegForm('jur', jurValidator);
+        cardInput(cardInputOptions('jur'), () => jurValidator.validateInput('jurCardNumber'))
+        cardInput(cardInputOptions('phys'), () => physValidator.validateInput('physCardNumber'))
     }
+}
+
+const cardInput = function (options, callback) {
+    const focusPrev = (e) => {
+        e.preventDefault();
+        const prev = $(e.currentTarget).prev(options.numberMaskSelector);
+        if (prev.length) prev.focus();
+    }
+    const focusNext = (e) => {
+        e.preventDefault();
+        const next = $(e.currentTarget).next(options.numberMaskSelector);
+        if (next.length) next.focus();
+    }
+
+    options.numberMasks
+        .keydown(function (e) {
+            const $this = $(this);
+            console.log(e);
+            if (e.keyCode == 46 || e.keyCode == 8) {
+                if ($this.val().length == 0) {
+                    focusPrev(e);
+                }
+            } else {
+                if ($this.val().length >= 4) {
+                    focusNext(e);
+                }
+            }
+        })
+        .keyup(function (e) {
+            const $this = $(this);
+            if ($this.val().length == 4) {
+                focusNext(e);
+            }
+        })
+
 }
 
 const autocompleteRegForm = function (prefix, validator) {

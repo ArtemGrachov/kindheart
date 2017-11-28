@@ -51,7 +51,7 @@
         background: $lightblue;
         width: rem(375px);
         height: rem(188px);
-        padding: rem(19px) rem(25px) rem(20px);
+        padding: rem(19px) rem(24px) rem(20px) rem(25px);
         .form__label {
             color: white;
             margin-bottom: rem(4px);
@@ -61,13 +61,27 @@
             display: inline-block;
         }
         &-group {
-            display: flex;
-            justify-content: space-between;
             margin-bottom: rem(30px);
+            position: relative;
+            .invalid {
+                &~input {
+                    border-color: $red;
+                    color: $red;
+                }
+                &__msg {
+                    top: 100%;
+                }
+            }
         }
         &__number {
             width: rem(74px);
             text-align: center;
+            margin-right: rem(10px);
+            padding-top: rem(11px);
+            padding-bottom: rem(11px);
+            &:last-child {
+                margin-right: 0;
+            }
         }
         &__delay {
             width: rem(130px);

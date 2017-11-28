@@ -31,9 +31,10 @@
     .form-card
         label.form__label Номер карти
         .form-card-group
+            input(type="text" id=prefix+'CardNumber' name=prefix+'CardNumber').el-hidden
             - var n = 0;
             while n < 4
-                input(type="text").form__input.form-card__number
+                input(type="text" id=prefix+'CardInput'+n).form__input.form-card__number
                 - n++
         .form-left
             label.form__label Термін дії

@@ -60,6 +60,7 @@ const validation = (function () {
                 }
             formEl.submit(function (e) {
                 e.preventDefault();
+                validationObj.submitBtn.attr('disabled', true);
                 validationObj.validateForm();
             })
             formEl.serializeArray().forEach(
@@ -162,6 +163,19 @@ const helpFormOptions = function (prefix) {
             [prefix + 'PostalCode']: {
                 presence: {
                     message: '^Вкажіть поштовий індекс'
+                }
+            },
+            [prefix + 'CardNumber']: {
+                presence: {
+                    message: '^Вкажіть номер карти'
+                },
+                format: {
+                    pattern: /^4+[0-9]*$/,
+                    message: '^Номер карти має починатися з 4 та може містити тільки цифри'
+                },
+                length: {
+                    is: 16,
+                    message: '^Номер карти має містити 16 цифр'
                 }
             }
         }

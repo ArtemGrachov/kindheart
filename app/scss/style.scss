@@ -59,7 +59,8 @@ body {
     transition: $transition;
     color: white;
     padding: rem(12px) rem(59px);
-    &:hover {
+    &:hover,
+    &:focus {
         background-color: rgba(white, .2);
     }
     &-lg {

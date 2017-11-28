@@ -12,7 +12,8 @@ a {
     font-family: 'Geometria';
     color: $blue;
     font-weight: bold;
-    &:hover {
+    &:hover,
+    &:focus {
         color: $violet;
     }
 }

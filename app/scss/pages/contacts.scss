@@ -34,7 +34,8 @@
             margin-right: rem(20px);
             font-family: 'GeometriaBold';
             &:focus {
-                background: $lightblue;
+                color: white;
+                background: rgba($lightblue, .3);
             }
             &::placeholder {
                 color: white;

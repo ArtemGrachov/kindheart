@@ -13,7 +13,8 @@
         background-color: #9d5e9b;
         font-size: rem(44px);
         box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 #9d5e9b;
-        &:hover {
+        &:hover,
+        &:focus {
             background-color: $red;
             box-shadow: 0 rem(2px) rem(2px) 0 rgba(0, 0, 0, 0.2), 0 rem(2px) rem(16px) 0 $red;
         }

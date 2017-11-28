@@ -10,23 +10,24 @@ const initRegForm = function () {
                     $this.trigger('click');
                 })
         })
-        validation.init([{
-            id: 'physHelpForm',
-            options: helpFormOptions('phys')
-        }, {
-            id: 'jurHelpForm',
-            options: helpFormOptions('jur')
-        }]);
+        const physValid = validation.init({
+                id: 'physHelpForm',
+                options: helpFormOptions('phys')
+            }),
+            jurValid = validation.init({
+                id: 'jurHelpForm',
+                options: helpFormOptions('jur')
+            })
+        autocompleteRegForm('phys', physValid);
+        autocompleteRegForm('jur', jurValid);
     }
-    autocompleteRegForm('phys');
 }
 
-const autocompleteRegForm = function (prefix) {
+const autocompleteRegForm = function (prefix, validator) {
     const autoComplete = new google.maps.places.Autocomplete(document.getElementById(prefix + 'Address'));
     google.maps.event.addListener(autoComplete, 'place_changed', function () {
         const place = autoComplete.getPlace();
         let form = {};
-        console.log(place);
         autoComplete.getPlace().address_components.forEach(component => {
             switch (component.types[0]) {
                 case 'country':
@@ -47,6 +48,7 @@ const autocompleteRegForm = function (prefix) {
         $('#' + prefix + 'District').val(form.district);
         $('#' + prefix + 'City').val(form.city);
         $('#' + prefix + 'PostalCode').val(form.postalCode);
+        validator.validateInputs([prefix + 'Country', prefix + 'District', prefix + 'City', prefix + 'PostalCode']);
     })
 }
 

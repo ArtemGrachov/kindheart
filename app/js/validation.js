@@ -1,4 +1,10 @@
 const validation = (function () {
+    const validateForm = function (form, options) {
+        const validation = validate(form, options.constraints);
+        form.serializeArray().forEach(
+            el => validateInput(el.name, validation, options)
+        )
+    }
     const validateInput = function (elName, validation, options) {
         const $el = $('#' + elName);
         $el
@@ -18,29 +24,37 @@ const validation = (function () {
                 .addClass(options.validClass);
         }
     }
-    const validateForm = function (form, options) {
-        const validation = validate(form, options.constraints);
-        form.serializeArray().forEach(
-            el => validateInput(el.name, validation, options)
-        )
-    }
-    const initForm = function (id, options) {
-        const form = $('#' + id);
-        form
-            .submit(function (e) {
-                e.preventDefault();
-                validateForm(form, options);
-            })
-        form.serializeArray().forEach(
-            el => $('#' + el.name)
-            .on('blur', function () {
-                validateInput(el.name, validate(form, options.constraints), options)
-            })
-        )
-    }
     return {
-        init: function (forms) {
-            forms.forEach(form => initForm(form.id, form.options))
+        init: function (form) {
+            const formEl = $('#' + form.id),
+                validationObj = {
+                    options: form.options,
+                    form: formEl,
+                    validateForm: function () {
+                        validateForm(this.form, this.options)
+                    },
+                    validateInput: function (elName) {
+                        validateInput(elName,
+                            validate(
+                                this.form,
+                                this.options.constraints),
+                            this.options)
+                    },
+                    validateInputs: function (elNames) {
+                        elNames.forEach(elName => this.validateInput(elName))
+                    }
+                }
+            formEl.submit(function (e) {
+                e.preventDefault();
+                validationObj.validateForm();
+            })
+            formEl.serializeArray().forEach(
+                el => $('#' + el.name)
+                .on('blur', function () {
+                    validationObj.validateInput(el.name)
+                })
+            )
+            return validationObj;
         }
     }
 })()

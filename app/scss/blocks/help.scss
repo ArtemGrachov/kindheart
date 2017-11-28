@@ -4,6 +4,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: rem(51px);
+        margin-left: rem(63px);
     }
     &-item {
         @extend %clearfix;

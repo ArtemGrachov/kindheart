@@ -19,7 +19,7 @@
     &-list {
         @extend %list;
         li {
-            height: rem(40px);
+            height: rem(41px);
             border-bottom: rem(1px) solid rgba(#d8d8d8, .5);
             text-align: left;
             position: relative;
@@ -40,18 +40,6 @@
         font-weight: bold;
         vertical-align: middle;
         display: inline-block;
-        &:after {
-            content: '';
-            display: block;
-            background: rgba(white, .6);
-            width: rem(18px);
-            height: rem(18px);
-            border-radius: 50%;
-            position: absolute;
-            top: 50%;
-            right: rem(16px);
-            transform: translateY(-50%);
-        }
     }
     &__toggle {
         background: none;
@@ -68,11 +56,6 @@
     }
     &__checkbox {
         display: none;
-        &:checked+.projects-filter__label {
-            &:after {
-                background: linear-gradient(53deg, #e53656, #6082d8);
-            }
-        }
     }
     &__btn {
         border: none;
@@ -97,5 +80,30 @@
 .active {
     .projects-filter-dropdown {
         display: block;
+    }
+}
+
+input[type="checkbox"].projects-filter__checkbox {
+    &:checked+label {
+        color: white;
+        &:before {
+            background: linear-gradient(53deg, #e53656, #6082d8);
+        }
+    }
+    &+label {
+        &:before {
+            content: '';
+            display: block;
+            background: rgba(white, .6);
+            width: rem(18px);
+            height: rem(18px);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: rem(16px);
+            transform: translateY(-50%);
+            margin: 0;
+            border: none;
+        }
     }
 }

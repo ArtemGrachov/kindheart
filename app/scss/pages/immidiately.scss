@@ -21,7 +21,10 @@
     }
     .projects {
         &-carousel__count {
-            color: #8492f3;
+            color: rgba(#8492f3, .95);
+        }
+        &-filter-dropdown {
+            background: #9450AC;
         }
     }
     .header-nav-list {

@@ -31,7 +31,8 @@
     &-wrap {
         @extend %clearfix;
         margin-left: rem(80px);
-        margin-bottom: rem(34px);
+        margin-bottom: rem(33px);
+        margin-top: rem(37px);
     }
     &-left {
         float: left;

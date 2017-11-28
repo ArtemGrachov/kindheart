@@ -10,10 +10,12 @@
     &-wrap {
         max-width: rem(1340px);
         margin: 0 auto;
-        padding: rem(100px) 0 rem(54px);
+        padding: rem(100px) 0 rem(100px);
         position: relative;
+        height: 100%;
         &_small {
             max-width: rem(700px);
+            height: auto;
         }
     }
     &.active {

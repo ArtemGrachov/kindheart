@@ -52,7 +52,7 @@
                 display: none;
                 border-radius: rem(15px);
                 border: rem(1px) solid $lightblue;
-                padding: rem(16px) rem(19px) rem(20px);
+                padding: rem(16px) rem(20px) rem(20px) rem(19px);
                 @extend %clearfix;
                 &.active {
                     display: block;

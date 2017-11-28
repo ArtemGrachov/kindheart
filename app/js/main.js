@@ -6,7 +6,6 @@ $(document).ready(function () {
     switchActive('.projects-item', 'active');
     indexListeners();
     initRegForm();
-    openRegForm('financial')
 })
 
 const switchActive = function (selector, activeClass) {

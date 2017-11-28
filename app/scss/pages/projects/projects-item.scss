@@ -124,7 +124,7 @@
         &__btn {
             display: block;
             margin: 0 auto;
-            padding: rem(18.5px) rem(15px);
+            padding: rem(20px) rem(15px);
             border-radius: rem(10px);
             width: rem(600px);
             background: rgba(black, .2);
@@ -136,6 +136,15 @@
                 background: rgba(white, .2);
                 color: white;
             }
+        }
+        &__count {
+            display: inline-block;
+            margin: 0 rem(11px);
+        }
+        &__number {
+            color: $red;
+            font-family: 'GilroyExtraBold';
+            margin: 0 rem(6px);
         }
     }
 }

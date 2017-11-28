@@ -9,9 +9,4 @@ mixin projects-tab(isArchive)
             | Lorem aliquip aute minim esse est commodo deserunt adipisicing magna. Pariatur voluptate sunt exercitation enim voluptate est. Proident nisi ut elit minim aute aliquip eu ea cillum aliquip incididunt.
         +projects-item('Id dolore esse laboris commodo do velit ipsum amet commodo deserunt excepteur elit.','419',{date:'03.05.2017',meta:meta})
             | In anim anim deserunt adipisicing in deserunt nostrud nisi reprehenderit. Proident ipsum proident ad ut non veniam nulla. Laboris amet magna velit qui cupidatat anim id nostrud cupidatat. Laboris amet ullamco consectetur reprehenderit eu aute Lorem amet deserunt occaecat dolore cillum anim dolor.
-        .projects-more
-            a(href="#").projects-more__btn
-                | Показати ще 
-                span.red 6
-                |  з 
-                span.red 18
+        include ../elements/projects-more.pug

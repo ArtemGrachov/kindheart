@@ -2,8 +2,7 @@
     &-list {
         margin: 0 auto;
         @extend %list;
-        color: white; // animation-name: projects-in;
-        // animation-duration: 400ms;
+        color: white;
     }
     &-dropdown {
         text-align: right;
@@ -16,3 +15,4 @@
 @import './projects-carousel.scss';
 @import './projects-help.scss';
 @import './projects-item.scss';
+@import './projects-filter.scss';

@@ -45,6 +45,12 @@ const validation = (function () {
     }
 })()
 
+validate.validators.phoneLength = function (value, options, key, attributes) {
+    if (value && value.replace(/[^0-9]/g, '').length != 10) {
+        return options.message;
+    };
+}
+
 const helpFormOptions = function (prefix) {
     return {
         validClass: 'valid',
@@ -68,6 +74,8 @@ const helpFormOptions = function (prefix) {
                 length: {
                     minimum: 2,
                     maximum: 30,
+
+
                     message: '^Прізвище має бути в межах між 2 та 30 символами'
                 },
             },
@@ -95,8 +103,11 @@ const helpFormOptions = function (prefix) {
                     message: '^Введіть номер телефону'
                 },
                 format: {
-                    pattern: /([()-]*?[0-9]{10} *?)/g,
-                    message: '^Для номеру телефону дозволено лише цифри та символи ( ) -. Довжина номеру має складати 10 цифр'
+                    pattern: /^[0-9-)(]*$/,
+                    message: '^Для номеру телефону дозволено лише цифри та символи ( ) -'
+                },
+                phoneLength: {
+                    message: '^Номер телефону має скаладитсь із 10 цифр'
                 }
             },
             [prefix + 'Country']: {

@@ -7,12 +7,6 @@
     }
     &__input {
         border: rem(1px)solid transparent;
-        &.invalid {
-            border-color: $red;
-        }
-        &.valid {
-            border-color: rgb(73, 107, 48);
-        }
     }
     &-file {
         &__input {

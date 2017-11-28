@@ -58,11 +58,6 @@ const validation = (function () {
                         submitAccess(this.submitBtn, validation);
                     }
                 }
-            formEl.submit(function (e) {
-                e.preventDefault();
-                validationObj.submitBtn.attr('disabled', true);
-                validationObj.validateForm();
-            })
             formEl.serializeArray().forEach(
                 el => $('#' + el.name)
                 .on('blur', function () {
@@ -176,6 +171,24 @@ const helpFormOptions = function (prefix) {
                 length: {
                     is: 16,
                     message: '^Номер карти має містити 16 цифр'
+                }
+            },
+            [prefix + 'CardExpiration']: {
+                presence: {
+                    message: '^Вкажіть термін дії карти'
+                },
+                format: {
+                    pattern: /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/,
+                    message: '^Введіть термін дії у коректному форматі'
+                }
+            },
+            [prefix + 'CardCvc']: {
+                presence: {
+                    message: '^Вкажіть CVC/CVV карти'
+                },
+                format: {
+                    pattern: /^[0-9]{3,4}$/,
+                    message: '^Вакжіть CVC/CVV у коректному форматі'
                 }
             }
         }

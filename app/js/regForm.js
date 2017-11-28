@@ -31,6 +31,16 @@ const initRegForm = function () {
         autocompleteRegForm('jur', jurValidator);
         cardInput(cardInputOptions('jur'), () => jurValidator.validateInput('jurCardNumber'))
         cardInput(cardInputOptions('phys'), () => physValidator.validateInput('physCardNumber'))
+        $('#jurHelpForm').submit(function (e) {
+            e.preventDefault();
+            console.log($(this).serializeArray());
+            jurValidator.submitBtn.attr('disabled', true)
+        })
+        $('#physHelpForm').submit(function (e) {
+            e.preventDefault();
+            console.log($(this).serializeArray());
+            physValidator.submitBtn.attr('disabled', true)
+        })
     }
 }
 
@@ -45,28 +55,40 @@ const cardInput = function (options, callback) {
         const next = $(e.currentTarget).next(options.numberMaskSelector);
         if (next.length) next.focus();
     }
-
+    const valueToInput = () => {
+        let value = '';
+        options
+            .numberMasks
+            .each(function () {
+                value += $(this).val();
+            });
+        options.numberInput.val(value);
+        callback();
+    }
     options.numberMasks
         .keydown(function (e) {
             const $this = $(this);
-            console.log(e);
             if (e.keyCode == 46 || e.keyCode == 8) {
                 if ($this.val().length == 0) {
                     focusPrev(e);
                 }
             } else {
-                if ($this.val().length >= 4) {
+                if (e.key.length === 1 && $this.val().length >= 4) {
                     focusNext(e);
                 }
             }
         })
         .keyup(function (e) {
             const $this = $(this);
-            if ($this.val().length == 4) {
+            if (e.key.length === 1 && $this.val().length == 4) {
                 focusNext(e);
             }
+            valueToInput();
         })
+        .blur(function (e) {
+            valueToInput();
 
+        })
 }
 
 const autocompleteRegForm = function (prefix, validator) {

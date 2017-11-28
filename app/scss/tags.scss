@@ -62,6 +62,12 @@ input {
     &:focus {
         color: $darkblue;
     }
+    &.invalid {
+        border-color: $red;
+    }
+    &.valid {
+        border-color: rgb(73, 107, 48);
+    }
 }
 
 strong {

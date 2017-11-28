@@ -1,28 +1,28 @@
 .form-left
     label.form__label.form-tabs__label Спосіб оплати
     .form-radio-group
-        +form-radio(prefix+'Visa','pay')
+        +form-radio(prefix+'Visa',prefix+'Pay')
             .form-radio__logo
                 span.icon.icon-mastercard
                 span.icon.icon-visa
             .form-radio__name Карта Visa/MasterCard
-        +form-radio(prefix+'Pb','pay')
+        +form-radio(prefix+'Pb',prefix+'Pay')
             .form-radio__logo Приват24
             .form-radio__name Приват24
-        +form-radio(prefix+'Terminals','pay')
+        +form-radio(prefix+'Terminals',prefix+'Pay')
             .form-radio__logo
                 span.icon.icon-terminals
             .form-radio__name Термінали України
-        +form-radio(prefix+'Webmoney','pay')
+        +form-radio(prefix+'Webmoney',prefix+'Pay')
             .form-radio__logo
                 span.icon.icon-webmoney
             .form-radio__name WebMoney
-        +form-radio(prefix+'Paypal','pay')
+        +form-radio(prefix+'Paypal',prefix+'Pay')
             .form-radio__logo
                 span.icon.icon-paypal
             .form-radio__name PayPal
         if jurPerson
-            +form-radio(prefix+'Bank','pay')
+            +form-radio(prefix+'Bank',prefix+'Pay')
                 .form-radio__logo
                     span.icon.icon-bank
                 .form-radio__name Банківський переказ
@@ -38,8 +38,8 @@
                 - n++
         .form-left
             label.form__label Термін дії
-            input(type="text").form__input.form-card__delay
+            input(type="text" id=prefix+'CardExpiration' name=prefix+'CardExpiration').form__input.form-card__delay
         .form-right
             label.form__label CVC/CVV
-            input(type="text").form__input.form-card__delay
+            input(type="text" id=prefix+'CardCvc' name=prefix+'CardCvc').form__input.form-card__delay
         .form-right

@@ -13,7 +13,7 @@ a {
     color: $blue;
     font-weight: bold;
     &:hover {
-        color: $red;
+        color: $violet;
     }
 }
 
@@ -56,9 +56,12 @@ input {
     background: rgba($lightblue, .2);
     border: none;
     border-radius: rem(5px);
-    color: #939aa3;
+    color: black;
     padding: rem(12px);
     font-weight: bold;
+    &::placeholder {
+        color: $lightblue;
+    }
     &:focus {
         color: $darkblue;
     }
@@ -66,7 +69,7 @@ input {
         border-color: $red;
     }
     &.valid {
-        border-color: rgb(73, 107, 48);
+        border-color: #496b30;
     }
 }
 

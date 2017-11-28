@@ -85,11 +85,16 @@
         font-family: 'GeometriaExtraBold';
         font-size: rem(18px);
         margin-bottom: rem(9px);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__text {
         margin-bottom: rem(16px);
         padding-left: rem(1px);
         display: none;
+        height: rem(80px);
+        overflow: hidden;
     }
     &-meta {
         color: #b4c4d8;

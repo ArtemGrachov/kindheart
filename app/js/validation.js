@@ -4,6 +4,10 @@ const validation = (function () {
         form.serializeArray().forEach(
             el => validateInput(el.name, validation, options)
         )
+        if (validation) {
+            return false;
+        }
+        return true;
     }
     const validateInput = function (elName, validation, options) {
         const $el = $('#' + elName);
@@ -35,7 +39,7 @@ const validation = (function () {
                     form: formEl,
                     submitBtn: formEl.find(form.options.submitSelector),
                     validateForm: function () {
-                        validateForm(this.form, this.options)
+                        return validateForm(this.form, this.options)
                     },
                     validateInput: function (elName) {
                         const validation = validate(
@@ -45,6 +49,10 @@ const validation = (function () {
                             validation,
                             this.options)
                         submitAccess(this.submitBtn, validation);
+                        if (validation) {
+                            return false;
+                        }
+                        return true;
                     },
                     validateInputs: function (elNames) {
                         const validation = validate(
@@ -56,6 +64,10 @@ const validation = (function () {
                                 this.options)
                         })
                         submitAccess(this.submitBtn, validation);
+                        if (validation) {
+                            return false;
+                        }
+                        return true;
                     }
                 }
             formEl.serializeArray().forEach(

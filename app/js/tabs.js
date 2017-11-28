@@ -16,9 +16,12 @@ const tabs = (function () {
                     tabsEls.tabPages.first().addClass('active');
                 }
                 tabsEls.navBtns.each(function () {
-                    $(this).on('click', function (e) {
+                    const $this = $(this);
+                    $this.on('click', function (e) {
                         e.preventDefault();
-                        _this.switchTab(tabsEls, $(this).index());
+                        if (!$this.hasClass('active')) {
+                            _this.switchTab(tabsEls, $this.index());
+                        }
                     })
                 })
             })

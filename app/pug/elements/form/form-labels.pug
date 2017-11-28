@@ -9,7 +9,7 @@
     .form-right
         +form-group({name:'Країна',id:prefix +'Country'})
         +form-group([{name:'Місто',id:prefix +'City'},{name:'Штат, район',id:prefix +'District'}])
-        +form-group({name:'Адреса',id:prefix +'Address'})
+        +form-group({name:'Адреса',id:prefix +'Address',placeholder:'Введіть адресу для автозаповнення'})
         +form-group([{name:'Поштовий індекс',id:prefix +'PostalCode'}])
 if jurPerson
     .form-wrap
@@ -19,5 +19,5 @@ if jurPerson
             +form-group({name:'Розрахунковий рахунок',id:prefix +'Account'})
         .form-right
             +form-group([{name:'ЗКПО',id:prefix +'Zkpo'},{name:'Тип оподаткування',id:prefix +'TaxType'}])
-            +form-group([{name:'ІНН',id:'inn'},{name:'Система оподаткування',id:prefix +'TaxSystem'}])
+            +form-group([{name:'ІНН',id:prefix +'Inn'},{name:'Система оподаткування',id:prefix +'TaxSystem'}])
             +form-group([{name:'Телефон бухгалтерії',id:prefix +'AccouintingPhone'},{name:'Факс',id:prefix +'Fax'}])

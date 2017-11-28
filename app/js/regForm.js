@@ -33,13 +33,23 @@ const initRegForm = function () {
         cardInput(cardInputOptions('phys'), () => physValidator.validateInput('physCardNumber'))
         $('#jurHelpForm').submit(function (e) {
             e.preventDefault();
+            if (jurValidator.validateForm()) {
+                console.log('Form is valid');
+                jurValidator.submitBtn.attr('disabled', true)
+            } else {
+                console.log('Form is invalid');
+            }
             console.log($(this).serializeArray());
-            jurValidator.submitBtn.attr('disabled', true)
         })
         $('#physHelpForm').submit(function (e) {
             e.preventDefault();
+            if (physValidator.validateForm()) {
+                console.log('Form is valid');
+                physValidator.submitBtn.attr('disabled', true)
+            } else {
+                console.log('Form is invalid');
+            }
             console.log($(this).serializeArray());
-            physValidator.submitBtn.attr('disabled', true)
         })
     }
 }
@@ -87,7 +97,6 @@ const cardInput = function (options, callback) {
         })
         .blur(function (e) {
             valueToInput();
-
         })
 }
 

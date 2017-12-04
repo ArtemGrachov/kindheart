@@ -35,6 +35,7 @@ body {
 .title {
     @extend %title;
     font-size: rem(64px);
+    margin: 0;
     &_white {
         color: white;
     }

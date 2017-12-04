@@ -1,4 +1,4 @@
-.form-wrap
+fieldset.form-wrap
     .form-left
         +form-group([{name:'Ім\'я',id:prefix + 'Firstname'},{name:'Фамілія',id: prefix +'Lastname'}])
         +form-group({name:'Назва компанії, організації',id:prefix +'Org'})
@@ -12,7 +12,7 @@
         +form-group({name:'Адреса',id:prefix +'Address',placeholder:'Введіть адресу для автозаповнення'})
         +form-group([{name:'Поштовий індекс',id:prefix +'PostalCode'}])
 if jurPerson
-    .form-wrap
+    fieldset.form-wrap
         .form-left
             +form-group({name:'Юридична адреса',id:prefix +'OrgAddress'})
             +form-group([{name:'Найменування банку',id:prefix +'BankName'},{name:'МФО банку',id:prefix +'BankMFO'}])

@@ -16,7 +16,7 @@ mixin projects-item(title, imgUrl, options)
             .projects-details
                 .projects-desc
                     time(datetime=options.date.slice(6,10)+'-'+options.date.slice(3,5)+'-'+options.date.slice(0,2)+' 00:00').projects__date #{options.date}
-                    .projects__title #{title}
+                    h1.projects__title #{title}
                     .projects__text 
                         block
                     .projects-meta

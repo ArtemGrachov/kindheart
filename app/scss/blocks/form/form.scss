@@ -30,9 +30,9 @@
     }
     &-wrap {
         @extend %clearfix;
-        margin-left: rem(80px);
-        margin-bottom: rem(33px);
-        margin-top: rem(37px);
+        margin: rem(33px) 0 rem(34px) rem(80px);
+        border: 0;
+        padding: 0;
     }
     &-left {
         float: left;

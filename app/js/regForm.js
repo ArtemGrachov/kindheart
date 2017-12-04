@@ -7,7 +7,8 @@ const initRegForm = function () {
                 numberWrap: cardGroup,
                 numberInput: cardGroup.find('#' + prefix + 'CardNumber'),
                 numberMasks: cardGroup.find('.form-card__number'),
-                numberMaskSelector: '.form-card__number'
+                numberMaskSelector: '.form-card__number',
+                numberFocusClass: 'card-focus'
             }
         }
         formModal.find('.form-file__input').each(function () {
@@ -51,6 +52,8 @@ const initRegForm = function () {
             }
             console.log($(this).serializeArray());
         })
+        $('#physPhone').mask('(000) 000-00-00');
+        $('#jurPhone').mask('(000) 000-00-00');
     }
 }
 
@@ -76,6 +79,10 @@ const cardInput = function (options, callback) {
         callback();
     }
     options.numberMasks
+        .focus(function () {
+            options.numberWrap
+                .addClass(options.numberFocusClass)
+        })
         .keydown(function (e) {
             const $this = $(this);
             if (e.keyCode == 46 || e.keyCode == 8) {
@@ -89,7 +96,6 @@ const cardInput = function (options, callback) {
             }
         })
         .keyup(function (e) {
-            console.log('dgedrhe')
             const $this = $(this);
             if (e.key.length === 1 && $this.val().length == 4) {
                 focusNext(e);
@@ -105,6 +111,9 @@ const cardInput = function (options, callback) {
             })
             if (!inCard) {
                 valueToInput();
+                options
+                    .numberWrap
+                    .removeClass(options.numberFocusClass)
             }
         })
 }
@@ -113,7 +122,6 @@ const autocompleteRegForm = function (prefix, validator) {
     const autoComplete = new google.maps.places.Autocomplete(document.getElementById(prefix + 'Address'));
     google.maps.event.addListener(autoComplete, 'place_changed', function () {
         const place = autoComplete.getPlace();
-        console.log(place)
         let form = {};
         autoComplete.getPlace().address_components.forEach(component => {
             switch (component.types[0]) {

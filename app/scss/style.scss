@@ -41,12 +41,14 @@ body {
     &_sm {
         font-size: rem(26px);
     }
+    font-weight: normal;
 }
 
 .subtitle {
     font-size: rem(18px);
     font-family: 'GilroyLight';
     text-align: center;
+    font-weight: normal;
 }
 
 .btn {

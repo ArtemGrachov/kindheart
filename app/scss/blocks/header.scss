@@ -54,8 +54,8 @@
         ul {
             @extend %list;
             li {
-                display: inline-block;
-                a {
+                >a,
+                >span {
                     font-family: 'GeometriaExtraBold';
                     font-size: rem(14px);
                     opacity: 1;
@@ -64,28 +64,31 @@
                     border-radius: rem(5px);
                     margin: 0 rem(13.5px);
                     padding: rem(6px) 0;
-                    &.active,
-                    &.accent {
-                        padding-left: rem(21px);
-                        padding-right: rem(21px);
-                    }
-                    &.active {
-                        background: rgba(black, .2);
-                        margin: 0 rem(-7.5px);
-                    }
-                    &.accent {
-                        background: linear-gradient(to left, #6082d7, #e73453);
-                        color: white;
-                        margin: 0 rem(14px);
-                        &:hover {
-                            background: $red;
-                            color: white;
-                        }
-                    }
+                }
+                >a {
                     &:hover {
                         color: $red;
                     }
                 }
+                &.active>span,
+                &.accent>a {
+                    padding-left: rem(21px);
+                    padding-right: rem(21px);
+                }
+                &.active>span {
+                    background: rgba(black, .2);
+                    margin: 0 rem(-7.5px);
+                }
+                &.accent>a {
+                    background: linear-gradient(to left, #6082d7, #e73453);
+                    color: white;
+                    margin: 0 rem(14px);
+                    &:hover {
+                        background: $red;
+                        color: white;
+                    }
+                }
+                display: inline-block;
             }
         }
     }

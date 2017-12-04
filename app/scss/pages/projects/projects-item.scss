@@ -1,11 +1,14 @@
 .projects {
-    &-item {
+    &-wrap {
         padding-left: rem(100px);
+        display: flex;
+        height: inherit;
+    }
+    &-item {
         height: rem(100px);
         transition: $transition;
         overflow: hidden;
         position: relative;
-        display: flex;
         cursor: pointer;
         &.active {
             cursor: inherit;

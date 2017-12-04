@@ -45,6 +45,9 @@
                     border-color: $red;
                     color: $red;
                 }
+                ~&__msg {
+                    display: block;
+                }
                 &__msg {
                     top: 100%;
                 }
@@ -95,5 +98,11 @@ input[type="radio"].form-radio__input {
     }
     &:checked+.form-radio__label {
         background: $violet;
+    }
+}
+
+.card-focus {
+    .invalid__msg {
+        display: block;
     }
 }

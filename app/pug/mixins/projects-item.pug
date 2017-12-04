@@ -3,39 +3,40 @@ mixin projects-item(title, imgUrl, options)
     if options.active
         - cls += ' active'
     li(class=cls)
-        if isArchive
-            .projects__logo
-                img(src="./img/misc/test-logo.png")
-        .projects-pic
-            img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff')
-            if options.immidiately
-                .projects-pic__warning Терміново
-            if options.video
-                span.projects-pic__video.icon.icon-play       
-        .projects-details
-            .projects-desc
-                time(datetime=options.date.slice(6,10)+'-'+options.date.slice(3,5)+'-'+options.date.slice(0,2)+' 00:00').projects__date #{options.date}
-                .projects__title #{title}
-                .projects__text 
-                    block
-                .projects-meta
-                    if options.meta && options.meta.collected
-                        | Зібрано 
-                        span.projects-meta__number #{options.meta.collected}
-                        |  з 
-                        span.projects-meta__number #{options.meta.total}
-                        |  UAH
-                    else
-                        | Допомогли: #{options.meta}
-                        a(href="#").projects-meta-details
-                            span.projects-meta__dot
-                            span.projects-meta__dot
-                            span.projects-meta__dot
-            .projects-help
-                ul.projects-help-list
-                    each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'financial',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteers',icon:'help-heart-sm'}]
-                        li.projects-help-item
-                            a(href="#" data-tab-open=help.id).projects-help__link
-                                .projects-help__name #{help.name}
-                                .projects-help-icon
-                                    span(class="icon icon-" + help.icon)
+        article.projects-wrap
+            if isArchive
+                .projects__logo
+                    img(src="./img/misc/test-logo.png")
+            .projects-pic
+                img(src='https://dummyimage.com/400x200/' + imgUrl + '/fff')
+                if options.immidiately
+                    .projects-pic__warning Терміново
+                if options.video
+                    span.projects-pic__video.icon.icon-play       
+            .projects-details
+                .projects-desc
+                    time(datetime=options.date.slice(6,10)+'-'+options.date.slice(3,5)+'-'+options.date.slice(0,2)+' 00:00').projects__date #{options.date}
+                    .projects__title #{title}
+                    .projects__text 
+                        block
+                    .projects-meta
+                        if options.meta && options.meta.collected
+                            | Зібрано 
+                            span.projects-meta__number #{options.meta.collected}
+                            |  з 
+                            span.projects-meta__number #{options.meta.total}
+                            |  UAH
+                        else
+                            | Допомогли: #{options.meta}
+                            a(href="#").projects-meta-details
+                                span.projects-meta__dot
+                                span.projects-meta__dot
+                                span.projects-meta__dot
+                .projects-help
+                    ul.projects-help-list
+                        each help in [{name:'Зробити',id:'do',icon:'help-hand-sm'},{name:'Фінансова допомога',id:'financial',icon:'help-wallet-sm'},{name:'Матеріальна допомога',id:'material',icon:'help-clothes-sm'},{name:'Волонтери',id:'volunteers',icon:'help-heart-sm'}]
+                            li.projects-help-item
+                                a(href="#" data-tab-open=help.id).projects-help__link
+                                    .projects-help__name #{help.name}
+                                    .projects-help-icon
+                                        span(class="icon icon-" + help.icon)

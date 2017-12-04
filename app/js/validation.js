@@ -15,7 +15,6 @@ const validation = (function () {
             .siblings('.' + options.messageClass)
             .remove();
         if (validation && elName in validation) {
-            console.log(validation[elName])
             $el
                 .addClass(options.invalidClass);
             $el
@@ -146,10 +145,6 @@ const helpFormOptions = function (prefix) {
                 presence: {
                     message: '^Введіть номер телефону'
                 },
-                format: {
-                    pattern: /^[0-9-)(]*$/,
-                    message: '^Для номеру телефону дозволено лише цифри та символи ( ) -'
-                },
                 phoneLength: {
                     message: '^Номер телефону має скаладитсь із 10 цифр'
                 }
@@ -177,10 +172,6 @@ const helpFormOptions = function (prefix) {
             [prefix + 'PostalCode']: {
                 presence: {
                     message: '^Вкажіть поштовий індекс'
-                },
-                format: {
-                    pattern: /^[0-9]*$/,
-                    message: '^Для поштового індексу доступні лише цифри'
                 }
             },
             [prefix + 'CardNumber']: {

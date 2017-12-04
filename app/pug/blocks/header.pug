@@ -18,10 +18,17 @@ header.header
                     - var cls = 'active'
                 else
                     - var cls = ''
-                li
-                    a(href=page.url class=cls) #{page.name}
-            li
-                a(href="./immidiately.html").accent Термінова допомога
+                li.active
+                    if index == navIndex
+                        span #{page.name}
+                    else
+                        a(href=page.url class=cls) #{page.name}
+            if isImmidiately
+                li.active
+                    span Термінова допомога
+            else
+                li.accent
+                    a(href="./immidiately.html") Термінова допомога
     .header-right
         .header-search
             a(href="#").header-search__toggle

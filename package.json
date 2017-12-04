@@ -43,5 +43,7 @@
     "uninstall": "0.0.0",
     "validate.js": "^0.12.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jquery-mask-plugin": "^1.14.12"
+  }
 }

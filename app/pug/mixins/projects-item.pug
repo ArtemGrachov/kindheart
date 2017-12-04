@@ -14,7 +14,7 @@ mixin projects-item(title, imgUrl, options)
                 span.projects-pic__video.icon.icon-play       
         .projects-details
             .projects-desc
-                .projects__date #{options.date}
+                time(datetime=options.date.slice(6,10)+'-'+options.date.slice(3,5)+'-'+options.date.slice(0,2)+' 00:00').projects__date #{options.date}
                 .projects__title #{title}
                 .projects__text 
                     block

@@ -49,11 +49,6 @@
                     top: 100%;
                 }
             }
-            .valid {
-                &~input {
-                    border-color: rgb(73, 107, 48);
-                }
-            }
         }
         &__number {
             width: rem(74px);
@@ -67,6 +62,11 @@
         }
         &__delay {
             width: rem(130px);
+        }
+        .valid {
+            &~input {
+                border-color: rgb(73, 107, 48);
+            }
         }
     }
 }

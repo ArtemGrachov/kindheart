@@ -3,9 +3,11 @@ const modal = (function () {
     return {
         init: function () {
             const _this = this;
-            $('.modal__close').on('click', function (e) {
-                e.preventDefault();
-                _this.close($(e.target.closest('.modal')))
+            $('.modal').on('click', function (e) {
+                if (!$(e.target).closest('.modal-window').length) {
+                    e.preventDefault();
+                    _this.close($(e.target.closest('.modal')))
+                }
             })
         },
         open: function (modalId) {
@@ -33,7 +35,7 @@ const modal = (function () {
                     'animation-name': '',
                     'animation-duration': ''
                 })
-            }, modalAnimDur * 0.8 - 100)
+            }, modalAnimDur * 0.8)
         }
     }
 })();

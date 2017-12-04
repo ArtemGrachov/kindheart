@@ -4,12 +4,12 @@ const initRegForm = function () {
         const cardInputOptions = function (prefix) {
             const cardGroup = $('#' + prefix + 'HelpForm').find('.form-card-group');
             return {
+                numberWrap: cardGroup,
                 numberInput: cardGroup.find('#' + prefix + 'CardNumber'),
                 numberMasks: cardGroup.find('.form-card__number'),
                 numberMaskSelector: '.form-card__number'
             }
         }
-
         formModal.find('.form-file__input').each(function () {
             const $this = $(this);
             $this
@@ -89,14 +89,23 @@ const cardInput = function (options, callback) {
             }
         })
         .keyup(function (e) {
+            console.log('dgedrhe')
             const $this = $(this);
             if (e.key.length === 1 && $this.val().length == 4) {
                 focusNext(e);
             }
-            valueToInput();
         })
         .blur(function (e) {
-            valueToInput();
+            let inCard = false;
+            options.numberMasks.each(function () {
+                if (this === e.relatedTarget) {
+                    inCard = true;
+                    return false;
+                }
+            })
+            if (!inCard) {
+                valueToInput();
+            }
         })
 }
 

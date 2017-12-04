@@ -15,12 +15,13 @@ const validation = (function () {
             .siblings('.' + options.messageClass)
             .remove();
         if (validation && elName in validation) {
+            console.log(validation[elName])
             $el
                 .addClass(options.invalidClass);
             $el
                 .removeClass(options.validClass);
             $el
-                .after('<div class="' + options.messageClass + '">' + validation[elName] + '</div>')
+                .after('<ul class="' + options.messageClass + '">' + validation[elName].map(str => '<li>' + str + '</li>').join('') + '</ul>')
         } else {
             $el
                 .removeClass(options.invalidClass);
@@ -98,6 +99,10 @@ const helpFormOptions = function (prefix) {
                 presence: {
                     message: '^Введіть ім\'я'
                 },
+                format: {
+                    pattern: /^[а-яА-ЯіІїЇёЁa-zA-Z\-]+$/,
+                    message: '^Ім\'я може містити тільки літери або дефіс'
+                },
                 length: {
                     minimum: 2,
                     maximum: 30,
@@ -111,10 +116,12 @@ const helpFormOptions = function (prefix) {
                 length: {
                     minimum: 2,
                     maximum: 30,
-
-
                     message: '^Прізвище має бути в межах між 2 та 30 символами'
                 },
+                format: {
+                    pattern: /^[а-яА-ЯіІїЇёЁa-zA-Z\-]+$/,
+                    message: '^Прізвище може містити тільки літери або дефіс'
+                }
             },
             [prefix + 'Org']: {
                 presence: {
@@ -170,6 +177,10 @@ const helpFormOptions = function (prefix) {
             [prefix + 'PostalCode']: {
                 presence: {
                     message: '^Вкажіть поштовий індекс'
+                },
+                format: {
+                    pattern: /^[0-9]*$/,
+                    message: '^Для поштового індексу доступні лише цифри'
                 }
             },
             [prefix + 'CardNumber']: {

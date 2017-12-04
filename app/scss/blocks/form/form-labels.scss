@@ -23,6 +23,7 @@
             width: rem(200px);
             display: inline-block;
             margin-right: rem(16px);
+            position: relative;
             &:last-child {
                 margin-right: 0;
             }
@@ -35,9 +36,40 @@
 
 .invalid {
     &__msg {
-        margin-top: rem(5px);
-        color: $red;
+        margin: rem(5px) 0 0;
+        padding: rem(5px);
+        list-style: none;
+        color: white;
+        display: none;
+        font-family: 'GeometriaBold';
         position: absolute;
-        width: 100%;
+        background: $red;
+        border-radius: rem(5px);
+        box-shadow: rem(2px) rem(2px) rem(4px) rem(2px) rgba($red, .2);
+        border: rem(1px) solid $red;
+        z-index: 100;
+        li {
+            margin-bottom: rem(10px);
+            &:before {
+                content: '!';
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                border-radius: 50%;
+                background: white;
+                color: $red;
+                text-align: center;
+                font-family: 'GeometriaBold';
+                margin-right: rem(5px);
+            }
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+    &:focus {
+        ~.invalid__msg {
+            display: block;
+        }
     }
 }

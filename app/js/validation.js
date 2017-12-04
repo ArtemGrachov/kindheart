@@ -1,9 +1,10 @@
 const validation = (function () {
     const validateForm = function (form, options) {
-        const validation = validate(form, options.constraints);
+        const validation = validate(form, getConstraints(options));
         form.serializeArray().forEach(
             el => validateInput(el.name, validation, options)
         )
+        console.log(validation)
         if (validation) {
             return false;
         }
@@ -31,6 +32,12 @@ const validation = (function () {
     const submitAccess = function (submit, validation) {
         validation ? submit.attr('disabled', true) : submit.removeAttr('disabled')
     }
+    const getConstraints = function (options) {
+        if (options.additionalConstraints) {
+            return Object.assign(options.constraints, options.additionalConstraints())
+        }
+        return options.constraints;
+    }
     return {
         init: function (form) {
             const formEl = $('#' + form.id),
@@ -44,7 +51,8 @@ const validation = (function () {
                     validateInput: function (elName) {
                         const validation = validate(
                             this.form,
-                            this.options.constraints)
+                            getConstraints(this.options))
+
                         validateInput(elName,
                             validation,
                             this.options)
@@ -57,7 +65,7 @@ const validation = (function () {
                     validateInputs: function (elNames) {
                         const validation = validate(
                             this.form,
-                            this.options.constraints)
+                            getConstraints(this.options))
                         elNames.forEach(elName => {
                             validateInput(elName,
                                 validation,
@@ -93,6 +101,7 @@ const helpFormOptions = function (prefix) {
         invalidClass: 'invalid',
         messageClass: 'invalid__msg',
         submitSelector: '.form-submit>button',
+        additionalConstraints: helpFormAdditional,
         constraints: {
             [prefix + 'Firstname']: {
                 presence: {
@@ -202,9 +211,14 @@ const helpFormOptions = function (prefix) {
                 },
                 format: {
                     pattern: /^[0-9]{3,4}$/,
-                    message: '^Вакжіть CVC/CVV у коректному форматі'
+                    message: '^Вкажіть CVC/CVV у коректному форматі'
                 }
             }
         }
     }
+}
+
+const helpFormAdditional = function () {
+
+    return {}
 }

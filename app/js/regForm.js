@@ -54,6 +54,7 @@ const initRegForm = function () {
         })
         $('#physPhone').mask('(000) 000-00-00');
         $('#jurPhone').mask('(000) 000-00-00');
+
     }
 }
 
@@ -158,10 +159,26 @@ const openRegForm = function (help) {
     const id = 'modalHelpForm';
     modal.open(id);
     const formModal = $('#' + id);
+    // toggleActiveFieldset = function (tabs, index) {
+    //     tabs
+    //         .find('.form-tabs-fieldset')
+    //         .attr('disabled', true);
+    //     tabs
+    //         .find('.form-tabs-fieldset')
+    //         .eq(index)
+    //         .attr('disabled', false);
+    // }
     formModal.find('.form-tabs').each(function () {
+        const $this = $(this);
         tabs.setActive(
-            $(this),
+            $this,
             help ? formModal.find(`#${help}Tab`).index() : 0
         );
+        // toggleActiveFieldset($this, $this.find('.form-tabs-btns>.active').index());
+        // $this
+        //     .find('.form-tabs-btns>li')
+        //     .on('click', function () {
+        //         toggleActiveFieldset($this, $(this).index())
+        //     })
     })
 }

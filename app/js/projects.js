@@ -24,7 +24,7 @@ const projects = (function () {
                     const _this = this;
                     clickBindings.push(
                         $(window).on('click', function (e) {
-                            if (!e.target.closest('.projects-filter')) {
+                            if (!(e.target || e.srcElement).closest('.projects-filter')) {
                                 $('.projects-filter').each(function () {
                                     _this.close($(this))
                                 })
@@ -38,17 +38,18 @@ const projects = (function () {
                 },
                 open: function (filter) {
                     const _this = this;
+                    _this.addClickListener();
                     filter
                         .find('.projects-filter-dropdown')
                         .slideDown(slideSpeed, function () {
                             filter.addClass('active');
                             $(this).removeAttr('style');
-                            _this.addClickListener();
                         });
                 },
                 close: function (filter) {
                     const _this = this;
                     filter.find('.projects-filter-dropdown')
+                        .stop()
                         .slideUp(slideSpeed / 2, function () {
                             filter.removeClass('active');
                             $(this).removeAttr('style');

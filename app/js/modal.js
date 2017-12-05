@@ -4,9 +4,10 @@ const modal = (function () {
         init: function () {
             const _this = this;
             $('.modal').on('click', function (e) {
-                if (!$(e.target).closest('.modal-window').length) {
+                const target = $(e.target || e.srcElement);
+                if (!target.closest('.modal-window').length) {
                     e.preventDefault();
-                    _this.close($(e.target.closest('.modal')))
+                    _this.close($(target.closest('.modal')))
                 }
             })
         },

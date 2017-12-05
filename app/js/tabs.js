@@ -31,21 +31,30 @@ const tabs = (function () {
                 newPage = $(tabEls.tabPages.eq(index));
             activePage.finish();
             newPage.finish();
-            activePage.fadeOut(200, () => {
-                newPage.fadeIn(200, () => {
-                    activePage.removeAttr('style');
-                    newPage.removeAttr('style');
-                });
-                $(tabEls.navBtns.eq(index))
-                    .addClass('active')
-                    .siblings()
-                    .removeClass('active');
-                newPage
-                    .addClass('active')
-                    .siblings()
-                    .removeClass('active')
+            $(tabEls.navBtns.eq(index))
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+            newPage
+                .addClass('active')
+                .siblings()
+                .removeClass('active');
+            const animSpeed = 200;
+            activePage.css({
+                'display': 'block'
+            });
+            newPage.css({
+                'display': 'none'
             })
-
+            activePage.fadeOut(animSpeed, () => {
+                newPage.fadeIn(animSpeed);
+                activePage.css({
+                    'display': ''
+                });
+                newPage.css({
+                    'display': ''
+                });
+            })
         },
         setActive: function (tabs, index) {
             const tabEls = getTabEls(tabs);

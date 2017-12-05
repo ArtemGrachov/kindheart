@@ -193,43 +193,48 @@ const helpFormOptions = function (prefix) {
 
 const helpFormAdditional = function (prefix) {
     console.log('called additional constraints')
-    const activeHelpPage = $('.modal-tabs>.tabs-list>.active').find('.form-tabs-list>li.active');
-    const additionalConstraints = [{
 
-    }, (function () {
-        return {
-            [prefix + 'CardNumber']: {
-                presence: {
-                    message: '^Вкажіть номер карти'
+    console.log($('.modal-tabs>.tabs-list').find('fieldset'));
+
+    const activeHelpPage = $('.modal-tabs>.tabs-list>.active')
+        .find('.form-tabs-list>li.active'),
+        additionalConstraints = [{
+
+        }, (function () {
+            return {
+                [prefix + 'CardNumber']: {
+                    presence: {
+                        message: '^Вкажіть номер карти'
+                    },
+                    format: {
+                        pattern: /^4+[0-9]*$/,
+                        message: '^Номер карти має починатися з 4 та може містити тільки цифри'
+                    },
+                    length: {
+                        is: 16,
+                        message: '^Номер карти має містити 16 цифр'
+                    }
                 },
-                format: {
-                    pattern: /^4+[0-9]*$/,
-                    message: '^Номер карти має починатися з 4 та може містити тільки цифри'
+                [prefix + 'CardExpiration']: {
+                    presence: {
+                        message: '^Вкажіть термін дії карти'
+                    },
+                    format: {
+                        pattern: /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/,
+                        message: '^Введіть термін дії у коректному форматі'
+                    }
                 },
-                length: {
-                    is: 16,
-                    message: '^Номер карти має містити 16 цифр'
-                }
-            },
-            [prefix + 'CardExpiration']: {
-                presence: {
-                    message: '^Вкажіть термін дії карти'
-                },
-                format: {
-                    pattern: /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/,
-                    message: '^Введіть термін дії у коректному форматі'
-                }
-            },
-            [prefix + 'CardCvc']: {
-                presence: {
-                    message: '^Вкажіть CVC/CVV карти'
-                },
-                format: {
-                    pattern: /^[0-9]{3,4}$/,
-                    message: '^Вкажіть CVC/CVV у коректному форматі'
+                [prefix + 'CardCvc']: {
+                    presence: {
+                        message: '^Вкажіть CVC/CVV карти'
+                    },
+                    format: {
+                        pattern: /^[0-9]{3,4}$/,
+                        message: '^Вкажіть CVC/CVV у коректному форматі'
+                    }
                 }
             }
-        }
-    })(), {}, {}]
+        })(), {}, {}]
+    console.log(activeHelpPage);
     return additionalConstraints[activeHelpPage.index()]
 }

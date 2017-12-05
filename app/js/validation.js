@@ -4,7 +4,6 @@ const validation = (function () {
         form.serializeArray().forEach(
             el => validateInput(el.name, validation, options)
         )
-        console.log(validation)
         if (validation) {
             return false;
         }
@@ -33,8 +32,9 @@ const validation = (function () {
         validation ? submit.attr('disabled', true) : submit.removeAttr('disabled')
     }
     const getConstraints = function (options) {
+        console.log('called getContraints');
         if (options.additionalConstraints) {
-            return Object.assign(options.constraints, options.additionalConstraints())
+            return Object.assign({}, options.constraints, options.additionalConstraints())
         }
         return options.constraints;
     }
@@ -48,11 +48,15 @@ const validation = (function () {
                     validateForm: function () {
                         return validateForm(this.form, this.options)
                     },
+                    submitAccess: function () {
+                        submitAccess(this.submitBtn, validate(
+                            this.form,
+                            getConstraints(this.options, this.options)))
+                    },
                     validateInput: function (elName) {
                         const validation = validate(
                             this.form,
                             getConstraints(this.options))
-
                         validateInput(elName,
                             validation,
                             this.options)
@@ -101,7 +105,7 @@ const helpFormOptions = function (prefix) {
         invalidClass: 'invalid',
         messageClass: 'invalid__msg',
         submitSelector: '.form-submit>button',
-        additionalConstraints: helpFormAdditional,
+        additionalConstraints: () => helpFormAdditional(prefix),
         constraints: {
             [prefix + 'Firstname']: {
                 presence: {
@@ -182,7 +186,18 @@ const helpFormOptions = function (prefix) {
                 presence: {
                     message: '^Вкажіть поштовий індекс'
                 }
-            },
+            }
+        }
+    }
+}
+
+const helpFormAdditional = function (prefix) {
+    console.log('called additional constraints')
+    const activeHelpPage = $('.modal-tabs>.tabs-list>.active').find('.form-tabs-list>li.active');
+    const additionalConstraints = [{
+
+    }, (function () {
+        return {
             [prefix + 'CardNumber']: {
                 presence: {
                     message: '^Вкажіть номер карти'
@@ -215,10 +230,6 @@ const helpFormOptions = function (prefix) {
                 }
             }
         }
-    }
-}
-
-const helpFormAdditional = function () {
-
-    return {}
+    })(), {}, {}]
+    return additionalConstraints[activeHelpPage.index()]
 }

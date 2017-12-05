@@ -80,6 +80,10 @@ input {
     &.valid {
         border-color: #496b30;
     }
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
     &[type="checkbox"],
     &[type="radio"] {
         display: none;

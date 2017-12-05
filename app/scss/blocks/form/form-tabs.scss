@@ -68,16 +68,12 @@
         }
         &-list {
             @extend %list;
+            border-radius: rem(15px);
+            border: rem(1px) solid $lightblue;
+            padding: rem(16px) rem(20px) rem(20px) rem(19px);
+            background: white;
             &>li {
-                display: none;
-                border-radius: rem(15px);
-                border: rem(1px) solid $lightblue;
-                padding: rem(16px) rem(20px) rem(20px) rem(19px);
-                background: white;
                 @extend %clearfix;
-                &.active {
-                    display: block;
-                }
             }
         }
         &__label {

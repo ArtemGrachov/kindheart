@@ -1,5 +1,5 @@
 .body-danger {
-    background-image: svg('<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="800" viewBox="0 0 1440 800"><defs><linearGradient id="a" x1="26.228%" x2="131.911%" y1="82.733%" y2="-17.138%"><stop offset="0%" stop-color="#E53656"/><stop offset="100%" stop-color="#6082D8"/></linearGradient></defs><path fill="url(#a)" fill-rule="evenodd" d="M0 0h1440v800H0z"/></svg>');
+    background-image: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' width='1440' height='800' viewBox='0 0 1440 800'%3E    %3Cdefs%3E        %3ClinearGradient id='a' x1='26.228%25' x2='131.911%25' y1='82.733%25' y2='-17.138%25'%3E            %3Cstop offset='0%25' stop-color='%23E53656'/%3E            %3Cstop offset='100%25' stop-color='%236082D8'/%3E        %3C/linearGradient%3E    %3C/defs%3E    %3Cpath fill='url(%23a)' fill-rule='evenodd' d='M0 0h1440v800H0z'/%3E%3C/svg%3E");
     .header-nav li .accent {
         background: rgba(black, .2);
     }

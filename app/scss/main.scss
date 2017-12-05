@@ -42,9 +42,9 @@ $pseudoblur: rgba(#7F8CAA,
 0.9);
 $red:#e63554;
 @import './_mixins.scss';
-@import './icons/icons.scss';
 @import './tags.scss';
 @import './style.scss';
+@import './sprites/sprites.scss';
 @import './elements/socials.scss';
 @import './elements/search.scss';
 @import './elements/feedback.scss';

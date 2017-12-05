@@ -1,0 +1,67 @@
+.icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    &-help {
+        &-clothes,
+        &-clothes-sm {
+            width: 1.45em;
+            height: 1.45em;
+        }
+        &-heart-sm {
+            @extend .icon-help-heart-white;
+        }
+    }
+    &-webmoney {
+        width: 2.45em;
+    }
+    &-visa {
+        width: 1.55em;
+        height: 1.55em;
+    }
+    &-terminals {
+        width: 1.25em;
+        height: 1.25em;
+    }
+    &-mastercard {
+        width: 1.32em;
+        height: 1.32em;
+    }
+    &-soc {
+        &-facebook {
+            height: .9em;
+            width: .9em;
+        }
+        &-vkontakte {
+            width: 1.45em;
+            height: 1.45em;
+        }
+    }
+}
+
+.form-tabs-btns {
+    &>li.active {
+        .icon {
+            &-help {
+                &-clothes {
+                    @extend .icon-help-clothes-white;
+                }
+                &-heart {
+                    @extend .icon-help-heart-white;
+                }
+                &-hand {
+                    @extend .icon-help-hand-white;
+                }
+                &-wallet {
+                    @extend .icon-help-wallet-white;
+                }
+            }
+        }
+    }
+}
+
+@import './_generated.scss';

@@ -54,6 +54,8 @@ const initRegForm = function () {
         })
         $('#physPhone').mask('(000) 000-00-00');
         $('#jurPhone').mask('(000) 000-00-00');
+        $('#physCardExpiration').mask('00/0000');
+        $('#jurCardExpiration').mask('00/0000');
         const toggleActiveFieldset = function (tabs, index) {
             tabs
                 .find('.form-tabs-fieldset')

@@ -23,23 +23,30 @@
             border-bottom: rem(1px) solid rgba(#d8d8d8, .5);
             text-align: left;
             position: relative;
-            &:before {
-                height: 100%;
-                width: 0;
-                content: '';
-                display: inline-block;
-                vertical-align: middle;
-            }
         }
     }
     &__label {
-        color: white;
-        margin: 0 rem(36px) 0 rem(14px);
-        font-size: rem(12px);
-        font-family: 'Geometria';
-        font-weight: bold;
+        height: 100%;
+        width: 100%;
         vertical-align: middle;
         display: inline-block;
+        &:after {
+            height: 100%;
+            width: 0;
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    &__filtername {
+        padding-top: rem(1px);
+        vertical-align: middle;
+        font-family: 'Geometria';
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+        font-size: rem(12px);
+        margin: 0 rem(36px) 0 rem(14px);
     }
     &__toggle {
         background: none;
@@ -66,7 +73,7 @@
         color: white;
         font-family: 'Geometria';
         font-weight: bold;
-        padding: rem(9px);
+        padding: rem(9px)rem(9px)rem(8px);
         font-size: rem(12px);
         &:hover {
             background: rgba(white, .2);
@@ -100,7 +107,7 @@ input[type="checkbox"].projects-filter__checkbox {
             border-radius: 50%;
             position: absolute;
             top: 50%;
-            right: rem(16px);
+            right: rem(15px);
             transform: translateY(-50%);
             margin: 0;
             border: none;

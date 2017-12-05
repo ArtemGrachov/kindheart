@@ -32,7 +32,6 @@ const validation = (function () {
         validation ? submit.attr('disabled', true) : submit.removeAttr('disabled')
     }
     const getConstraints = function (options) {
-        console.log('called getContraints');
         if (options.additionalConstraints) {
             return Object.assign({}, options.constraints, options.additionalConstraints())
         }
@@ -192,15 +191,10 @@ const helpFormOptions = function (prefix) {
 }
 
 const helpFormAdditional = function (prefix) {
-    console.log('called additional constraints')
-
-    console.log($('.modal-tabs>.tabs-list').find('fieldset'));
-
     const activeHelpPage = $('.modal-tabs>.tabs-list>.active')
-        .find('.form-tabs-list>li.active'),
-        additionalConstraints = [{
-
-        }, (function () {
+        .find('.form-tabs-list>li.active');
+    const additionalConstraints = {
+        financialTab: (function () {
             return {
                 [prefix + 'CardNumber']: {
                     presence: {
@@ -234,7 +228,45 @@ const helpFormAdditional = function (prefix) {
                     }
                 }
             }
-        })(), {}, {}]
-    console.log(activeHelpPage);
-    return additionalConstraints[activeHelpPage.index()]
+        })(),
+        doTab: (function () {
+            return {
+                [prefix + 'DoTest1']: {
+                    presence: {
+                        message: '^Вкажіть тестове поле "Зробити" 1'
+                    }
+                },
+                [prefix + 'DoTest2']: {
+                    presence: {
+                        message: '^Вкажіть тестове поле"Зробити" 2'
+                    }
+                },
+            }
+        })(),
+        materialTab: (function () {
+            return {
+                [prefix + 'MatTest1']: {
+                    presence: {
+                        message: '^Вкажіть тестове поле мат. допомоги 1'
+                    }
+                },
+                [prefix + 'MatTest2']: {
+                    presence: {
+                        message: '^Вкажіть тестове поле мат. допомоги 2'
+                    }
+                },
+                [prefix + 'MatTest3']: {
+                    format: {
+                        pattern: /^[A-Z]*$/,
+                        message: '^Тільки великі латинські літери'
+                    },
+                    presence: {
+                        message: '^Вкажіть тестове поле мат. допомоги 3'
+                    }
+                },
+            }
+        })(),
+        volunteersTab: {}
+    }
+    return additionalConstraints[activeHelpPage.attr('id')]
 }

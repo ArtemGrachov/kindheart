@@ -4,18 +4,18 @@
     +form-tabs([{icon:'help-hand',name:'Зробити'},{icon:'help-wallet',name:'Фінансова допомога'},{icon:'help-clothes',name:'Матеріальна допомога'},{icon:'help-heart',name:'Волонтерство'}])
         li(id='doTab')
             fieldset.form-tabs-fieldset
-                h2 Зробити
-                | Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+                +form-group({name:'Тестове поле 1',id:prefix + 'DoTest1'})
+                +form-group({name:'Тестове поле 2',id:prefix + 'DoTest2'})
         li(id='financialTab')
             fieldset.form-tabs-fieldset
                 include ./form-pay.pug
         li(id='materialTab')
             fieldset.form-tabs-fieldset
                 h2 Матеріальна допомога
-                | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
-                | #3 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+                +form-group({name:'Тестове поле 1',id:prefix + 'MatTest1'})
+                +form-group({name:'Тестове поле 2',id:prefix + 'MatTest2'})
+                +form-group({name:'Тестове поле 3',id:prefix + 'MatTest3'})
         li(id='volunteersTab')
             fieldset.form-tabs-fieldset
                 h2 Волонтерство
-                | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
-                | #4Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ducimus sint soluta optio! Iure sunt nostrum ut eligendi ipsam deserunt totam! Iure quidem, quae tenetur nulla doloremque maxime veniam aut! Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit possimus labore, quia qui in ipsa laboriosam, cum ut dolore dicta nesciunt id excepturi reprehenderit. Rem, nulla! Quia dignissimos eum veritatis.
+                | Жодних полів, форма має бути валідною, коли будуть заповнені поля вгорі.

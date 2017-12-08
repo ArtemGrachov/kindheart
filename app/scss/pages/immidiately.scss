@@ -26,6 +26,9 @@
         &-filter-dropdown {
             background: #9450AC;
         }
+        &-help-icon {
+            background: #8492f3;
+        }
     }
     .header-nav-list {
         a {
@@ -36,5 +39,8 @@
     }
     .red {
         color: white;
+    }
+    input[type=checkbox].projects-filter__checkbox:checked+label:before {
+        background: $red;
     }
 }

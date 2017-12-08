@@ -33,10 +33,13 @@ const initRegForm = function () {
         cardInput(cardInputOptions('jur'), () => jurValidator.validateInput('jurCardNumber'))
         cardInput(cardInputOptions('phys'), () => physValidator.validateInput('physCardNumber'))
         $('#jurHelpForm').submit(function (e) {
+            console.log(this);
             e.preventDefault();
             if (jurValidator.validateForm()) {
                 console.log('Form is valid');
-                jurValidator.submitBtn.attr('disabled', true)
+                jurValidator.submitBtn.attr('disabled', true);
+                resetForm(this);
+                modal.close($('#modalHelpForm'));
             } else {
                 console.log('Form is invalid');
             }
@@ -46,12 +49,27 @@ const initRegForm = function () {
             e.preventDefault();
             if (physValidator.validateForm()) {
                 console.log('Form is valid');
-                physValidator.submitBtn.attr('disabled', true)
+                physValidator.submitBtn.attr('disabled', true);
+                resetForm(this);
+                modal.close($('#modalHelpForm'));
             } else {
                 console.log('Form is invalid');
             }
             console.log($(this).serializeArray());
         })
+
+        const resetForm = function () {
+            [document.getElementById('physHelpForm'), document.getElementById('jurHelpForm')].forEach(form => {
+                form.reset();
+                $(form).serializeArray().forEach(
+                    el => {
+                        $('#' + el.name)
+                            .removeClass('invalid')
+                            .removeClass('valid')
+                    }
+                )
+            })
+        }
         $('#physPhone').mask('(000) 000-00-00');
         $('#jurPhone').mask('(000) 000-00-00');
         $('#physCardExpiration').mask('00/0000');

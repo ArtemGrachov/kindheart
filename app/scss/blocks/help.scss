@@ -3,7 +3,7 @@
         @extend %list;
         display: flex;
         justify-content: space-between;
-        margin: rem(51px) rem(45px) 0 rem(63px);
+        margin: rem(51px) rem(45px) rem(51px) rem(63px);
     }
     &-item {
         @extend %clearfix;

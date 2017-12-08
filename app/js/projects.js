@@ -21,19 +21,19 @@ const projects = (function () {
                     })
                 },
                 addClickListener: function () {
-                    const _this = this;
+                    const _this = this,
+                        callback = function () {
+                            $('.projects-filter').each(function () {
+                                _this.close($(this))
+                            })
+                        }
                     clickBindings.push(
-                        $(window).on('click', function (e) {
-                            if (!(e.target || e.srcElement).closest('.projects-filter')) {
-                                $('.projects-filter').each(function () {
-                                    _this.close($(this))
-                                })
-                            }
-                        }))
+                        outsideClick.addListener('.projects-filter', callback)
+                    )
                 },
                 removeClickListener: function () {
                     clickBindings.forEach(bind => {
-                        bind.unbind();
+                        outsideClick.removeListener(bind);
                     })
                 },
                 open: function (filter) {

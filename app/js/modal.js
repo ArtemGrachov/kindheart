@@ -14,6 +14,7 @@ const modal = (function () {
         open: function (modalId) {
             const modal = $('#' + modalId);
             modal.addClass('active');
+            modal.scrollTop(0);
             modal.find('.modal-wrap').css({
                 'animation-name': 'modalOpen',
                 'animation-duration': modalAnimDur + 'ms'

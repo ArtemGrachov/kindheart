@@ -6,7 +6,7 @@
         }
         &__logo {
             font-size: rem(18px);
-            font-family: 'GilroyExtraBold';
+            font-family: 'Gilroy';
             font-weight: 800;
             height: rem(51px);
             &:before {
@@ -18,7 +18,7 @@
             }
             .icon {
                 font-size: rem(31px);
-                .icon+.icon {
+                &+.icon {
                     margin-left: rem(20px);
                 }
             }

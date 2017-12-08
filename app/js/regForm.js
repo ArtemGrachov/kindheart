@@ -38,7 +38,6 @@ const initRegForm = function () {
             if (jurValidator.validateForm()) {
                 console.log('Form is valid');
                 jurValidator.submitBtn.attr('disabled', true);
-                resetForm(this);
                 modal.close($('#modalHelpForm'));
             } else {
                 console.log('Form is invalid');
@@ -50,7 +49,6 @@ const initRegForm = function () {
             if (physValidator.validateForm()) {
                 console.log('Form is valid');
                 physValidator.submitBtn.attr('disabled', true);
-                resetForm(this);
                 modal.close($('#modalHelpForm'));
             } else {
                 console.log('Form is invalid');
@@ -58,31 +56,11 @@ const initRegForm = function () {
             console.log($(this).serializeArray());
         })
 
-        const resetForm = function () {
-            [document.getElementById('physHelpForm'), document.getElementById('jurHelpForm')].forEach(form => {
-                form.reset();
-                $(form).serializeArray().forEach(
-                    el => {
-                        $('#' + el.name)
-                            .removeClass('invalid')
-                            .removeClass('valid')
-                    }
-                )
-            })
-        }
         $('#physPhone').mask('(000) 000-00-00');
         $('#jurPhone').mask('(000) 000-00-00');
         $('#physCardExpiration').mask('00/0000');
         $('#jurCardExpiration').mask('00/0000');
-        const toggleActiveFieldset = function (tabs, index) {
-            tabs
-                .find('.form-tabs-fieldset')
-                .attr('disabled', true);
-            tabs
-                .find('.form-tabs-fieldset')
-                .eq(index)
-                .attr('disabled', false);
-        }
+
         formModal.find('.form-tabs').each(function () {
             const $this = $(this);
             toggleActiveFieldset($this, $this.find('.form-tabs-btns>.active').index());
@@ -96,6 +74,16 @@ const initRegForm = function () {
                 })
         })
     }
+}
+
+const toggleActiveFieldset = function (tabs, index) {
+    tabs
+        .find('.form-tabs-fieldset')
+        .attr('disabled', true);
+    tabs
+        .find('.form-tabs-fieldset')
+        .eq(index)
+        .attr('disabled', false);
 }
 
 const cardInput = function (options, callback) {
@@ -198,12 +186,24 @@ const autocompleteRegForm = function (prefix, validator) {
 const openRegForm = function (help) {
     const id = 'modalHelpForm';
     modal.open(id);
-    const formModal = $('#' + id);
+    const formModal = $('#' + id),
+        activeTabIndex = help ? formModal.find(`#${help}Tab`).index() : 0
     formModal.find('.form-tabs').each(function () {
         const $this = $(this);
         tabs.setActive(
             $this,
-            help ? formModal.find(`#${help}Tab`).index() : 0
+            activeTabIndex
         );
+        toggleActiveFieldset($(this), activeTabIndex);
+    })
+    formModal.find('form').each(function () {
+        this.reset();
+        $(this).serializeArray().forEach(
+            el => {
+                $('#' + el.name)
+                    .removeClass('invalid')
+                    .removeClass('valid')
+            }
+        )
     })
 }

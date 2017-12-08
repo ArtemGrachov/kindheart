@@ -1,6 +1,7 @@
 .header {
     position: relative;
     font-family: 'Geometria';
+    font-weight: normal;
     @extend %clearfix;
     text-align: center;
     padding: rem(17px) rem(30px) 0;
@@ -56,7 +57,8 @@
             li {
                 >a,
                 >span {
-                    font-family: 'GeometriaExtraBold';
+                    font-family: 'Geometria';
+                    font-weight: 800;
                     font-size: rem(14px);
                     opacity: 1;
                     display: block;

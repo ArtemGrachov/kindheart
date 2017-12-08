@@ -39,7 +39,8 @@
             left: rem(10px);
             bottom: rem(10px);
             background-image: linear-gradient(to left, #6082d7, #e73453);
-            font-family: 'GeometriaExtraBold';
+            font-family: 'Geometria';
+            font-weight: 800;
             font-size: rem(14px);
             padding: rem(4px);
         }
@@ -86,7 +87,8 @@
         display: block;
     }
     &__title {
-        font-family: 'GeometriaExtraBold';
+        font-family: 'Geometria';
+        font-weight: 800;
         font-size: rem(18px);
         margin-bottom: rem(9px);
         white-space: nowrap;
@@ -135,7 +137,9 @@
             text-align: center;
             color: white;
             font-size: rem(18px);
-            font-family: 'GeometriaExtraBold';
+            font-family: 'Geometria';
+            font-weight: 800;
+            ;
             &:hover {
                 background: rgba(white, .2);
                 color: white;
@@ -147,7 +151,8 @@
         }
         &__number {
             color: $red;
-            font-family: 'GilroyExtraBold';
+            font-family: 'Gilroy';
+            font-weight: 800;
             margin: 0 rem(6px);
         }
     }

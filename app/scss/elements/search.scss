@@ -24,12 +24,14 @@
     }
     &__label {
         font-size: rem(18px);
-        font-family: 'GeometriaBold';
+        font-family: 'Geometria';
+        font-weight: bold;
         color: #2e3f69;
         margin-left: rem(4px);
     }
     &__input {
         font-family: 'Geometria';
+        font-weight: normal;
         font-size: rem(40px);
         background: none;
         border: none;
@@ -67,6 +69,7 @@
         width: rem(290px);
         float: left;
         font-family: 'Geometria';
+        font-weight: normal;
         font-size: rem(24px);
         padding-top: rem(28px);
     }
@@ -74,6 +77,7 @@
         float: left;
         &__title {
             font-family: 'Geometria';
+            font-weight: normal;
             font-size: rem(18px);
             margin-bottom: rem(19px);
         }

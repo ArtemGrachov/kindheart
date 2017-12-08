@@ -14,7 +14,6 @@ a {
     font-family: 'Geometria';
     color: $blue;
     font-weight: bold;
-    font-weight: normal;
     &:hover,
     &:focus {
         color: $violet;
@@ -143,7 +142,8 @@ td {
 }
 
 th {
-    font-family: 'GeometriaBold';
+    font-family: 'Geometria';
+    font-weight: bold;
     color: $darkblue;
 }
 
@@ -155,5 +155,7 @@ caption {
     padding: rem(10px);
     font-size: rem(18px);
     color: $darkblue;
-    font-family: 'GeometriaExtraBold';
+    font-family: 'Geometria';
+    font-weight: 800;
+    ;
 }

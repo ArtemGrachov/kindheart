@@ -41,7 +41,8 @@
         list-style: none;
         color: white;
         display: none;
-        font-family: 'GeometriaBold';
+        font-family: 'Geometria';
+        font-weight: bold;
         position: absolute;
         background: $red;
         border-radius: rem(5px);
@@ -59,7 +60,8 @@
                 background: white;
                 color: $red;
                 text-align: center;
-                font-family: 'GeometriaBold';
+                font-family: 'Geometria';
+                font-weight: bold;
                 margin-right: rem(5px);
             }
             &:last-child {

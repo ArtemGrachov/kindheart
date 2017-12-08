@@ -18,10 +18,11 @@ header.header
                     - var cls = 'active'
                 else
                     - var cls = ''
-                li.active
-                    if index == navIndex
-                        span #{page.name}
-                    else
+                if index == navIndex
+                    li.active
+                            span #{page.name}
+                else
+                    li
                         a(href=page.url class=cls) #{page.name}
             if isImmidiately
                 li.active

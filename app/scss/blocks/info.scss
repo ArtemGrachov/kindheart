@@ -1,7 +1,8 @@
 .info {
     &-list {
         @extend %list;
-        font-family: 'GeometriaLight';
+        font-family: 'Geometria';
+        font-weight: 300;
         font-size: rem(16px);
         margin: rem(20px) 0;
         li {

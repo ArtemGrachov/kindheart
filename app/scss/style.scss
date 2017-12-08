@@ -10,7 +10,8 @@ html {
 }
 
 body {
-    font-family: 'GilroyLight';
+    font-family: 'Gilroy';
+    font-weight: 300;
     font-size: rem(14px);
     text-align: left;
     letter-spacing: .003em;
@@ -26,9 +27,9 @@ body {
 }
 
 %title {
-    font-family: 'GeometriaExtraBold';
+    font-family: 'Geometria';
+    font-weight: 800;
     color: $darkblue;
-    font-weight: normal;
     text-align: center;
 }
 
@@ -42,19 +43,20 @@ body {
     &_sm {
         font-size: rem(26px);
     }
-    font-weight: normal;
 }
 
 .subtitle {
     font-size: rem(18px);
-    font-family: 'GilroyLight';
+    font-family: 'Gilroy';
+    font-weight: 300;
     text-align: center;
     font-weight: normal;
 }
 
 .btn {
     background: rgba(black, .2);
-    font-family: 'GeometriaBold';
+    font-family: 'Geometria';
+    font-weight: bold;
     font-size: rem(14px);
     border: none;
     border-radius: rem(5px);
@@ -67,7 +69,8 @@ body {
         background-color: rgba(white, .2);
     }
     &-lg {
-        font-family: 'GeometriaExtraBold';
+        font-family: 'Geometria';
+        font-weight: 800;
         font-size: rem(18px);
         color: white;
         box-shadow: 0 0 rem(15px) rem(5px) rgba(#e53656, 0.4);

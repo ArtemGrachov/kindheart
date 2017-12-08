@@ -144,8 +144,8 @@ const cardInput = function (options, callback) {
 const autocompleteRegForm = function (prefix, validator) {
     const autoComplete = new google.maps.places.Autocomplete(document.getElementById(prefix + 'Address'));
     google.maps.event.addListener(autoComplete, 'place_changed', function () {
-        const place = autoComplete.getPlace();
         let form = {};
+        console.log(autoComplete.getPlace());
         autoComplete.getPlace().address_components.forEach(component => {
             switch (component.types[0]) {
                 case 'country':

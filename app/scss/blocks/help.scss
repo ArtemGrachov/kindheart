@@ -32,7 +32,8 @@
         align-items: flex-start;
         flex-direction: column;
         &__text {
-            font-family: 'GeometriaExtraBold';
+            font-family: 'Geometria';
+            font-weight: 800;
             font-size: rem(18px);
             color: $darkblue;
             display: inline-block;

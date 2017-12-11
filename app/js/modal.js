@@ -1,8 +1,10 @@
 const modal = (function () {
     const modalAnimDur = 500;
+    let scrolBarWidth = 0;
     return {
         init: function () {
             const _this = this;
+            scrolBarWidth = getScrollBarWidth();
             $('.modal').on('click', function (e) {
                 const target = $(e.target || e.srcElement);
                 if (!target.closest('.modal-window').length) {
@@ -19,13 +21,25 @@ const modal = (function () {
                 'animation-name': 'modalOpen',
                 'animation-duration': modalAnimDur + 'ms'
             })
+            modal.css({
+                'overflow-y': 'hidden',
+                'padding-right': scrolBarWidth + 'px'
+            })
+            setTimeout(() => {
+                modal.css({
+                    'overflow-y': '',
+                    'padding-right': ''
+                })
+            }, modalAnimDur)
             $('.wrapper').addClass('wrapper_blur');
         },
         close: function (modal) {
             modal.removeClass('active');
             $('.wrapper').removeClass('wrapper_blur');
             modal.css({
-                'display': 'block'
+                'display': 'block',
+                'padding-right': scrolBarWidth + 'px',
+                'overflow-y': 'hidden'
             })
             modal.find('.modal-wrap').css({
                 'animation-name': 'modalClose',
@@ -33,11 +47,9 @@ const modal = (function () {
             })
             setTimeout(() => {
                 modal.css({
-                    'display': '',
-                    'animation-name': '',
-                    'animation-duration': ''
+                    'display': ''
                 })
-            }, modalAnimDur * 0.8)
+            }, modalAnimDur * 0.5)
         }
     }
 })();

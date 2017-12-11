@@ -6,6 +6,7 @@ $(document).ready(function () {
     switchActive('.projects-item', 'active');
     indexListeners();
     initRegForm();
+    modal.open('modalHelp')
 })
 
 const switchActive = function (selector, activeClass) {

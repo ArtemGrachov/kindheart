@@ -4,9 +4,8 @@
   "description": "",
   "main": "./app/js/main.js",
   "scripts": {
-    "dev": "webpack-dev-server --watch --env dev",
-    "build": "webpack --env build",
-    "prod": "webpack --env prod"
+    "dev": "gulp default",
+    "build": "gulp build"
   },
   "keywords": [],
   "author": "",
